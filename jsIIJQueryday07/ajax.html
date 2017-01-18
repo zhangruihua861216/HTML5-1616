@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	<form action="test.php" name="myForm">
+		<input type="text" name="username" value="admin"/>
+		<input type="text" name="password"  value="admin" />
+		
+		<!--<input type="submit" value="提交"/>-->
+		<button>按钮提交</button>
+	</form>
+		
+	</body>
+	<script type="text/javascript">
+		$("button").click(function(e){
+			e.preventDefault();
+//			e.preventDefault;
+//			console.log(document.forms["myForm"].action);
+//			console.log($("input:eq(0)").val());
+//			console.log($("input:eq(1)").val())
+			$.ajax({
+				url:"test.php",
+				data:{
+					username:"admin",
+					password:"admin",
+				},
+				success:function(res){
+					console.log(res)
+				}
+			})
+		})
+		
+//		$("button").click(function(e){
+//			// 阻止默认提交，防止页面刷新
+//			e.preventDefault();
+//			// 获取当前页面的所有表单
+//			// 获取页面中的所有form表单
+//			console.log(document.forms["myForm"]);
+//			// .action -- 获取form表单的提交地址
+//			console.log(document.forms["myForm"].action);
+//
+//			$.ajax({
+//				url: "test.php",
+//				data: {
+//					username: $("input:eq(0)").val(),
+//					password: $("input:eq(1)").val()
+//				},
+//				success: function(res){
+//					console.log(res)
+//				}
+//			})
+//		})		
+	</script>
+	
+		<script type="text/javascript">
+//		$.ajax({
+//			//url:"http://xxx.php"
+//			//url:"http://localhost/jq/test.php"
+//			//url:"./1/2/3/test3.php"
+//			url:"test.php",
+//			data:{
+//				username:"admin",
+//				password:"admin",
+//			},
+//			success:function(res){
+//				console.log(res);
+//			}
+//		})
+	</script>
+</html>

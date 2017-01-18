@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    *{
+		    	margin: 0;
+		    	padding: 0;
+		    }
+		    form{
+				width: 1198px;
+				margin: 100px auto;
+				font-family: "微软雅黑";	
+				box-sizing: border-box;  	
+		    }
+		    .desc{
+		    	font-size: 42px;
+		    	text-align: center;
+		    }
+			.boder{
+
+				height: 304px;	
+				border: 1px solid #8a8a8a;
+				border-radius:15px;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				
+			}
+			#login{
+				float: left;
+				width: 810px;
+				/*background: pink;*/
+				height: 274px;
+				text-align: center;
+				
+				
+			}
+			#login div{
+				height: 60px;
+				line-height: 60px;				
+				/*border:1px solid red;*/
+				
+			}
+			#login input{
+				width: 258px;
+				height: 28px;
+							
+			}
+			#login label{
+				/*background: blue;*/
+				width: 60px;
+				display: inline-block;
+			}
+			form button{
+				width: 151px;
+				height: 60px;
+				border: none;
+				color: #fff;
+			}
+			form #login button{
+				background: #0600fe;
+				margin-top: 30px;
+				margin-right: 15px;
+			}
+			form #regedit button{
+				background: #fea500;
+			}
+			#regedit{
+				float: left;
+				height: 304px;
+				/*background: gold;*/
+				padding-left: 75px;
+				border-left: 1px solid #8A8A8A;
+				
+			}
+			#regedit h3{
+				height: 62px;
+				line-height: 62px;
+				font-size: 32px;
+				/*background: pink;*/
+			}
+			#regedit div{
+				height: 83px;
+				line-height: 83px;
+				font-size: 26px;
+				/*background: gold;*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<form action="">
+			<div class="desc">登录或创建一个账户</div>
+			<div class="boder">
+				<div id="login">
+				<div><label>用户名</label><input type="text" /></div>
+				<div><label>密&nbsp;码</label><input type="password" /></div>
+				<div><button>登录</button><span>忘记密码</span></div>
+				</div>
+				<div id="regedit">
+					<h3>注册</h3>
+					<div>如果你没有我们的账户</div>
+					<button>注册</button>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
