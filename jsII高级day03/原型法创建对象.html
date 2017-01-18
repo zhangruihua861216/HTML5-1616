@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		//函数对象  Person
+		//person对象    p  p2
+		var Person=function(){
+			length:0,
+		    prototype:{
+		    	constructor:Person,
+		    	name:"王小二",
+		    	sayhi:function(){
+		    		console.log("hello");
+		    	}
+		    },
+			age:20,
+			};
+			
+		}
+			function Person(){
+				
+			}
+			Person.prototype.name="王小二";
+			Person.prototype.sayHi=function(){
+				console.log("hello");
+			}
+			var p=new Person();
+			
+			console.log(p);
+			var p2=new Person();
+
+			console.log(p.name);
+			console.log(p2.name);
+			console.log("------------");			
+			p.sayHi();
+			p2.sayHi();
+			console.log(p);
+			console.log(p2);
+			//给函数对象添加属性
+			Person.age=20;
+			//不是给Person的对象添加属性
+			console.log(Person.prototype);
+			console.log(Person.prototype.constructor);
+			
+			console.log(Person.prototype.constructor==Person);
+			console.log(p.__proto__);
+			console.log(p.__proto__===Person.prototype);
+			
+			//1.函数是对象，函数有一个核心属性prototype，属性值是一个对象，这个对象就是原型对象
+			//2.原型对象中的constructor指向了原型对象所属的函数
+			//3.构造函数创建的实例有一个内部指针__proto__指向了构造函数的原型对象
+			//4.构造函数的原型对象中属性和方法可以被构造函数创建的所有实例所共享
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

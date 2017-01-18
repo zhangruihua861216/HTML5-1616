@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	       function Bank(id,money){
+        	this.id=id;
+        	this.money=money;
+        	this.saveMoney=function(m){
+        		this.money+=m;
+        	}
+        	this.crashMoney=function(m){
+        		this.money-=m;
+        	}
+        	this.showMoney=function(){
+        		console.log("余额是:" + this.money);
+        	}
+        }
+		
+		
+		var  count=new Bank("001",9);
+		//instanceof 判断对象是否是某个引用类型的实例
+		//判断对象是否是由某个构造函数创建的
+		
+		console.log(count instanceof Bank);
+		console.log(count instanceof Array);
+		//Objedt是一个根类，js中所有的对象都来自Object
+		console.log(count instanceof Object);
+		
+		//【补充】判断某个对象是否是数组的对象  2种方法
+		var arr=[1,2,3,4,5];
+		console.log(arr instanceof Array);
+		console.log(Array.isArray(arr));
+	</script>
+</html>

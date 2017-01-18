@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			
+		}
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			border-radius: 50%;
+			position: absolute;
+		}
+	</style>
+	<body>
+		<div class="box"></div>
+	</body>
+	<script src="js/Tween.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+	   //tween(start,begin,change,dur)
+	   //start :开始步数
+	   //begin:动画的开始值
+	   //change:变化量
+	   //dur：持续总步数
+		var box=document.querySelector(".box");
+		var  start=30;
+		begin=0;  //元素的初始状态，并不一定是一个像素值或者其它具体值
+		change=500-begin;   //元素的终止状态
+//		 change=1;
+		dur=30;   //需要耗时多少步完成这个动画
+		var inter=setInterval(function(){
+			start++;
+//			console.log(dur);
+			if(start>dur){
+				
+				clearInterval(inter);
+			}
+			console.log(Tween.Bounce.easeInOut(start,begin,change,dur)+"px");
+			box.style.left=Tween.Bounce.easeInOut(start,begin,change,dur)+"px";
+//			box.style.opacity=Tween.Bounce.easeInOut(start,begin,change,dur);
+		},30)
+	</script>
+</html>

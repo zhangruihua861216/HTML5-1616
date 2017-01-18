@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>块级作用域</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		for(var i=0;i<3;i++){
+			//其它语言中，此处定义的循环变量i只能在循环体中使用。
+			//这就是块级作用域
+		}
+		
+		var global="小王的全局变量";
+		(function(){
+			var i=0;
+			//此处，就是块级作用域
+			var a="小王的a";
+		})();
+		//为了解决多人开发命名冲突的问题
+		//1.块级作用域---保证自己定义变量只在自己的作用域块中生效
+		
+		
+		function fun(cnt){
+			for(var i=0;i<cnt;i++){
+				
+			}
+			var i;  //此时，后面声明的变量，不起作用
+			console.log(i);
+			
+			var i=1; //此时的赋值起作用
+			console.log(i);
+		}
+		
+		fun(3);
+     //2.命名空间---保证共享数据时候，避免全局变量的名字冲突（生成命名空间的函数）
+     //3.注释写清楚
+     //4.事先商议
+     var GLOBAL={}; //一级命名空间
+     //生成命名空间
+     GLOBAL.namespaces=function(nameStr){
+     	var arr=nameStr.split(".");
+     	var g;
+//   	if(arr[0]=='GLOBAL'){
+//   		var i=1;
+//   	}else{
+//   		var i=0;
+//   	}
+     	for(var i=(arr[0]=="GLOBAL"?1:0);i<arr.length;i++){
+     		g[arr[i]]=g[arr[i]]||{};  //访问对象属性----方括号
+     		g=g[arr[i]];
+     	}
+     	return g;
+     }
+     
+     //程序员A  GLOBAL.A.name   "A.age"
+     //程序员B  GLOBAL.name
+     
+     
+     
+     //小王的代码
+     (function(){
+     	GLOBAL.XW="小王的全局变量"
+     })
+     //小李的代码
+     
+     /*
+      * 功能：
+      * 姓名：
+      * 联系方式: Email
+      * 最后一次更改：
+      */
+     (function(){
+     	var i=100;
+     	GLOBAL.XlCat.name="肉包";
+     	GLOBAL.XLCat.name={};  //二级命名空间
+     })
+     
+     //老刘的代码
+     (function(){
+     	console.log(GLOBAL.XW);
+     	console.log(GLOBAL.XLCat.name);
+     })
+     (function(){
+     	var catNameSpace=function(){
+     		
+     	}
+     })
+	</script>
+	
+	
+	
+</html>

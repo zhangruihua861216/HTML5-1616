@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		   body>div{
+		   	margin-top: 30px;
+		   }
+			#wrap{
+				width:1250px;
+				margin: 0 auto;
+				border: 1px solid red;
+				padding: 20px;
+				
+			}
+			#middle{
+				border: 1px solid blue;
+			}
+			.leaf{
+				width: 150px;
+				height: 150px;
+				display: inline-block;
+				border: 1px solid #ccc;
+				margin: 8px;
+				line-height: 150px;
+				text-align: center;
+			}
+			.btns{
+				text-align: center;
+				margin-top: 30px;
+			}
+			.btns button{
+				background:  #3547AA;
+				border: none;
+				min-width: 80px;
+				padding: 5px 10px;
+				color: #FFFFFF;
+				font-size: 15px;
+				margin: 5px;
+				cursor: pointer;
+				border-radius:4px
+			}
+			
+			#six{
+				display: none;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="middle">
+				<div id="first" name="first" class="leaf">
+					<span>DIV1</span>
+				</div>
+				<div id="second" diy="" name="second" class="leaf other">
+					<span>DIV2</span>
+				</div>
+				<div id="third" name="third" class="leaf">
+					<span>DIV3</span>
+					<span lang="en">lang span</span>
+				</div>
+				<div id="four" name="four" class="leaf  other">
+					<span>DIV4</span>
+					<span diy="span">diy span</span>
+					
+				</div>
+				<div id="five" class="leaf other"></div>
+				<div id="six" class="leaf other"></div>
+				<div class="leaf other"></div>
+				<div><input type="hidden" /></div>
+			</div>
+			<div id='center'>
+				<div name="first" class="leaf">
+					<span>DIV1</span>
+				</div>	
+				<div  name="second" class="leaf other">
+					<span>DIV2</span>
+				</div>				
+			</div>
+		<form >
+			<input type="text" />
+			<input type="image" />
+			<input type="file" />
+			<input type="hidden" />
+			<input type="submit" name="" id="" value="提交" />
+			<input type="reset" />
+		</form>	
+			<h1>育知同创h1</h1>
+			<p>育知同创p</p>
+			<h2>育知同创h2</h2>
+	        <div id="content">
+	        	<input tabIndex="1">
+	        	<input tabIndex="2">
+	        	<input type="password" />
+	        	<input type="email" disabled="disabled" />
+	        	<input type="radio" name="" id="" value="" />男
+	        	<input type="radio" name="" id="" value="" checked="checked" />女
+	        	<input type="checkbox" />足球<input type="checkbox" />羽毛球<input type="checkbox" checked="checked" />篮球
+	        	<select tabIndex="3">
+	        		<option>Flowers</option> 
+	        		<option selected="selected">Gardens</option> 
+	        		<option>Trees</option> 
+	            </select>    
+	            <div tabIndex="4"> a div</div>
+	        </div>			
+		</div>
+	
+		
+		<div class="btns">
+			<button>#id</button><button>element</button><button>class</button><button>*</button><button>selector1,selector2,selectorN</button>
+			<button>ancestor descendant</button><button>parent>child</button><button>prev+next</button><button>prev~next</button>
+			<br />
+			<button>:first</button><button>:last</button><button>:not(selector) 待处理</button><button>:even</button><button>:odd</button>
+			<button>:eq(index)</button><button>:gt(index)</button><button>:it(index)</button><button>lang</button>
+			<button>:header</button><button>animated 待处理</button>
+			<br />
+			<button>focus 待处理</button><button>:root</button><button>:target</button><button>:contains(text)</button><button>empty</button>
+			<button>:has(selector)</button><button>:parent</button><button>:hidden 待处理</button>
+			<button>:visible</button>
+			<br />
+			<button>[attribute]</button><button>[attribute=value]</button><button>[attribute!=value]</button><button>[attribute^=value]</button>
+			<button>[attribute$=value]</button><button>[attribute*=value]</button>
+			<button>[selector1][selector2][selectorN]</button>
+			<br />
+			<button>:first-child</button><button>first-of-type</button><button>:last-child</button><button>:last-of-type</button>
+			<button>nth-child</button><button>:nth-last-child</button><button>:nth-last-of-type 待处理</button><button>:nth-of-type</button>
+			<br />
+			<button>:only-child</button><button>:only-of-type</button><button>:input</button><button>:text</button><button>:passord</button>
+			<button>radio</button><button>:checkbox</button><button>:submit</button><button>:image</button>
+			<button>reset</button>
+			<br />
+			<button>:button</button><button>:file待处理</button><button>:hidden</button><button>enabled</button><button>:disabled</button>
+			<button>checked</button><button>selected</button>
+		</div>
+		
+		
+	</body>
+	<script type="text/javascript">
+	    $("button:eq(0)").click(function(){
+	   		$("#first").css("background","green");	
+	    })
+	    
+	    $("button:eq(1)").click(function(){
+	    	$("span").css("background","green");
+	    })
+		
+		$("button:eq(2)").click(function(){
+			$(".other").css("background","green");
+		})
+		
+		$("button:eq(3)").click(function(){
+			$("* .other").css("background","green")
+		})
+		
+		$("button:eq(4)").click(function(){
+			$("#first,#second").css("background","green");
+		})
+		
+		$("button:eq(5)").click(function(){
+			$("#wrap #second").css("background","green");
+		})
+		
+		$("button:eq(6)").click(function(){
+			$("#middle>#first").css("border","1px solid  red");
+//			$("#wrap>#first").css("border","1px solid  red");
+		})
+		
+		$("button:eq(7)").click(function(){
+			$("#middle span").css("background","green");
+		})
+		
+		$("button:eq(8)").click(function(){
+			$("#second~div").css("background","green");
+//			$("#second~span").css("background","green");
+		})
+	
+		
+		
+	</script>
+	<script type="text/javascript">
+		
+		$("button:eq(9)").click(function(){
+			$("#middle div:first").css("background","green");
+		})
+		
+		$("button:eq(10)").click(function(){
+			$("#middle div:last").css("background","green");
+		})
+		
+		$("button:eq(11)").click(function(){
+			$("#middle div:not(#first)").css("background","green");
+		})
+		
+		$("button:eq(12)").click(function(){
+			$("#middle div:even").css("background","green")
+		})
+		
+		$("button:eq(13)").click(function(){
+			$("#middle div:odd").css("background","green");
+		})
+		
+		$("button:eq(14)").click(function(){
+			$("#middle div:eq(1)").css("background","green");
+		})
+		
+		$("button:eq(15)").click(function(){
+			$("#middle div:gt(1)").css("background","green");
+		})
+		
+		$("button:eq(16)").click(function(){
+			$("#middle div:lt(1)").css("background","green");
+		})
+		
+		$("button:eq(17)").click(function(){
+			$("span:lang(en)").css("background","green")
+		})
+		
+		$("button:eq(18)").click(function(){
+			$(":header").css("background","green");
+		})
+		
+		
+//		$("button:eq(19)").click(function(){
+//			$("div:not(animate)").animate({left:"+=20"},2000);
+//		})
+		
+
+		
+	</script>
+	<script type="text/javascript">
+		
+//		$( "#content" ).delegate( "*", "focus blur", function( event ) {
+//  		var elem = $( this );
+//  		setTimeout(function() {
+//     		elem.toggleClass( "focused", elem.is( ":focus" ) );
+//  	}, 0);
+//	  });
+
+		$("button:eq(21)").click(function(){
+			console.log("hehe");
+			$(":root").css("background","green");
+//			$(":root").css("background-color","yellow");
+		})	
+		
+		$("button:eq(22)").click(function(event){
+			$("#five").html(event.target.nodeName);
+		});
+		
+		$("button:eq(23)").click(function(){
+			$("#middle div:contains('span')").css("background","green");
+			console.log($("#middle:contains('lang')"));
+		})
+		
+		$("button:eq(24)").click(function(){
+			$("#middle div:empty").css("background","green");
+		})
+		
+		$("button:eq(25)").click(function(){
+			$("div:has(button)").css("background","green");
+		})
+		
+		$("button:eq(26)").click(function(){
+			$("#middle div:parent").css("background","green")
+		})
+		
+		$("button:eq(27)").click(function(){
+			$("div:hidden").css("display","inline-block");
+			$("input:hidden").css("type","text");
+			console.log($("input:hidden"));
+		})
+		
+		$("button:eq(28)").click(function(){
+			$("#middle div:visible").css("background","green");
+		})
+		
+
+	</script>
+	
+	<script type="text/javascript">
+		$("button:eq(29)").click(function(){
+			$("#middle div[diy]").css("background","green")
+		})	
+		
+		$("button:eq(30)").click(function(){
+			$("#middle div[id='first']").css("background","green");
+		})
+		
+		$("button:eq(31)").click(function(){
+			$("#middle div[id!='first']").css("background","green");
+		})
+		
+		$("button:eq(32)").click(function(){
+			$("#middle div[id^='f']").css("background","green");
+		})
+		
+		$("button:eq(33)").click(function(){
+			$("#middle div[id$='d']").css("background","green");
+		})
+		
+		$("button:eq(34)").click(function(){
+			$("#middle div[id*='ve']").css("background","green");
+		})
+		
+		$("button:eq(35)").click(function(){
+			$("#middle div[id][name*='f']").css("background",'green');
+		})
+		
+
+	</script>
+	<script type="text/javascript">
+		$("button:eq(36)").click(function(){
+			$("#middle div:first-child").css("background",'green');
+		})
+		
+		$("button:eq(37)").click(function(){
+
+			$("#wrap div:first-of-type").css("background","green");
+		})
+		
+		$("button:eq(38)").click(function(){
+			
+			$("#center div:last-child").css("background",'green');
+		})		
+		
+		$("button:eq(39)").click(function(){
+			$("#wrap div:last-of-type").css("background","green");
+		})
+		$("button:eq(40)").click(function(){
+			$("#middle div:nth-child(2)").css("background","green");
+		})		
+
+		$("button:eq(41)").click(function(){
+			$("#middle div:nth-last-child(2)").css("background","green");
+		})
+		$("button:eq(42)").click(function(){
+			$("#wrap div:nth-last-of-type(2)").css("background","green");
+		})
+		$("button:eq(43)").click(function(){
+			$("span:nth-of-type(2)").css("background","green");
+		})	
+
+		$("button:eq(44)").click(function(){
+			$("#middle div span:only-child").css("background","green");
+		})
+		
+		$("button:eq(45)").click(function(){
+			$("div span:only-of-type").css("background","green");
+		})
+		$("button:eq(46)").click(function(){
+			$(":input").css("background","green");
+		})
+		
+		$("button:eq(47)").click(function(){
+			$(":text").css("background","green");
+		})
+		$("button:eq(48)").click(function(){
+			$(":password").css("background","green");
+		})	
+		$("button:eq(49)").click(function(){
+			$(":radio").attr("checked","checked");
+			console.log($(":radio"));
+		})
+		
+		$("button:eq(50)").click(function(){
+			$(":checkbox").attr("checked","checked");
+		
+		})
+
+		$("button:eq(51)").click(function(){
+
+			$(":submit").attr("value","重置");
+		
+		})
+		
+		$("button:eq(52)").click(function(){
+
+			$(":image").attr("src","img/2.jpg");
+		
+		})
+		$("button:eq(53)").click(function(){
+
+		console.log($(":reset"));
+		
+		})			
+	</script>
+	
+	<script type="text/javascript">
+		$("button:eq(54)").click(function(){
+
+		$(":button").css("background","yellow");
+		
+		})	
+		
+		$("button:eq(55)").click(function(){
+
+			$(":file").attr("src","tab.html");
+		
+		})
+		
+		$("button:eq(56)").click(function(){
+
+			$(":hidden").attr("type","text");
+		
+		})
+		
+		$("button:eq(57)").click(function(){
+
+			$("input:enabled").css("background","green");
+		
+		})
+		$("button:eq(58)").click(function(){
+
+			$("input:disabled").css("background","green");
+		
+		})
+		$("button:eq(59)").click(function(){
+
+			console.log($("input:checked"));
+		
+		})
+		
+		$("button:eq(60)").click(function(){
+
+			console.log($("input:selected"));
+		
+		})			
+	</script>
+</html>

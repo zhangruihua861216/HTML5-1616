@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/封装ajax请求.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		    body{
+		    	font-family: "微软雅黑";
+		    	color: #434540;
+		    	width: 1000px;
+		    	margin: 0 auto;
+		    	height: 1000px;
+		    	border: 1px solid red;
+		    	border-collapse: collapse;
+		    	
+		    }
+			.add{
+				width: 800px;
+				height: 630px;
+				background: #aaaaaa;
+				margin:0px auto;
+				display: none;
+			}
+			.add div:first-of-type{
+				height:30px;
+				background: #b1d0ee;
+				font-size: 16px;
+				padding-left: 8px;
+				line-height: 30px;
+				margin-bottom: 12px;
+			}
+			.add div{
+				height: 58px;
+				line-height: 58px;
+			}
+			.add div label{
+				display: inline-block;
+				width: 76px;
+				text-align: right;
+				padding-right: 6px;
+				font-size: 16px;
+			}
+			.add div input{
+				width: 300px;
+				height: 30px;
+				font-size: 16px;
+				padding-left:2px;
+			}
+			.add div:last-of-type{
+				text-align: center;
+				height: 100px;
+				line-height: 100px;
+			}
+			.add div button{
+				width: 100px;
+				height: 36px;
+				background: #007686;
+				color: #FFFFFF;
+				border: 0px;
+				font-size: 18px;
+				cursor: pointer;
+				font-family: "微软雅黑";
+				
+			}
+			
+			.btnAdd{
+				width: 1000px;
+				text-align: center;
+				margin-top: 10px;
+			}
+			.btnAdd button{
+				background: #1f2124;
+				padding: 8px 20px;
+				color: #FFFFFF;
+				margin-right: 7px;
+				font-family: "微软雅黑";
+				cursor: pointer;
+			}
+			.show div{
+				width: 100%;
+				height: 65px;				
+				border: 1px solid red;
+
+			}
+			.show span{
+				display: inline-block;
+				border: 1px solid #ccc;
+				text-align: center;
+				min-height: 65px;
+				
+			}
+			.show .title{
+				height: 34px;
+				line-height: 34px;
+				background: #B1D0EE;
+			}
+			.show .title span{
+				height: 0px;
+			}
+
+			.show span:first-of-type{
+				width: 40px;
+				
+			}
+			.show span:nth-of-type(2){
+				width: 60px;
+			}
+			.show span:nth-of-type(3){
+				width: 250px;
+				/*white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;				*/
+			}
+			.show span:nth-of-type(4){
+				width: 235px;
+				/*white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;*/
+			}
+			.show span:nth-of-type(5){
+				width: 65px;
+			}
+			.show span:nth-of-type(6){
+				width: 235px;
+			}	
+			.show span:nth-of-type(7){
+				width: 100px;
+			}	
+			.show span img{
+				width: 30px;
+				vertical-align: top;
+				
+				
+			}																				
+		</style>
+	</head>
+	<body>
+		<div class="btnAdd"><button  id="addBtnDate">添加数据</button><button>刷新</button></div>
+		<div class="show">
+			<div class="title"><span><input type="checkbox" name="" id="" value="" /></span><span>图片</span><span>书名</span><span>作者</span><span>会员价</span><span>出版社</span><span>操作</span></div>
+		</div>
+		<div class="add">
+			<div>新建书籍</div>
+			<div><label>书名</label><input type="text" name="" id="bookname" value=""/><label>ISBN</label><input type="text"  value="" /></div>
+			<div><label>副标题</label><input type="text" value=""/><label>上架时间</label><input type="text" value="" ></div>
+			<div><label>价格</label><input type="text" value=""/><label>出版时间</label><input type="text" value=""/></div>
+			<div><label>会员价</label><input type="text" value=""/><label>开本</label><input type="text" value=""/></div>
+			<div><label>校园价</label><input type="text" value=""/><label>页数</label><input type="text" value=""/></div>
+			<div><label>评分</label><input type="text" value=""/><label>版本</label><input type="text" value=""/></div>
+			<div><label>作者</label><input type="text" value=""/><label>分类</label><input type="text" value=""/></div>
+			<div><label>出版社</label><input type="text" value=""/><label>图片</label><input type="text" value=""/></div>
+			<div><button id="addBtn">添加</button></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	var addBtn=document.getElementById("addBtn");
+	var add=document.getElementsByClassName("add")[0];
+	addBtn.onclick=function(){
+	var bookname=document.getElementsByTagName("input")[0].value;
+//  var bookname=document.getElementById("bookname").value;
+	console.log(bookname);
+	var isbn=document.getElementsByTagName("input")[1].value;
+	var fTitle=document.getElementsByTagName("input")[2].value;
+	var sjDate=document.getElementsByTagName("input")[3].value;
+	var price=document.getElementsByTagName("input")[4].value;
+	var pubDate=document.getElementsByTagName("input")[5].value;
+	var hyPrice=document.getElementsByTagName("input")[6].value;
+	var kb=document.getElementsByTagName("input")[7].value;
+	var xyPrice=document.getElementsByTagName("input")[8].value;
+	var page=document.getElementsByTagName("input")[9].value;
+	var pf=document.getElementsByTagName("input")[10].value;
+	var version=document.getElementsByTagName("input")[11].value;
+	var author=document.getElementsByTagName("input")[12].value;
+	var category=document.getElementsByTagName("input")[13].value;
+	var publisher=document.getElementsByTagName("input")[14].value;
+	var pic=document.getElementsByTagName("input")[15].value;
+	
+		var xhr=ajax(
+				"post",
+				"http://localhost:5050/books",
+				true,
+				{bookname:bookname,isbn:isbn,fTitle:fTitle,sjDate:sjDate,price:price,pubDate:pubDate,hyPrice:hyPrice,kb:kb,xyPrice:xyPrice
+				,page:page,pf:pf,version:version,author:author,category:category,publisher:publisher,pic:pic},
+				function(){
+					if(xhr.readyState==4){
+						if(xhr.status>=200&&xhr.status<300){
+//							console.log(xhr.responseText);
+							add.style.display="none";
+						}
+					}
+				}
+			)		
+	}
+
+	</script>
+	<script type="text/javascript">
+		var btnAddDate=document.getElementById("addBtnDate");
+		
+		btnAddDate.onclick=function(){
+			add.style.display="block";
+		}
+	</script>
+	
+	<script>
+	var show=document.getElementsByClassName("show")[0];
+		var xhr1=ajax(
+			"get",
+			"http://localhost:5050/books",
+			true,
+			null,
+			function(){
+				if(xhr1.readyState==4){
+					if(xhr1.status>=200&&xhr1.status<300){
+//						console.log(xhr1.responseText);
+						var data=JSON.parse(xhr1.responseText);
+						console.log(data);
+						var attriName=['bookname','author','xyPrice','publisher'];
+						console.log(data.length);
+						for(var i=0;i<data.length;i++){
+							var div=document.createElement("div");
+							show.appendChild(div);
+						    var span=document.createElement("span");
+						    var inputCheckBox=document.createElement("input");
+						    inputCheckBox.setAttribute("type","checkbox");
+						    span.appendChild(inputCheckBox);
+						    div.appendChild(span);
+						    var spanImg=document.createElement("span");
+						    var img=document.createElement("img");
+						    console.log(data[i].pic);
+						    img.setAttribute("src",data[i].pic);
+						    spanImg.appendChild(img);
+						    div.appendChild(spanImg);
+							for(var j=0;j<attriName.length;j++){
+							  var span=document.createElement("span");
+						      div.appendChild(span);
+						      span.innerHTML=data[i][attriName[j]];
+							}
+						}
+
+
+					}
+				}
+			}
+		)
+	</script>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<button onclick="fun1()">html</button>
+		<button id="btn2">DOM0</button>
+		<button id="btn3">DMO2</button>
+		<button id="btn4">IE专用</button>
+		<ul id='list'>
+			<li>111111111111</li>
+			<li>2222222222222</li>
+			<li>3333333333333</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		//1.在单独定义的函数中使用this
+		
+		function fun(){
+			console.log(this);  //window
+		}
+		
+		fun();  //window.fun();
+		
+		var a=1;
+		function test(){
+			console.log("1---"+a);  //undefined
+			var a=10;
+			this.a++; //this指window这个全局对象
+			console.log("3%%%%%%%%%"+a);
+		}
+		test();
+		console.log("2*****"+a);
+		
+		//2.在事件处理程序中(事件响应函数的函数体)使用this
+		//2.1 HTML事件处理程序
+		
+		function fun1(){
+			console.log(this);  //window
+		}
+		
+		//2.2 DOM0事件处理程序
+		document.getElementById("btn2").onclick=function(){
+			console.log(this); //this指的是btn2  触发事件的元素节点
+		}
+		
+		//2.3 DOM2事件处理程序
+		
+		document.getElementById("btn3").addEventListener("click",function(){
+			console.log(this);   //this指的是btn3
+		},false)
+		
+		//2.4 IE8--及以下专用处理程序
+		
+//		document.getElementById("btn4").attachEvent("onclick",function(){
+//			console.log(this);  //window
+//		})
+		
+		//3.this在构造函数中使用  代表的是新创建的对象
+		
+		function Person(){
+			this.name="张三";
+			this.sayHi=function(){
+				console.log(this.name); //this指的是调用该函数的对象
+			}
+		}
+		Person.prototype.say=function(){
+			console.log(this);
+		}
+		
+		var p=new Person();
+		
+		function Animal(age,sex){
+			this.age=age;
+			this.sex=sex;
+		}
+		
+		function Dog(name,age,sex){
+			this.name=name;
+			//在子类的构造函数中调用父类的构造函数
+			Animal.call(this,age,sex);
+			//调用Animal函数，只不过在调用的时候，做了"小动作",改变Animal函数的函数体中this指针的指向，将Animal函数体中this指针指向第一个参数
+		}
+		
+		var d=new Dog("大白",3,"男");
+		
+		//4. 在HTML标签中使用this指针,this指针指的是当前标签
+		
+		//5.直接写
+		console.log(this);
+		
+		
+		/*
+		 * 总结:
+		 * 1.在函数体中的this，谁来调用该函数，this就指向谁
+		 * 2.在函数体外，如果直接将this写在script标签中，this指的是window；如果讲台this写在标签中，this指的是当前标签
+		 */
+		
+		/*
+		 * 说说你对this指针的理解
+		 * 1.this用在单独定义的函数中，this指的是window
+		 * 2.this用在事件的响应函数中。
+		 *   2.1
+		 *   2.2
+		 *   2.3
+		 *   2.4
+		 * 3.this用在构造函数中，this指的是新创建对象
+		 * 4.this直接使用在标签中，this指的是当前所在的标签
+		 * 
+		 * 
+		 */
+		
+		
+		var Lis=document.querySelectorAll("ul li");
+		for(var i=0;i<Lis.length;i++){
+			Lis[i].index=i;
+			eventUtill.addEventHandler(Lis[i],"click",function(){
+				console.log(Lis[this.index].innerHTML);
+			})
+		}
+	//IE8以下的版本，使用this，this指的是window	
+		var oLis=document.getElementById('list').getElementsByTagName("li");
+//		console.log(oLis);
+//		for(var i=0;i<oLis.length;i++){
+//			eventUtill.addEventHandler(oLis[i],"click",callBack);
+//			function callBack(){
+//				console.log(this.innerHTML);  //IE8下指window
+//			
+//}
+//		}
+//使用闭包更好
+		for(var i=0;i<oLis.length;i++){
+//			eventUtill.addEventHandler(oLis[i],"click",callBack(i));
+//			function callBack(idx){
+//				return function(){
+//				console.log(oLis[idx].innerHTML); 
+//				}
+//				
+//			}
+		(function(idx){
+			eventUtill.addEventHandler(oLis[i],"click",callBack);
+			function callBack(){
+				console.log(oLis[idx].innerHTML);
+			}
+		})(i);			
+			
+		}
+		
+		
+
+		
+	</script>
+</html>

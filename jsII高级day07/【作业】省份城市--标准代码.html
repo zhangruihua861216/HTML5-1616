@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/封装ajax请求.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<select id="province">
+			<option value="">请选择</option>
+		</select>
+		<select id="city">
+			<option value="">请选择</option>
+		</select>
+		<input type="text" name="code" id="code" value=""placeholder="城市编码" readonly="readonly" id="code"/>
+		<button id="searchBtn">查询</button>
+	</body>
+	<script type="text/javascript">
+		//1.请求数据
+		var select_province=document.getElementById("province");
+		var select_city=document.getElementById("city");
+		var oBtn=document.getElementById("searchBtn");
+		var oInput=document.getElementById("code");
+		var xhr=ajax(
+			"get",
+			"http://127.0.0.1/jsII%E9%AB%98%E7%BA%A7day07/city.json",
+//			"city.json",
+			true,
+			null,
+			function(){
+				if(xhr.readyState==4){
+					if(xhr.status>=200&&xhr.status<300){
+						console.log(xhr.responseText);
+					var data=JSON.parse(xhr.responseText);
+					console.log(data);
+					var provinceArr=data["城市代码"];
+					console.log(provinceArr);
+					for(var i=0;i<provinceArr.length;i++){
+						select_province.innerHTML+="<option>"+provinceArr[i]["省"]+"</option>";
+					}
+					select_province.onchange=function(){
+						select_city.innerHTML="<option>请选择</option>";
+						oInput.value="";
+						for(var i=0;i<provinceArr.length;i++){
+							if(provinceArr[i]["省"]==select_province.value){
+								var cityArr=provinceArr[i]["市"];
+								for(var j=0;j<cityArr.length;j++){
+									select_city.innerHTML+="<option>"+cityArr[j]["市名"]+"</option>"
+								}
+								break;
+							}
+						}
+						
+					}
+					oBtn.onclick=function(){
+						for(var i=0;i<provinceArr.length;i++){
+							if(provinceArr[i]["省"]==select_province.value){
+								var cityArr=provinceArr[i]["市"];
+								for(var j=0;j<cityArr.length;j++){
+								console.log("hehe");									
+									if(cityArr[j]["市名"]==select_city.value){
+//										oInput.readOnly=false;
+										oInput.value=cityArr[j]["编码"];
+//										oInput.readOnly=true;
+									}
+								}
+							}
+						}
+					}
+					
+					select_city.onchange=function(){
+						oInput.value="";
+					}
+					}
+				}
+			}
+		)
+		
+		//请求数据--添加到省份的下拉列表
+		//当省份改变的时候---添加市
+	</script>
+
+</html>

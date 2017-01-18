@@ -1,0 +1,127 @@
+		    *{
+		    	margin: 0px;
+		    	padding: 0px;
+		    }
+		    #bg{
+		    	position: absolute;
+		    }
+			.main{
+				width: 343px;
+				height: 480px;				
+				position: relative;
+				margin: 0 auto;
+			}
+			.slide{
+				width: 343px;
+			}
+			.slide img{
+				position: absolute;
+				width: 343px;
+				top: 423px;
+
+			}
+			.logo{
+				position:absolute;
+				top: 130px;
+				left: 30px;
+			}
+			.game{
+				position:absolute;
+				/*display: none;*/
+				border:2px solid red;
+				width: 343px;
+				height: 426px;
+				/*overflow: hidden;*/
+	
+			}
+			.start{
+				position: absolute;
+				top: 260px;
+				left: 120px;
+				cursor: pointer;
+			}
+
+			ul{
+				height: 100%;
+				width: 62px;
+				float:left;	
+				margin-right: 100px;
+				position: absolute;
+				left: 360px;
+				list-style: none;
+			}
+
+			ul .up_mod{
+				background: url(../img/up_mod.png);
+
+			}			
+			ul .up_mod img{
+				position: absolute;
+			}
+
+			ul .down_mod{
+				background: url(../img/down_mod.png);
+				margin-top: 120px;
+			}
+			#bird{
+				position: absolute;
+				left: 80px;
+				top:120px;
+			}
+			
+			#gameover{
+				position: absolute;
+				display: none;
+				width: 343px;
+				height: 424px;
+			}
+			#gameover_zi{
+				position:absolute;
+				left: 60px;
+				top: 150px;
+				width: 221px;
+				height: 40px;
+				background: url(../img/game_over.jpg);
+			}
+			#record{
+				width: 269px;
+				height: 135px;
+				background: url(../img/message.jpg);
+				position: absolute;
+				left:35px;
+				top: 200px;
+			}
+			#myScore{
+				position: absolute;
+				left: 210px;
+				top: 35px;
+				font-size: 30px;
+				font-weight: bolder;
+		}
+			#best{
+				position: absolute;
+				left: 210px;
+				top:85px;
+				font-size: 30px;
+				font-weight: bolder;
+			}
+			
+			#score{
+			position: absolute;
+			left: 40%;
+			top: 80px;
+			z-index: 20;
+			text-align: center;
+	        line-height: 39px;
+	        height: 39px;
+	        }
+	        #ok{
+			width: 96px;
+			height: 33px;
+			position: absolute;
+			left: 120px;
+			top: 350px;
+			background: url(../img/ok.jpg);
+			cursor: pointer;
+}
+

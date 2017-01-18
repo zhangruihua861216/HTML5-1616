@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#banner{
+				width: 730px;
+				height: 454px;
+				margin: 0 auto;
+				position: relative;
+
+			}
+			ul{
+				overflow: hidden;
+				position:absolute;
+				bottom: 10px;
+				left:30%;				
+			}
+			ul li{
+				background: rgba(0,0,0,1);
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				float: left;
+				list-style: none;
+				margin-right: 5px;
+				line-height: 30px;
+				text-align: center;
+				color: white;
+            }
+            .leftBtn{
+            	width: 30px;
+            	height: 50px;
+            	line-height: 50px;
+            	text-align: center;
+            	color: white;
+            	font-size:30px;
+            	position: absolute;
+            	top:38%;
+            	left: 0px;
+            	background: rgba(0,0,0,0.7);
+            	display: none;
+            }
+             .rightBtn{
+            	width: 30px;
+            	height: 50px;
+            	line-height: 50px;
+            	text-align: center;
+            	color: white;
+            	font-size:30px;
+            	position: absolute;
+            	top:38%;
+            	right: 0px;
+            	background: rgba(0,0,0,0.7);
+            	display: none;
+            }           
+			
+		</style>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="banner" >
+			<img src="img/0.jpg" id="bannerPic"/>		
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+			<div class="leftBtn"><</div>
+			<div class="rightBtn">></div>
+		</div>
+	</body>
+   <script type="text/javascript">
+     var oImg=$("bannerPic");
+   	 var imgArr=['img/0.jpg','img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg'];
+   	 var timer=setInterval(picLoop,2000);
+   	 var index=0;
+   	 
+   	 var indexLis=document.querySelectorAll("ul li");
+   	 	 indexLis[0].style.background="red";
+   	 var bannerDiv=document.getElementById("banner");
+   	 var leftBtn=document.querySelector(".leftBtn");
+   	 var rightBtn=document.querySelector(".rightBtn");
+   	 function picLoop(){
+   	 	index++;
+   	 	if(index==6){
+   	 		index=0;
+   	 	}   	 	
+   	 	oImg.src=imgArr[index];
+   	 	resetLiBg();
+   	 	indexLis[index].style.background="red";
+   	 }
+   	 
+    function resetLiBg(){
+    	for(var i=0;i<indexLis.length;i++){
+    		indexLis[i].style.background="rgba(0,0,0,1)";
+    	}
+    }
+    
+    bannerDiv.onmousemove=function(){
+    	leftBtn.style.display="block";
+    	rightBtn.style.display="block";
+    	clearInterval(timer);
+    }
+    
+    bannerDiv.onmouseout=function(){
+    	leftBtn.style.display="none";
+    	rightBtn.style.display="none";
+    	timer=setInterval(picLoop,2000);
+    }
+    
+    
+    for(var i=0;i<indexLis.length;i++){
+    	indexLis[i].index=i;
+	    indexLis[i].onmousemove=function(){
+	    	oImg.src=imgArr[this.index];
+	    	index=this.index;
+	    	resetLiBg();
+	    	this.style.background="red";
+	    }    	
+    }
+    
+    leftBtn.onclick=function(){
+    	index--;
+    	if(index==-1){
+    		index=0;
+    		return;
+    	}
+    	oImg.src=imgArr[index];
+    	resetLiBg();
+    	indexLis[index].style.background="red";
+    }
+    
+    rightBtn.onclick=function(){
+    	index++;
+    	if(index==6){
+    		index=5;
+    		return;
+    	}
+    	oImg.src=imgArr[index];
+    	resetLiBg();
+    	indexLis[index].style.background='red';
+    }
+
+   </script>
+</html>

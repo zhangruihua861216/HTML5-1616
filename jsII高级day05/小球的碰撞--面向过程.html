@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<style type="text/css">
+				*{
+				padding: 0px;
+				margin: 0px;
+			}
+			div{
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				position: absolute;
+				box-shadow: 5px 5px 5px #666;
+				background-size: cover; 
+			}
+			</style>
+
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	var img=['1.jpeg','2.jpg','3.png','4.gif','5.jpeg'];
+	 document.onclick=function(e){
+	    var evt=e||window.event;
+		for(var i=0;i<10;i++){
+			var div=document.createElement("div");
+			div.style.backgroundImage="url("+img[parseInt(Math.random()*5)]+")";
+			document.body.appendChild(div);
+			div.style.left=evt.pageX+"px";
+			div.style.top=evt.pageY+"px";
+			var speedX=(parseInt(Math.random()*2)==0?1:-1)*parseInt(Math.random()*16+1);
+			var speedY=(parseInt(Math.random()*2==0?1:-1))*parseInt(Math.random()*15+1);
+			
+			setInterval((function(div,speedX,speedY){
+				function move(){
+					if(div.offsetLeft+div.offsetWidth+15>window.innerWidth||div.offsetLeft<15){
+						speedX*=-1;
+					}
+					if(div.offsetTop+div.offsetHeight+15>window.innerHeight||div.offsetTop<15){
+						speedY*=-1;
+					}
+					div.style.left=div.offsetLeft+speedX+"px";
+					div.style.top=div.offsetTop+speedY+"px";
+				}
+				return move;
+			})(div,speedX,speedY),30);
+			
+					(function(div,speedX,speedY){
+				 	setInterval(function(){
+				 	if(div.offsetLeft+div.offsetWidth+15>window.innerWidth|| div.offsetLeft<15 ){
+				 		speedX*=-1;
+				 	};
+				 	if(div.offsetTop+div.offsetHeight+15>window.innerHeight|| div.offsetTop<15){
+				 		speedY*=-1;
+				 	}
+				 		div.style.left=div.offsetLeft+speedX+"px";
+				 		div.style.top=div.offsetTop+speedY+"px";
+				 	},40)
+				 })(div,speedX,speedY)
+
+		}
+
+}
+	</script>
+</html>

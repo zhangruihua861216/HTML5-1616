@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	    /*****创建对象的方法***************/
+	   // 1.字面量法（比较常用 ，   封装 ， 事件处理程序的封装）
+	   // 2.工厂模式
+	   // 3.Object构造函数法
+	   // 4.构造函数
+	   // 5.原型模式
+	   // 6.组合模式（主流）
+	   
+	   
+	   
+		//创建一个Person类
+		//静态属性  name  age  sex
+		//行为属性  sayHi work  play think
+		
+		//1.字面量法
+		var person={
+			name:"zhangsan",
+			age:"12",
+			sex:"女",
+			sayHi:function(){
+				
+			},
+			work:function(){
+				
+			},
+			play:function(){
+				
+			},
+			think:function(){
+				
+			}
+		}
+		
+		//2.工厂模式
+		
+		function person(){
+			
+		}
+		
+		//3.Object方法创建
+		var person=new Object();
+		person.name="zhangsna";
+		person.age="16";
+		person.sex="女";
+		person.sayHi=function(){};
+		person.work=function(){};
+		person.play=function(){};
+		person.think=function(){};
+		
+		//4.构造函数
+		
+		function Person(name,age,sex){
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+			this.sayHi=function(){};
+			this.work=function(){};
+			this.play=function(){};
+			this.think=function(){};
+		}
+		
+		//5.原型模式
+		function Person(){};
+		Person.prototype.name="zhangsan";
+		Person.prototype.age=12;
+		Person.prototype.sex="女";
+		Person.prototype.sayHi=function(){};
+		Person.prototype.work=function(){};
+		Person.prototype.play=function(){};
+		Person.prototype.think=function(){};
+		
+		//6.组合模式
+		
+		function Person(name,age,sex){
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+		}
+		Person.prototype.sayHi=function(){};
+		Person.prototype.work=function(){};
+		Person.prototype.play=function(){};
+		Person.prototype.think=function(){};
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/**********************************************/
+		var p0=new  Object();
+		p0.name="张三";
+		p0.age=20;
+		p0.sex="男";
+		p0.work=function(){
+			console.log("coding");
+		}
+		console.log(p0);
+		var p1={
+			name:"张三",
+			age:20,
+			sex:"男",
+			sayHi:function(){
+				console.log("我叫"+this.name);
+			},
+			work:function(){
+				console.log("codding");
+			}
+		}
+		
+		console.log(p1)
+		//3  
+		function createPerson(name,age,sex){
+			return{
+				name:name,
+				age:age,
+				work:function(){
+					console.log("code");
+				}
+			}
+		}
+		
+		var p3=createPerson("zhangsan",30)
+		
+		console.log(p3);
+		
+		//模仿传统的面向对象语言："类"  "对象"
+		
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			this.play=function(){
+				console.log("lol");
+			};
+			this.work=function(){
+				console.log("coding")
+			}
+
+		}
+					
+		var p4=new Person("赵四",60);
+		console.log(p4);
+		
+		//原型模式
+		
+		function Person(){};
+		Person.prototype.name="zhangsan";
+		Person.prototype.play=function(){
+			console.log("lol");
+		}
+		
+		var p5=new Person();
+		console.log(p5);
+		
+		//组合模式
+		
+		function Person(name,age){
+			//实例属性
+			this.name=name;
+			this.age=age;
+		}
+		
+		Person.prototype.play=function(){
+			console.log("lol");
+		}
+		</script>
+</html>

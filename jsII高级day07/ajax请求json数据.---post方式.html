@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		//1.创建xhr对象		
+		var xhr=new XMLHttpRequest();
+		
+		//xhr对象的兼容
+		if(window.XMLHttpRequest){
+			//IE7+ ff chorme safari opera
+			var xhr= new XMLHttpRequest();
+		}else{
+			// IE5 IE6
+			var xhr=new Activeobject("Microsoft.XMLHTTP")
+		}
+		//2.初始化
+//		xhr.open("get","ajaxTest.json",true);
+		//get 方式传参  拼接到url后面
+//		xhr.open("get","ajaxTest.json?userID=123&name=tom",true);
+		//登录
+//		xhr.open("get","login.php?id=123456&pwd=abcdef",true);
+
+		//post 方式
+		xhr.open("post","ajaxTest.json",true);
+		//3.发送
+//		xhr.send();
+		xhr.send(JSON.stringify({userID:123,name:"tom"}));
+		//4.监听
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4){
+				if(xhr.status>=200&&xhr.status<300){
+					console.log(xhr.responseText);
+				var obj=JSON.parse(xhr.responseText);
+				console.log(obj);
+				
+				console.log(obj.result);
+				console.log(obj.result.list);
+				
+				for(var i in obj.result.list){
+					console.log(obj.result.list[i]);
+				}
+				console.log("-------------");
+				var personArr=obj["result"]["list"];
+				for(var i=0;i<personArr.length;i++){
+					console.log(personArr[i]);
+				}
+				
+				}
+			}
+		}
+		
+		/*
+		 * get与post在ajax中不同
+		 * get方式 如果需要向服务传参  参数需要拼接到url的后面
+		 * "ajaxTest.json?userID=123&name=tom"
+		 * post方式  如果需要向服务器传参，，参数需要变成字面对象，然后转换成json数据，作为send函数的实参传递过去
+		 */
+		
+		/*
+		 * get与post的区别：
+		 * 1.安全性区别:post的安全性高
+		 * 2.数量级区别：post传输的数据更大
+		 * 3.性能(传输速度)：理论上get的性能要高一些
+		 * 
+		 * 哪些场景下面需要使用post：
+		 * 1.不适用缓存
+		 * 2.传输数据多
+		 */
+	</script>
+</html>

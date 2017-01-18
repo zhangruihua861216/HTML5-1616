@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			这是一段内容
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var  box=$(".box");
+		//.css(cssName[,cssVal]) 设置或获取元素的指定样式
+		box.css("background","red");
+		//getComputedStyle() 获取非行间样式  兼容主流浏览器
+		//currentStyle  IE浏览器
+		//element.style.xxx
+		console.log(box.css("width"));
+		//.css(obj)  设置多个样式  横线使用驼峰式命名  像素值可直接使用数字
+		box.css({
+			background:"blue",
+			fontSize:100,
+			padding:100,
+			height:"300px"
+			
+		})
+	</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+	   *{
+	   	margin: 0;
+	   	padding: 0;
+	   }
+		div{
+			width: 100px;
+			height: 100px;
+			background:#fd1;
+			position: absolute;
+			/*margin-left: 100px;*/
+			/*left: 100px;*/
+		}
+	</style>	
+	<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		//点哪里飞到哪里
+
+		document.onclick=function(e){
+			var evt=e||window.event;
+			//1.获取鼠标位置
+//			evt.pageX  evt.pageY
+			//2.添加定时器
+			var oDiv=document.getElementById("box");
+			var disX=evt.pageX-oDiv.offsetLeft;
+			var disY=evt.pageY-oDiv.offsetTop;
+			var cnt=0;
+			var timer2=setInterval(function(){
+				cnt++;
+//				oDiv.style.left=oDiv.offsetLeft+(disX/50)+"px";
+//				oDiv.style.top=oDiv.offsetTop+(disY/50)+"px";
+				oDiv.style.left=parseFloat(getStyle(oDiv,"left"))+(disX/50)+"px";
+				oDiv.style.top=parseFloat(getStyle(oDiv,"top"))+(disY/50)+"px";
+				if(cnt==50){
+					clearInterval(timer2);
+				}				
+				
+			},30)
+			
+		}
+	</script>
+</html>

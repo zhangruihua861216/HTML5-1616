@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="box">
+		 	这也是元素部落
+			<span>这是原始部落</span>
+		</div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>15</li>
+		</ul>
+		<ul>
+			<li><span>1</span></li>
+			<li><span>2</span></li>
+			<li><span>3</span></li>
+			<li><span>4</span></li>
+		</ul>
+		
+	</body>
+	<script type="text/javascript">
+		var div=$(".box");
+		var h1=document.createElement("h1");
+		h1.innerHTML="DOM-H1";
+		var sH1="<h1>字符串-H1</h1>";
+		var jH1=$("<h1/>").html("jQuery-H1");
+//		$("")  $(function(){})  $("<h1/>")
+//		$("<p class='active' id='pId>这是动态创建的p元素</p>")
+		//parent.append(child)向指定父元素追加子元素
+		//child：子元素element\jElement\str
+//		div.append(jH1).append(h1).append("sH1");
+		
+		//child.appendTo(parent) 将子元素追加到指定的父元素
+//		$("<p/>").html("这是动态创建的p元素").appendTo($("body"));
+		
+		//parent.prepend(child) 向父元素内前置子元素
+		//child.prependTo(parent)  将子元素前置到父元素
+//		div.append(h1);
+//		div.prepend(jH1);
+//		$(sH1).prependTo(div);
+		
+		//a.after(b)  在a的后面追加元素(同辈)
+//		div.after(jH1);
+		//a.before(b) 在a的全面追加元素(同辈)
+//		div.before(jH1)
+		//b.insertAfter(a)  将b追加到a的后面
+//		jH1.insertAfter(div);
+		//b.insertBefore(a) 将b追加到a的前面
+//		jH1.insertBefore(div)
+        //wrap() 用html标签包裹指定元素
+//		div.wrap(sH1);
+		//unwrap() 移除指定元素的包裹元素(常被用做移除父标签)
+//		$("span").unwrap()
+    
+//	    $("li span").wrap("<a></a>")
+		//empty()  清空当前元素的所有子元素
+//      div.empty();
+		//remove() 从dom树移除当前节点
+//      div.remove();
+//		div.innerHTML=""
+//		parent.removeChild(div)
+ 		$("span").click(function(){
+ 			console.log($(this).html());
+ 		})
+ 		//cloneNode()
+ 		//clone([bol])  创建指定的元素副本  传入true代表克隆元素的事件处理程序  默认false
+		var d=div.clone(true);
+		$("body").append(d);
+	</script>
+</html>

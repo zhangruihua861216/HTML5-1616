@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>利用封装实现拖拽效果</title>
+		<style type="text/css">
+		   *{
+		   	margin: 50px;
+		   }
+			#box{	
+				width: 100px;
+				height: 100px;
+				background: red;
+				position:absolute;
+				cursor: pointer;
+				}
+		</style>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box"></div>		
+		
+	</body>
+	<script type="text/javascript">
+		var oBox=document.getElementById("box");
+		
+		eventUtill.addEventHandler(oBox,"mousedown",down);
+
+		function down(ev){	
+//			ev=ev||window.event;
+            ev=eventUtill.getEvent(ev);
+			var L=ev.pageX-oBox.offsetLeft;
+			var T=ev.pageY-oBox.offsetTop;
+			//移动的时候
+			eventUtill.addEventHandler(document,"mousemove",move)
+			
+		function move(ev){
+			oBox.style.left=ev.pageX-L-50+"px";
+			oBox.style.top=ev.pageY-T-50+"px";
+			console.log(oBox.style.left);
+		}
+		eventUtill.addEventHandler(document,"mouseup",up);
+		
+		function up(){
+			eventUtill.deleteEventHandler(document,"mousemove",move)
+		}
+			
+		}
+	</script>
+</html>

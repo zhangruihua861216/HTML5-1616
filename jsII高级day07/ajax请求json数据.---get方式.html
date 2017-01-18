@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		//1.创建xhr对象		
+		var xhr=new XMLHttpRequest();
+		//2.初始化
+		xhr.open("get","ajaxTest.json",true);
+		//get 方式传参  拼接到url后面
+		xhr.open("get","ajaxTest.json?userID=123&name=tom",true);
+		//登录
+//		xhr.open("get","login.php?id=123456&pwd=abcdef",true);
+		//3.发送
+		xhr.send();
+		//4.监听
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4){
+				if(xhr.status>=200&&xhr.status<300){
+					console.log(xhr.responseText);
+				var obj=JSON.parse(xhr.responseText);
+				console.log(obj);
+				
+				console.log(obj.result);
+				console.log(obj.result.list);
+				
+				for(var i in obj.result.list){
+					console.log(obj.result.list[i]);
+				}
+				console.log("-------------");
+				var personArr=obj["result"]["list"];
+				for(var i=0;i<personArr.length;i++){
+					console.log(personArr[i]);
+				}
+				
+				}
+			}
+		}
+	</script>
+</html>

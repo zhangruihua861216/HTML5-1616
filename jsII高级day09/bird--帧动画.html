@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+	    div{
+	    	width: 100px;
+	    	height: 100px;
+	    }
+		#bird{
+			position: absolute;
+			left: 100px;
+			top:100px;
+			/*background: url(img/0.png) no-repeat;*/
+		}
+	</style>	
+<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<img src="img/bird0.png" id="bird"/>
+	</body>
+	<script type="text/javascript">
+	//帧动画 frame Animation
+	    var oDiv=document.getElementById("box");
+		var oImg=document.getElementById("bird");
+		var imgArr=["img/bird0.png","img/bird1.png"];
+		var index=1;
+		var birdTimer=setInterval(function(){
+//			oDiv.style.background="url("+imgArr[index]+") no-repeat";
+			oDiv.style.background="url("+imgArr[index]+") no-repeat";
+//			console.log(oDiv.style.background);
+//			oImg.src=imgArr[index];
+			index++;
+			if(index==imgArr.length){
+				index=0;
+			}
+		},30)
+
+	</script>
+</html>

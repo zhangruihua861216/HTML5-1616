@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 100px;
+				height: 100px;
+				background: #FFDD11;
+				position: absolute;
+			}
+			#box2{
+				width: 100px;
+				height: 100px;
+				background:orangered;
+				position: absolute;
+				left: 600px;
+				top: 200px;
+			}			
+		</style>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='box1'></div>
+		<div id="box2"></div>
+	</body>
+	<script>
+		var divBox1=document.getElementById("box1");
+		var divBox2=document.getElementById("box2");
+		
+	    EventT(divBox1);
+	    EventT(divBox2);
+		function EventT(obj){
+			eventUtill.addEventHandler(obj,"mousedown",down)
+			function down(e){
+				var e=e||window.event;
+				var X=e.offsetX;
+				var Y=e.offsetY;			
+				eventUtill.addEventHandler(document,"mousemove",move);
+			
+			function move(e){
+				
+				var pX=e.pageX;
+				var pY=e.pageY;
+				obj.style.left=pX-X+"px";
+				obj.style.top=pY-Y+"px";
+				pengzhuang(divBox1,divBox2);
+			
+			}		
+	
+				eventUtill.addEventHandler(document,"mouseup",up);
+				function up(){
+					eventUtill.deleteEventHandler(document,"mousemove",move);
+				}
+			}				
+		}
+		
+	  	function pengzhuang(obj1,obj2){
+	  		
+			//1.获取obj1距离左边界距离			
+			var Lbox1=obj1.offsetLeft;
+			//2.获取obj1的宽度
+			var Wbox1=obj1.offsetWidth;
+			//3.获取obj2距离左边的距离
+			var Lbox2=obj2.offsetLeft;
+			//4.获取obj2的宽度
+			var Wbox2=obj2.offsetWidth;
+			
+			//5.获取obj1距离上边界距离
+			var Tbox1=obj1.offsetTop;
+			//6.获取obj1的高度
+			var Hbox1=obj1.offsetHeight;
+			//7.获取obj2距离上边界的距离
+			var Tbox2=obj2.offsetTop;
+			//8.获取obj2的高度
+			var Hbox2=obj2.offsetHeight;
+			
+			
+			if(Lbox1+Wbox1>Lbox2&&Lbox2+Wbox2>Lbox1&&Tbox1+Hbox1>Tbox2&&Tbox2+Hbox2>Tbox1){
+				obj1.style.background="pink";
+			}else{
+				obj1.style.background="";
+			}
+			
+	
+		};
+
+	</script>
+</html>

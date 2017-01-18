@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="content"></div>
+	</body>
+	<script type="text/javascript">
+	//2.给Date添加函数。 按照指定格式打印 "2016-11-10  星期四 17:06:00"
+		var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+		Date.prototype.FormData1=function(){
+		
+			document.write(this.getFullYear()+"-"+num((this.getMonth()+1))+"-"+num(this.getDate())+" "+ arr[this.getDay()]+" "+num(this.getHours())+":"+num(this.getMinutes())+":"+num(this.getSeconds()));
+		}
+		function FormData2(){
+		    var data=new Date()
+		    var dd=document.getElementById("content");
+		    var riqi=data.getFullYear()+"-"+num((data.getMonth()+1))+"-"+num(data.getDate())+" "+ arr[data.getDay()]+" "+num(data.getHours())+":"+num(data.getMinutes())+":"+num(data.getSeconds());
+			dd.innerHTML=riqi;
+		}		
+		function num(num){
+			if(num<10&&num>=0){
+				return  "0"+num;
+			}else{
+				return num;
+			}
+		}
+
+		var date1=new Date("2016//11//8");
+		var date1=new Date("2016/11/7");		
+		date1.FormData1();
+//		setInterval(FormData2,500);
+	</script>
+</html>

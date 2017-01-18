@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button>按钮1</button> <button>按钮2</button>  <button>按钮3</button>
+	</body>
+	<script type="text/javascript">
+		var gg=1;
+		function aa(gg){  //局部变量  gg=1
+			gg=2;
+			console.log(gg);
+		}
+		aa(gg);  //调用aa函数  aa(1)  
+		console.log(gg);
+	</script>
+	<script type="text/javascript">
+	 var oBtns=document.querySelectorAll("button");
+	  
+//	  for(var i=0;i<btns.length;i++){
+//	  	//给宿主对象添加一个index的新属性
+//	  	btns[i].index=i;
+//	  	eventUtill.addEventHandler(btns[i],"click",function(){	
+//	  		console.log(this.index);
+//	  	})
+//	  }
+
+// 		for(var i=0;i<oBtns.length;i++){
+// 			oBtns[i].index=i;
+// 			oBtns[i].onclick=function(){
+// 				console.log(this.index);
+// 			}
+// 		}
+// 		
+// 		for(var i=0;i<oBtns.length;i++){
+// 			oBtns[i].onclick=fun(i);
+// 			
+// 			function fun(idx){
+// 				return function(){
+// 					console.log(idx);
+// 				}
+// 			}
+// 		}
+ 		
+ 		
+// 		for(var i=0;i<oBtns.length;i++){
+// 			oBtns[i].onclick=(function(idx){
+// 				return function(){
+// 					console.log(idx);
+// 				}
+// 			})(i);
+// 		}
+ 		
+   		for(var i=0;i<oBtns.length;i++){
+   			eventUtill.addEventHandler(oBtns[i],"click",fun(i));
+   			
+   		}
+	  			function fun(idx){
+   				return function(){
+   					console.log(idx);
+   				}
+   			}
+//	  			
+
+   			
+   			//封装常量
+   			
+   			var  bb=(function(){
+   				var conf=100;
+   				return function(){
+   					return conf;
+   				}
+   				
+   			})();
+   			
+   			
+   			console.log(bb());
+   			
+   			var appInfo=(function(){
+   				var conf={
+   					version:"1.0.1",
+   					name:"微信",
+   					author:"jack"
+   				}
+   				
+   			return	function(attri){
+   					return conf[attri];
+   				}
+   			})();
+   			
+   			
+   			console.log(appInfo("version"));
+	</script>
+	<script type="text/javascript">
+	add(2,5);
+	add(2)(5);
+		function add(a){
+			return function(b){
+			var sum=a+b;
+			return sum;
+			}
+		}
+	console.log(add(2)(5));
+	
+	
+	     function add(a,b){
+	     	if(b==undefined){
+	     		return function(c){
+	     			return a+c;
+	     		}
+	     	}else{
+	     		return a+b;
+	     	}
+	     }
+	</script>
+</html>

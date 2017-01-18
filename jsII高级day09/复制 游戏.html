@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    *{
+		    	margin: 0px;
+		    	padding: 0px;
+		    }
+		    #bg{
+		    	position: absolute;
+		    }
+			.main{
+				width: 343px;
+				height: 480px;				
+				position: relative;
+				margin: 0 auto;
+				/*overflow: hidden;*/
+			}
+			.banner{
+				width: 343px;
+			}
+			.banner img{
+				position: absolute;
+				width: 343px;
+				top: 423px;
+
+			}
+			.login{
+				position:absolute;
+				top: 130px;
+				left: 30px;
+			}
+			.game{
+				position:absolute;
+				/*display: none;*/
+				border:2px solid red;
+				width: 343px;
+				height: 426px;
+				overflow: hidden;
+			}
+			.start{
+				position: absolute;
+				top: 260px;
+				left: 120px;
+				cursor: pointer;
+			}
+
+			ul{
+				height: 100%;
+				width: 62px;
+				border: 1px solid red;
+				
+		
+			}
+
+			ul .up_mod{
+				background: url(img/up_mod.png);
+
+			}
+			
+			ul .up_mod img{
+				/*position: absolute;*/
+			}
+
+			ul .down_mod{
+				background: url(img/down_mod.png);
+				margin-top: 120px;
+			}
+			#imgGame{
+				position: absolute;
+				/*top: -400px;*/
+				/*left:50px;*/
+			}			
+		</style>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="main">
+			<img src="img/bg.jpg"  id="bg"/>
+			<div class="game">
+				<img src="img/bird0.png" id="imgGame"/>		
+			</div>
+			<div class="login"><img src="img/head.jpg"/><img src="img/bird0.png" id="bird"/></div>
+			<div class="start"><img src="img/start.jpg"/></div>						
+			<div class="banner"><img src="img/banner.jpg" alt="" /></div>
+			
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+	//轮播图滚动
+	var banner=document.querySelector(".banner");
+	var ImgBanner=document.querySelectorAll(".banner img")[0];
+	var ImgBannerClone=ImgBanner.cloneNode(true);
+		ImgBannerClone.style.left=ImgBanner.offsetWidth+'px';
+		banner.appendChild(ImgBannerClone);
+	var login=document.querySelector(".login");
+	var oImg=document.querySelectorAll("#bird")[0];
+	var imgArr=["img/bird0.png","img/bird1.png"];
+	var imgArrDown=["img/down_bird0.png","img/down_bird1.png"];
+	var imgArrUp=["img/up_bird0.png","img/up_bird1.png"];
+	var index=1;
+	var timer=setInterval(move,30);
+	var speed=1;
+	var game=document.querySelector(".game");	
+	function move(){
+		ImgBanner.style.left=ImgBanner.offsetLeft-1+"px";
+		ImgBannerClone.style.left=ImgBannerClone.offsetLeft-1+"px";
+		
+		if(ImgBanner.offsetLeft<=-ImgBanner.offsetWidth){
+			ImgBanner.style.left=ImgBannerClone.offsetWidth+"px";
+		}
+		if(ImgBannerClone.offsetLeft<=-ImgBannerClone.offsetWidth){
+			ImgBannerClone.style.left=ImgBanner.offsetWidth+"px";
+		}
+		
+		//bird 翅膀闪动
+		birdFly(oImg,imgArr);
+		
+		//login 移动
+	    login.style.top=login.offsetTop-speed+"px";
+//	    console.log(speed);
+	    if(login.offsetTop<80||login.offsetTop>130){
+	    	speed=-speed;
+	    }
+	}
+	
+	function birdFly(obj,imgArr){
+		obj.src=imgArr[index];
+		index++;		
+		if(index==imgArr.length){
+			index=0;
+		}		
+	}
+	
+	
+var DownTimer	
+	var startBtn=document.querySelector(".start");
+	var ImgGame=document.getElementById("imgGame");
+//	console.log(ImgGame);
+	eventUtill.addEventHandler(startBtn,"click",function(){
+		login.style.display="none";
+		startBtn.style.display="none";
+		game.style.display="block";
+		clearInterval(timer);
+		setTimeout(function(){
+			birdFly(ImgGame,imgArrDown);
+		},2000);
+		DownTimer=setInterval(Down,200);
+	})
+	
+	
+//小鸟上下移动
+var birdspeed=0;
+var maxSpeed = 8;
+var UpTimer;
+   function Up(){
+	   	birdspeed--;
+	   	ImgGame.style.top=ImgGame.offsetTop-birdspeed+"px";
+	 	if (birdspeed<=0) {
+			clearInterval(UpTimer);
+			birdspeed=0;
+			DownTimer=setInterval(Down,200);
+		}
+		
+//		console.log(ImgGame.offsetTop+ImgGame.offsetHeight);
+		if(ImgGame.offsetTop+ImgGame.offsetHeight<=30) {			 
+			//游戏结束
+//			clearInterval(UpTimer);
+//			gameOver();
+		
+		}
+   
+    }
+	function Down(){
+		birdspeed++;
+		
+		if (birdspeed>=maxSpeed) {
+			birdspeed = maxSpeed;
+		};
+//		console.log(birdspeed);
+//		console.log(ImgGame.offsetTop);
+		ImgGame.style.top=ImgGame.offsetTop+birdspeed+"px";
+		if(ImgGame.offsetTop+ImgGame.offsetHeight>=424){
+			clearInterval(DownTimer);
+//			gameOver();
+		}
+	}
+	
+	 game.onclick=function(){
+	 	clearInterval(DownTimer);
+	 	clearInterval(UpTimer);
+		birdspeed = 8;
+		UpTimer = setInterval(Up,30);	 	
+	 }	
+	
+	
+	
+	
+	
+	//柱子	
+	function createPipe(){		
+		var ul=document.createElement("ul");
+		game.appendChild(ul);		
+		var liUp=document.createElement("li");
+		ul.appendChild(liUp);		
+		liUp.setAttribute("class","up_mod");
+		var imgUp=document.createElement("img");
+		imgUp.setAttribute("src","img/up_pipe.png");
+		liUp.appendChild(imgUp);
+		var liDown=document.createElement("li");
+		liDown.setAttribute("class","down_mod");
+		ul.appendChild(liDown);
+		var imgDown=document.createElement("img");
+		imgDown.setAttribute("src","img/down_pipe.png");
+		liDown.appendChild(imgDown);
+		liUp.style.height=parseInt(Math.random()*(300-10)+10)+"px";
+		imgUp.style.top=parseInt(liUp.style.height)-60+"px";
+		liDown.style.height=ul.offsetHeight-parseInt(liUp.style.height)-120+"px";
+	 	function ulMove(oul){
+	 		
+	 		oul.timer = setInterval(pipeMove,30);
+	 		function pipeMove(){
+//		 		if(oul.offsetLeft<-oul.offsetWidth){
+//		 			oul.remove();
+//		 			clearInterval(oul.timer);
+//		 		}	
+		 		oul.style.left = oul.offsetLeft-2+"px";
+		 		console.log(oul.offsetLeft);
+		 		console.log(oul.style.left)
+		    }
+	 	}	 	
+	 	ulMove(ul);
+	}
+
+	createPipeTime=setInterval(createPipe,3000);		
+	
+
+function gameOver(){
+	clearAllTimer();//清楚所有的定时器
+};
+// 暴力清除
+function clearAllTimer(){
+	for (var i = 0; i < 1000; i++) {
+		clearInterval(i);
+	};
+}	
+
+	</script>
+</html>

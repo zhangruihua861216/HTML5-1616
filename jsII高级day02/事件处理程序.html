@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//事件处理程序：事件响应函数
+			
+			//添加事件处理程序的方式：
+			//1.html事件处理程序（js刚刚产生的时候，废弃）
+			//2.dom0级事件处理程序  （ie4和网景4的浏览器使用的）
+			//3.dom2级事件处理程序（目前使用的，ie9+，chorm，ff，opera）
+			
+			//ie特有的事件处理程序（ie8-）
+			//添加事件  odiv.attachEvent("onclick",函数名或者匿名函数)
+			//移除事件 odiv.detachEvent("onclick",函数名)
+			
+			
+		</script>
+	</head>
+	<body>
+		<button id="btn">点我</button>
+	</body>
+	<script type="text/javascript">
+	//1.ie8的浏览器不支持addEventListener这种方式添加事件处理程序
+		var oBtn=document.getElementById("btn");
+//		oBtn.addEventListener("click",btnCallBack,false);
+		function btnCallBack(){
+			console.log("支持我么?");
+		}
+		
+	//ie8以下的浏览器支持 attachEvent这种添加事件处理程序
+	
+//	oBtn.attachEvent("onclick",btnCallBack);
+//	oBtn.detachEvent("onclick",btnCallBack);
+	
+	//封装函数，给元素添加事件处理程序，要求必须考虑兼容性问题
+	
+	//ie9+ chorme  ff  opera  Safari  ----addEventListener
+	//ie6---ie8  attachment
+	
+	//ie4-ie5 网景4  dom0级事件处理程序
+	
+	//1.判断浏览器 BOM  window.navigator.userAgent  chorme
+	//目前区分浏览器
+	function getStyle(obj,attri){
+		if(obj.currentStyle){
+			return obj.currentStyle[attri];
+		}else{
+			return  window.getComputedStyle(obj,null)[attri];
+		}
+	}
+	/*
+	 * element:元素节点
+	 * eventName：事件名
+	 * handler：响应函数名
+	 */
+	console.log(oBtn.addEventListener)
+	function addEventHandler(element,eventName,handler){
+		if(element.addEventListener){
+			element.addEventListener(eventName,handler,false);
+		}else if(element.attachEvent){
+			element.attachEvent("on"+eventName,handler);
+		}else{
+			//odiv.onclick=fun;
+			element["on"+eventName]=handler;
+		}
+	}
+	
+	addEventHandler(oBtn,"click",btnCallBack);
+	</script>
+</html>

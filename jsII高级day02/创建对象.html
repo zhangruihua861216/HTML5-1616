@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+			var dc={
+				name:"邓超",
+				age:'38',
+				sex:'男',
+				children:["等等","小花妹妹"],
+				wife:{
+					name:"孙俪",
+					age:20,
+					work:function(){
+						console.log("替皇上料理后宫");
+						
+					}
+				}
+			}
+			console.log(dc.name,dc['name']);
+			dc.children.push("小小花");
+			console.log(dc.children);
+			//链式访问
+			
+			console.log(dc.wife.name);
+			console.log(dc["wife"]["name"]);
+			
+			console.log(dc.wife["name"]);
+			console.log(dc["wife"].name);
+			
+			dc.wife.work();
+			
+			
+			//person name age job friends  dog 
+			                             // dog name age  color bark
+			
+			var person={
+				name:"贾玲,
+				age:"30",
+				job:"演员",
+				friends:["小沈阳","小宝"],
+				dog:{
+					name:"贾富贵",
+					color:"白色",
+					bark:function(){
+						console.log("汪汪汪!!!")
+					}
+				}
+			}
+			
+			console.log(person);
+			console.log(person.dog.name);
+			console.log(person["dog"]["name"]);
+			person.dog.bark();
+			
+			for(var t in person){
+				console.log(t,person[t]);
+				
+				
+			}
+			
+			for(var t2 in person.dog){
+				console.log(t2,person.dog[t2]);
+			}
+			
+			//面向对象：抽象  封装
+			
+			
+			//函数：是对功能的封装
+			
+			//对象：是对属性的封装。（静态属性与行为属性的封装）（数据和函数的封装）
+			//封装事件处理程序（兼容性处理）
+			
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

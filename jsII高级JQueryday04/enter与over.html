@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				padding:50px 100px;
+				
+			}
+			.one{
+				background: red;
+			}
+			.two{
+				background: blue;
+			}
+			.three{
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">
+			<div class="two">
+				<div class="three"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var divs=document.querySelectorAll("div");
+		
+		//currentTarget  委托事件的对象
+		//target  事件触发时鼠标所在的对象
+//		divs[0].onmouseover=function(ev){
+//			console.log(ev.target,ev.currentTarget);
+//		}
+
+		divs[0].onmouseenter=function(ev){
+			console.log(ev.target,ev.currentTarget);
+		}
+	</script>
+</html>

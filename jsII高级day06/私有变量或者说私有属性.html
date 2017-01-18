@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		//私有属性 ---在构造函数体外没有办法访问的属性
+		
+		function ManagerSystem(){
+//			this.personArr=[];
+			var personArr=[];   //私有属性
+		}
+		var mge=new ManagerSystem();
+	    console.log(mge.personArr);
+	    
+	    function Person(ID){
+	    	var ID=ID;  //保密  定义了一个只读的私有属性
+	    	this.getID=function(){
+	    	return ID;
+	   	 }
+	    }
+	    Person.prototype.setID=function(newId){
+	    	if(RegExp){
+	    		ID=newId;
+	    	}
+	    }
+	    //get 不能放在原型上，否则访问不到数据 undefined
+//	    Person.prototype.getID=function(){
+//	    	return ID;
+//	    }
+
+//  共有属性  在类（构造函数）外可以调用的属性                this.属性
+//  私有属性  只能在类内可以访问的属性                      直接定义变量  给该变量在函数体中定义getter  setter 方法 来访问该私有属性
+	    var p=new Person("334324234324324");
+	    console.log(p.ID);
+	    console.log(p.getID())
+	</script>
+</html>

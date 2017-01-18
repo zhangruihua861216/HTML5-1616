@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>借用构造函数法继承</title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		//借用构造函数法继承
+		//冒用构造函数法继承
+		
+		//注意：使用该种方法继承  模板  只能使用构造函数法  不可以使用组合方式
+		
+		
+		function Zoombie(speed,HP){
+			this.speed=speed;
+			this.HP=HP;
+			this.walk=function(){
+				console.log("朝着人类的房子前进");
+			}
+			this.eat=function(){
+				console.log("咔嚓咔嚓")
+			}
+		}
+			function PaperZoombie(paper,spped,HP){
+				this.paper=paper;
+				this.angry=function(){
+					console.log("生气");
+				}
+				//借用构造函数法继承
+				//此处的this指的是新创建的paperZoombie的对象
+				Zoombie.call(this,spped,HP);
+			}
+			
+			//父类有那些属性，子类原样“抄上”（借用）一份
+			//这样，子类就拥有了父类的属性
+			var pz=new  PaperZoombie("人民日报",100,200);
+			console.log(pz);
+		
+	</script>
+</html>

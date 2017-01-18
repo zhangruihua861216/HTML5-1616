@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//组合方式继承：
+		//静态属性   借用构造函数法继承
+		//行为属性  原型继承
+		
+		function Zoombie(speed,HP){
+			this.speed=speed;
+			this.HP=HP;
+		}
+		Zoombie.prototype.walk=function(){
+			console.log("朝着人类的房子前进");
+		}
+		Zoombie.prototype.eat=function(){
+			console.log("咔嚓咔嚓....");
+		}
+		
+		function PaperZoombie(paper,speed,HP){
+			this.paper=paper;
+			//静态属性  借用构造函数法继承
+			Zoombie.call(this,speed,HP);
+		}
+		
+		PaperZoombie.prototype=new Zoombie();
+	    PaperZoombie.prototype.angry=function(){
+	    	console.log("生气了");
+	    }
+	    
+	    var pz=new PaperZoombie("人民日报",20,200);
+	    
+	    console.log(pz);
+	    
+	    var z=new Zoombie();
+	    console.log(z);
+		
+
+		
+		
+		
+		
+		/*
+		 * 面向对象
+		 * 1.创建对象（6种方式）  抽象  封装
+		 * 2.继承（3种方式）          继承    ---原型  原型链  prototype  __proto__  construcotr
+		 * 3.              多态
+		 * 
+		 * 多态:面向同一个消息  不同对象  会做出不同处理
+		 * 
+		 * 举例子: 面对上课铃响了，，，，，体育课----》操场
+		 *  					   文化课----》教学楼
+		 * 						   音乐课----》音乐教师
+		 * 
+		 * 
+		 *    父类指针指向子类对象。
+		 * 
+		 * var father=new TiYu()
+		 * 	   father=new WenHua()
+		 * 	   father=new Music()
+		 * 
+		 * father.study()//  上课
+		 * 
+		 * 
+		*/
+		
+		
+		
+		//获取元素 节点------封装----------js在面向对象应用最多
+		//1.id   $id()
+		//2.name   $name()
+		//3.className   $class()
+		//4.tag      $tag()
+	</script>
+</html>

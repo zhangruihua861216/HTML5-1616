@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/birdGame.css" />
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="main">
+			<img src="img/bg.jpg"  id="bg"/>
+			<div class="game">
+				<div id="score"></div>
+				<img src="img/bird0.png" id="bird"/>		
+			</div>
+			<div class="logo"><img src="img/head.jpg"/><img src="img/bird0.png" id="logo_bird"/></div>
+			<div class="start"><img src="img/start.jpg"/></div>						
+			<div class="slide"><img src="img/Banner.jpg" alt="" /></div>
+			<!--gameover界面-->
+			<div id="gameover">
+				<div id="gameover_zi"></div>
+				<!--战绩-->
+				<div id="record">
+					<span id="myScore">0</span>
+					<span id="best">0</span>
+				</div>
+				<div id="ok"></div>
+			</div>
+	    </div>
+		<audio src="mp3/bullet.mp3" id="bullet"></audio>
+		<audio src="mp3/game_music.mp3" loop id="gameMusic"></audio>
+		<audio src="mp3/game_over.mp3" id="gameOverMusic"></audio>	
+	</body>
+     <script src="js/birdGame.js" type="text/javascript" charset="utf-8"></script>
+</html>

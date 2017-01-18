@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标拖拽</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+
+		}
+		body{
+			height: 2000px;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			position: absolute;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+		//拖拽的思路
+		// 1.div上按下鼠标 mousedown
+		var oDiv = document.getElementById("box");
+		oDiv.onmousedown = function(e){
+			var evt = e||window.event;
+			//获取按下的点距离左边界的值 距离上边界的值
+			var leftDiv = evt.pageX - oDiv.offsetLeft;
+			var topDiv = evt.pageY - oDiv.offsetTop;
+
+			document.body.onmousemove = function(e){
+				var evt = e||window.event;
+				oDiv.style.left = evt.pageX-leftDiv+"px";
+				oDiv.style.top = evt.pageY-topDiv+"px";
+			}
+		}
+
+		document.onmouseup = function(){
+			document.body.onmousemove = null;
+		}
+
+		// 2.在body上移动 body.onmousemove {改变div的位置}
+		// 3.鼠标抬起将body的mousemove事件处理程序取消掉
+		
+	</script>
+</body>
+</html>

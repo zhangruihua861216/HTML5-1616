@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		  *{
+		  	margin: 0;
+		  	padding: 0;
+		  }
+		   ul{
+		   	float:left;
+		   	list-style: none;
+		   	width: 200px;
+		   	margin: 10px;
+
+		   }
+			ul li{
+				width: 200px;
+				border-radius: 5px;
+				background: #ccc;
+				height: 200px;
+				margin-top: 10px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list"></ul>
+		<ul class="list"></ul>
+		<ul class="list"></ul>
+		<ul class="list"></ul>
+	</body>
+	<script type="text/javascript">
+		//取得当前url
+		//document.querySelector()
+		//document.querySelectorAll()
+		
+		var uls=document.getElementsByClassName("list");
+		function createLi(){
+			var li=document.createElement("li");
+			var _h=rand(100,200);
+			li.style.height=_h+"px";
+			li.style.lineHeight=_h+"px";
+			li.innerHTML=num;
+			
+			var minIndex=0;  //当前最小的ul索引
+			var minHeight=uls[minIndex].offsetHeight; //当前最小的高度值
+			for(var i=0;i<uls.length;i++){
+				var ulH=uls[i].offsetHeight; //每一个ul的高度值
+				if(minHeight>ulH){
+					minHeight=ulH;
+					minIndex=i;
+				}
+			}
+			uls[minIndex].appendChild(li);
+		}
+		
+		function rand(min,max){
+			return parseInt(Math.random()*(max-min))+min;
+		}
+		var num=0
+		function start(){
+			for(var i=0;i<20;i++){
+				createLi();
+				num++;
+			}			
+		}
+
+		start();
+		window.onscroll=function(){
+			
+			var st=document.documentElement.scrollTop||document.body.scrollTop;
+			
+			var ch=document.documentElement.clientHeight||document.body.clientHeight;
+			
+			var sh=document.documentElement.scrollHeight||document.body.clientHeight;
+			
+			if(st+ch==sh){
+				start();
+			}
+		}
+	</script>
+</html>

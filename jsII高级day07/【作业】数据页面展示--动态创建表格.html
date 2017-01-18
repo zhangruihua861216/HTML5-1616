@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/封装ajax请求.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			td{
+				border: 1px solid red;
+				width: 60px;
+				height: 30px;
+			}
+		</style>		
+	</head>
+
+	
+	<body>
+		<button onclick="fun2()">刷新</button>
+		<table></table>
+
+	</body>
+	<script type="text/javascript">
+	function fun2(){
+		//1.创建xhr对象		
+		var xhr=new XMLHttpRequest();
+		//2.初始化
+		xhr.open("get","ajaxTest.json",true);
+		//get 方式传参  拼接到url后面
+		xhr.open("get","ajaxTest.json?userID=123&name=tom",true);
+		//登录
+//		xhr.open("get","login.php?id=123456&pwd=abcdef",true);
+		//3.发送
+		xhr.send();
+		//4.监听
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4){
+				if(xhr.status>=200&&xhr.status<300){
+					console.log(xhr.responseText);
+				var obj=JSON.parse(xhr.responseText);
+//				console.log(obj);
+//				
+//				console.log(obj.result);
+//				console.log(obj.result.list);
+				
+//				for(var i in obj.result.list){
+//					console.log(obj.result.list[i]);
+//				}
+				console.log("-------------");
+				var personArr=obj["result"]["list"];
+				var table=document.getElementsByTagName("table")[0];
+				for(var i=0;i<personArr.length;i++){
+//					console.log(personArr);
+//					console.log(personArr[i]);
+					var tr=document.createElement("tr");
+					table.appendChild(tr);
+//					console.log(personArr[i]);
+					for(var j in personArr[i]){
+//						console.log(j);
+					var td=document.createElement("td");
+					tr.appendChild(td);		
+					td.innerHTML=personArr[i][j];
+					}
+
+					
+				}
+				
+				}
+			}
+		}
+	}
+	</script>
+	
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	
+	//面向过程
+		function guess(){
+			var conf=parseInt(Math.random()*100);
+			
+			while(true){
+				var a=prompt("请输入数字");
+				if(a>conf){
+					console.log("大了");
+				}else if(a<conf){
+					console.log("小了");
+				}else if(a==conf){
+					console.log("正确");
+					break;
+				}
+			}
+		}
+		
+		
+		function A(){
+			this.v=100;
+		}
+		function Guess(num){
+			this.num=num;
+		}
+		Guess.prototype.promptNum=function(num){
+			this.num=num;
+		}
+		Guess.prototype.guessA=function(){
+			if(this.num==a.v){
+				console.log("猜对了");
+				return 0;
+			}
+			if(this.num<a.v){
+				console.log("猜小了");
+				return -1;
+			}
+			if(this.num>a.v){
+				console.log("猜大了");
+				return 1;
+			}				
+		}
+		
+		var a=new A();
+		var g=new Guess(a);
+		g.guessA();
+		
+		while(true){
+			g.promptNum(prompt("请输入一个数字"));
+			if(g.guessA()==1){
+				console.log("猜大了");
+			}
+			if(g.guessA()==-1){
+				console.log("猜小了");
+			}
+			if(g.guessA()==0){
+				console.log("猜对了");
+				break;
+			}					
+		}
+	</script>
+</html>

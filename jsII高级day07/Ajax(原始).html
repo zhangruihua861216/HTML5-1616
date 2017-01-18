@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//向服务器请求 文件  .txt
+		//1.
+
+		var xhr=new XMLHttpRequest();
+		
+		/*
+		 * xhr 核心属性
+		 * 1.readyState  请求的状态
+		 * 
+		 * 		new XMLHttpRequest()        0
+		 *      open()                      1
+		 *      send()                      2
+		 *      服务器进行响应                              3
+		 *      服务器传输数据结束                      4
+		 * 2.responseText  响应数据(服务传回的数据)
+		 * 3.status 网络反馈码
+		 * 
+		 * xhr的核心方法
+		 * 1.open(method,ulr,true)
+		 *     method:"get/post"
+		 *     url:请求文件的地址
+		 *     true 异步  false 同步
+		 * 2.send([参数])
+		 *    get 方式不传参
+		 *    post 方式传参
+		 * 
+		 * 3.onreadystatechange readyState的监听函数
+		 * 4.onabort 
+		 * 
+		 */
+		
+		
+		
+		//2. 第一个参数：请求方式
+		//   第二个参数：url
+		//   第三个参数：是否异步
+		//请求方式：  "get/post"
+		// url:指的是相对地址
+		//布尔值：是否异步   true  异步  false 同步
+		xhr.open("get","123.txt",true);
+		
+		//3.
+		xhr.send();
+			console.log(xhr.readyState);
+		//4. 监听函数
+		xhr.onreadystatechange=function(){
+		
+			if(xhr.readyState==4){
+				if(xhr.status>=200&&xhr.status<300){
+				
+					console.log(xhr.responseText);
+				}
+			}
+		}
+		
+		/*
+		 * 认识ulr
+		 * http：//域名:8080/虚拟目录/文件名?属性名=属性值&属性名=属性值#锚
+		 * 
+		 * B/S  Brower/Server   --同步请求  
+		 * 
+		 * C/S  Client/Server   --异步请求  ajax
+		 * 
+		 * ajax   Goole 地图
+		 * 
+		 */
+	</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.change{
+				background: red;
+			}
+			.other{
+				padding:40px;
+			}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--<div class="box change other">-->
+			<div class="box">
+			<input type="text" disabled value="" />
+			<button type="button">click me</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+	//attr(attrName[,attrVal]) 设置或获取元素的指定属性
+		var box=$(".box");
+		$(".box").attr("name","zhar");
+		console.log($(".box").attr("name"));
+		//removeAttr(attrName)移除元素的指定属性  名字必须
+		box.removeAttr("name");
+		console.log($("input").attr("disabled"))
+		console.log($("input").prop("disabled"))
+		//个人建议：操作 天机即为true的属性 或者标准属性使用prop()
+		//其它自定义的属性使用attr();
+		$("input").prop("disabled",false);
+		//addClass(className[ className2....]) 为元素添加指定的class  dom.className
+		//removeClass([className]) 移除元素指定的样式  参数为空  移除所有class
+		//toggleClass(className) 有(无)则 删除(添加)  class
+		//html([str])  设置或获取元素的内部html字符
+		$("button").click(function(){
+//			box.addClass('change other');
+//			box.removeClass();
+//			box.toggleClass("change");
+//			$(this).html("你能点?")
+//			console.log($(this).html());
+			$(this).text("<span>你能点?</span>");
+			console.log($(this).text());
+		})
+	</script>
+</html>

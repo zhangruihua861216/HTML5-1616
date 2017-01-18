@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body{
+				width: 800px;
+				height: 500px;
+				border: 1px solid deeppink;
+				margin: 130px 120px;
+				
+			}
+			div{
+				background: black;
+				width: 100%;
+				height: 100%;
+			}
+			.ball{
+				width: 50px;
+				height: 50px;
+				/*border-radius: 50px;*/
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+	    function ball(oDiv,x,y){
+	    	this.body=oDiv;
+	    	this.bgColor=randomColor2();
+	    	this.styleName="ball";
+	    	this.posX=x;
+	    	this.posY=y;
+			this.speedX=(parseInt(Math.random()*2)==0?1:-1)*(parseInt(Math.random()*15)+1);
+			this.speedY=(parseInt(Math.random()*2)==0?1:-1)*(parseInt(Math.random()*15)+1);	    	
+	    	this.init=function(){
+	    		this.body.className=this.styleName;
+	    		this.body.style.backgroundColor=this.bgColor;
+	    		this.body.style.left=this.posX+"px";
+	    		this.body.style.top=this.posY+"px";
+	    		document.querySelector("div").appendChild(this.body);
+	    	}
+	    	this.move=function(){
+	    		var b=this;
+	    		setInterval(function(){
+	    			b.body.style.left=b.body.offsetLeft+b.speedX+"px";
+	    			b.body.style.top=b.body.offsetTop+b.speedY+"px";
+	    			if((b.body.offsetLeft+b.body.offsetWidth)>document.body.clientWidth+120){
+						b.body.style.display="none";
+	    			}
+	    			if((b.body.offsetLeft+b.body.offsetWidth)<0+120+50){
+	    				b.body.style.display="none";
+	    			}
+	    			if((b.body.offsetTop+b.body.offsetHeight)>document.body.clientHeight+130){
+	    				b.body.style.display="none";
+	    				console.log("3");
+	    			}
+	    			if((b.body.offsetTop+b.body.offsetHeight)<0+130+50){
+	    				b.body.style.display="none";
+	    				console.log("heha")
+	    			}		    			
+	    		},30)
+	    	}
+	    }
+		eventUtill.addEventHandler(document.body,"click",clickCallBack);
+		function clickCallBack(e){
+			var e=e||window.event;
+			for (var i=0;i<30;i++) {
+				var div=document.createElement("div");
+				var b=new ball(div,e.pageX,e.pageY);
+				b.init();
+				b.move();
+			}
+		}
+	</script>
+</html>

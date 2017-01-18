@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				padding: 100px;
+			}
+			.one{
+				background: red;
+			}
+			.two{
+				background: blue;
+				position: relative;
+			}
+			.three{
+				background: yellow;
+				position: relative;
+			}
+			.four{
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">
+			<div class="two">
+				<div class="three">
+					<div class="four"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var  three=document.querySelector(".three");
+		console.log(three.offsetLeft);
+		console.log(three.offsetParent);
+		console.log(three.offsetParent.offsetParent);
+		console.log(three.offsetParent.offsetParent.offsetParent);
+		
+		function offset(el){
+			var left=el.offsetLeft;
+			var top=el.offsetTop;
+			while(el.offsetParent){
+				left+=el.offsetParent.offsetLeft;
+				top+=el.offsetParent.offsetTop;
+				el=el.offsetParent;
+				
+				console.log(left);
+			}
+			
+			return el;
+		}
+		
+		offset(three)		
+	</script>
+</html>
