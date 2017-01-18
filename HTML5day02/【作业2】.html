@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            width: 350px;
+            height: 600px;
+            border: 1px solid salmon;
+            margin: 30px auto;
+            padding: 10px;
+        }
+        div span{
+            padding: 20px 25px 20px 15px;
+            display: inline-block;
+
+        }
+        div:first-of-type span{
+            border-image: url("img/icon_03.png") 33 17 20 22 fill stretch;
+            border-image-width: 33px;
+        }
+        div:nth-of-type(2) span{
+            border-image: url("img/icon_04_03.png") 28 18 22 27 fill stretch;
+            border-image-width: 25px;
+            float: right;
+        }
+        div:nth-of-type(2):after{
+            clear: both;
+            width: 0;
+            content: "";
+            display: block;
+        }
+        div:nth-of-type(3) span{
+            border-image: url("img/icon_05_03.png") 23 18 30 31 fill stretch;
+            border-image-width: 25px;
+
+        }
+        div:nth-of-type(4) span{
+            border-image: url("img/icon_07_03.png") 28 18 22 40 fill stretch;
+            border-image-width: 25px;
+            float: right;
+        }
+        div:nth-of-type(4):after{
+            clear: both;
+            width: 0;
+            content: "";
+            display: block;
+        }
+        div:nth-of-type(5) span{
+            border-image: url("img/icon1_03.png") 28 18 16 31 fill stretch ;
+            border-image-width: 25px;
+
+        }
+        div:nth-of-type(6) span{
+            border-image: url("img/icon6_03.png") 23 18 28 40 fill stretch;
+            border-image-width: 25px;
+            float: right;
+        }
+        div:nth-of-type(6):after{
+            clear: both;
+            width: 0;
+            content: "";
+            display: block;
+        }
+    </style>
+</head>
+<body>
+   <div><span>哈尼，人家等好久了</span></div>
+   <div><span>hello，我回来了</span></div>
+   <div><span>..........</span></div>
+   <div><span>嘿嘿</span></div>
+   <div><span>好久不见</span></div>
+   <div><span>。。。。。</span></div>
+</body>
+</html>

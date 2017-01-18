@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        table td {
+            width: 49px;
+            height: 49px;
+            border: 1px dotted #ccc;
+        }
+        canvas{
+            margin: 50px;
+            box-shadow: 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+<table>
+
+</table>
+</body>
+<script>
+    var canvas=document.querySelector("canvas");
+    var ctx=canvas.getContext("2d");
+    var cx=50;
+    var cy=50;
+    var speedX=2;
+    var speedY=3;
+    var r=0;
+
+    function  _move(){
+        ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+        for(var i=0;i<balls.length;i++){
+            var ball=balls[i];
+            if(ball.cx+ball.radius>=ctx.canvas.width||ball.cx-ball.radius<0){
+                ball.speedX*=-1;
+            }else{
+                ball.speedX*=1;
+            }
+            if(ball.cy+ball.radius>=ctx.canvas.height||ball.cy-ball.radius<0){
+                ball.speedY*=-1;
+            }else{
+                ball.speedY*=1;
+            }
+            ball.cx+=ball.speedX;
+            ball.cy+=ball.speedY;
+            ball.draw();
+        }
+        requestAnimationFrame(_move)
+    }
+    _move();
+    var balls = [];
+    for(var i=0;i<20;i++){
+        var rgba="rgba("+rand()+","+rand()+","+rand()+","+"1"+")";
+        var  r=randr();
+        var  cx=randNum();
+        var  cy=randNum();
+        var ball=new createBall(r,cx,cy,rgba);
+        balls.push(ball);
+        console.log(cball[i]);
+    }
+
+    setInterval(function () {
+//        ctx.clearRect(0, 0,500,500)
+        for (var i =0; i <20; i++) {
+            cball[i].play()
+        }
+    }, 1000);
+
+    function createBall(){
+        ctx.beginPath();
+        ctx.fillStyle=rgba;
+        ctx.arc(cx,cy,25,0,2*Math.PI);
+        ctx.fill();
+    }
+
+
+
+    function rand(){
+        return parseInt(Math.random()*256);
+    }
+
+    function randNum(){
+        return parseInt(Math.random()*450);
+    }
+
+    function randr(){
+        return parseInt(Math.random()*(25-18)+18);
+    }
+
+</script>
+<script>
+    var table = document.querySelector("table");
+    for (var i = 0; i < 10; i++) {
+        var tr = document.createElement("tr");
+        for (var j = 0; j < 10; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+</script>
+</html>

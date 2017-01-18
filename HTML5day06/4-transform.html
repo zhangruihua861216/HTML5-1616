@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform 变换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            font-size: 50px;
+            line-height: 100px;
+            text-align: center;
+            display: inline-block;
+            margin: 30px;
+        }
+        .box1{
+            /*
+            transform:rotate(deg)  旋转
+            */
+            transform: rotate(45deg);
+            /*animation: rot 2s linear infinite;*/
+        }
+        .box2{
+            /*
+            transform-origin：指定变换的相对位置
+            接收值:像素值\百分比值\关键字
+            left top 以左上为基点
+            left 以左 中 为基点
+            right center 以右 中  为基点
+            */
+            transform: rotate(45deg);
+            transform-origin: left;
+        }
+        .box3{
+            /*
+            transform:scale(num1[,num2])
+            一个值时 X Y 均按此值进行缩放
+            两个值时 X==num1  Y==num2
+            scaleX(num)； 指定沿X 轴的缩放比例
+            scaleY(num)； 指定沿Y 轴的缩放比例
+            */
+            transform: scale(0.5);
+        }
+        .box4{
+            transform: scaleX(2) scaleY(0.5) rotate(45deg);
+        }
+        .box5{
+            transform: scale(0.7,0.2);
+        }
+        .box6{
+            /*沿X轴倾斜的角度*/
+            /*transform: skew(45deg);*/
+            /*沿*/
+            /*
+            transform:skew(xAngle[.yAngle])；  倾斜(扭曲)
+            xAngle  在X方向上 Y轴的倾斜角度
+            yAngle  在Y方向上 X轴的倾斜角度
+            skewX(xAngle) Y轴的倾斜角度
+            skewY(yAngle)  X轴的倾斜角度
+            */
+            transform: skew(45deg,10deg);
+        }
+        .box7{
+            transform: skewX(45deg);
+        }
+        .box8{
+            transform: skewY(45deg);
+        }
+        .box9{
+            /*
+            transform:translate(x[,y])； 平移
+            x： 在X轴上平移距离
+            y:  在Y轴上平移距离
+            translateX(x) 沿X轴进行平移
+            translateY(y)  沿Y轴进行平移
+            */
+            transform: translate(50px);
+        }
+        .box10{
+            transform: translate(50px,100px);
+        }
+        .box11{
+            transform: translateX(-80px);
+        }
+        .box12{
+            transform: translateY(-20px);
+        }
+        .box13{
+            width: 200px;
+            transform-origin: left top;
+            transform: translate(100px,100px) rotate(45deg) scale(0.5);
+        }
+        @keyframes rot {
+            from{
+             transform: rotate(0deg);
+            }
+            to{
+             transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box1">1</div>
+<div class="box2">2</div>
+<div class="box3">3</div>
+<div class="box4">4</div>
+<div class="box5">5</div>
+<div class="box6">6</div>
+<div class="box7">7</div>
+<div class="box8">8</div>
+<div class="box9">9</div>
+<div class="box10">10</div>
+<div class="box11">11</div>
+<div class="box12">12</div>
+<div class="box13">13</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background: red;
+        }
+        div:nth-child(1){
+            /*
+              一个值：4 个角
+              两个值：左上-右下  右上-左下
+              三个值: 左上  右上-左下   右下
+              四个值: 左上 右上 右下 左下
+            */
+            /*bordr-radius: 50px;*/
+            /*border-radius: 10px 20px;*/
+            /*border-radius: 10px 30px 40px;*/
+            /*横轴/纵轴  不同大小的圆角*/
+            /*border-radius: 30px/5px;*/
+            /*border-radius: 10px 20px 5px/30px;*/
+            border-radius: 10px 20px/50px 5px;
+        }
+        div:nth-child(2){
+            /*非简写形式纵轴始终写在前*/
+            border-top-left-radius: 10px;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 25px;
+        }
+        div:nth-child(3){
+            border-radius: 50%/25%;
+        }
+    </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+</html>

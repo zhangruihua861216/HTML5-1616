@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*input:out-of-range{*/
+            /*border:5px solid red;*/
+        /*}*/
+        /*input:in-range{*/
+            /*border: 5px solid green;*/
+        /*}*/
+        /*input:required{*/
+            /*border: 5px solid green;*/
+        /*}*/
+        /*input:optional{*/
+            /*border: 5px solid blue;*/
+        /*}*/
+         input:valid{
+             border: 5px solid green;
+         }
+        input:invalid{
+            border: 5px solid red;
+        }
+        /*
+          :out-of-range  超出min max指定值
+          :in-rang 在min max 范围内
+          适用含有min max属性的表单元素
+
+          :optional 非必填表单项
+          :required 必填项
+
+          :valid 验证通过项
+          :invalid 未通过验证
+        */
+    </style>
+</head>
+<body>
+<input type="number" min="20" max="80" value="10">
+<input type="text" required="required">
+<input type="text">
+</body>
+</html>

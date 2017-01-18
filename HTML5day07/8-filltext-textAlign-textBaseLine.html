@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        table td {
+            width: 49px;
+            height: 49px;
+            border: 1px dotted #ccc;
+        }
+        canvas{
+            margin: 50px;
+            box-shadow: 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+     <canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+    <table>
+
+    </table>
+</body>
+<script>
+    //第一步  取得canvas画布
+    var canvas=document.querySelector("canvas");
+    //第二步 取得绘图环境
+    //参数 2d 且目前 必须是2d  3d草案还在制作中
+    var ctx=canvas.getContext("2d");
+
+    //fillText(str,x,y) 填充文本
+    ctx.fillText("你好CANVAS",50,50);
+    ctx.font="500 50px 宋体";
+    //textAlign：left/center/right
+    //指定文字水平方向的对齐
+    ctx.textAlign="center";
+//    ctx.textAlign="right";
+    //textBaseLine:top|bottom|middle
+    //指定文字在垂直方向上的对齐
+//    ctx.textBaseline="top";
+    ctx.textBaseline="middle";
+    ctx.strokeText("不好CANVAS",200,150);
+
+</script>
+<script>
+    var table = document.querySelector("table");
+    for (var i = 0; i < 10; i++) {
+        var tr = document.createElement("tr");
+        for (var j = 0; j < 10; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+</script>
+</html>

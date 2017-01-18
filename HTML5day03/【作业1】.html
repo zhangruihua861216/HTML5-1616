@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        header,footer{
+            height: 40px;
+            line-height: 40px;
+        }
+        header{
+            background: red;
+        }
+        footer{
+            background: yellowgreen;
+        }
+        aside:first-of-type{
+            background: goldenrod;
+        }
+        aside:nth-of-type(2){
+            background: pink;
+        }
+        section{
+            background: blue;
+        }
+
+        @media screen and (min-width:780px) {
+        nav{
+                display: flex;
+                flex-basis: 100%;
+            }
+            nav aside{
+            width: 300px;
+            }
+            nav section{
+                flex-basis: 100%;
+            }
+        }
+        @media screen and (min-width: 500px)and (max-width: 780px) {
+            nav{
+                display: flex;
+                flex-basis: 100%;
+                background: green;
+                flex-wrap:wrap;
+                flex-direction: row;
+
+            }
+            section{
+                order: -1;
+                flex: 1 1 100%;
+                /*flex-basis: 100%;*/
+                padding: 300px;
+
+            }
+            aside{
+                /*display: inline-block;*/
+                flex: 1;
+            }
+
+        }
+
+        @media screen and (max-width: 500px) {
+            nav{
+                display: flex;
+                flex-basis: 100%;
+                flex-direction: column;
+            }
+            section{
+                order: -1;
+                flex-basis: 100%;
+
+            }
+            aside{
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+ <header>Header</header>
+ <nav>
+     <aside>aside1</aside>
+     <section>Pellectef  fdafds rwerew</section>
+     <aside>aside2</aside>
+ </nav>
+ <footer>Footer</footer>
+</body>
+</html>

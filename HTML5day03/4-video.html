@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<video src="movie.mp4"   controls loop >
+    你的浏览器不支持video，请升级；
+</video>
+<button>开始播放</button>
+<button>暂停播放</button>
+<button>停止播放</button>
+<button>加速</button>
+<button>减速</button>
+<button>增大音量</button>
+<button>减小音量</button>
+<button>静音</button>
+<button>开始/暂停</button>
+</body>
+<script>
+    var video=document.querySelector("video");
+    var btns=document.querySelectorAll("button");
+    v
+    ideo.height="800";
+    btns[0].onclick=function(){
+        video.play();
+    }
+    btns[1].onclick=function(){
+        video.pause();
+    }
+    btns[2].onclick=function(){
+        video.pause();
+        video.currentTime=0;
+    }
+    var speed=1;
+    btns[3].onclick=function(){
+        speed+=0.5;
+        video.playbackRate=speed;
+    }
+    btns[4].onclick=function(){
+//        speed-=0.5;
+        speed>0.2&&speed>1?speed-=0.5:speed-=0.2;
+        video.playbackRate=speed;
+    }
+    var volume=1;
+    btns[5].onclick=function(){
+        volume<1&&(volume+=0.1);
+        video.volume=volume;
+    }
+    btns[6].onclick=function(){
+        volume>0.1&&(volume-=0.1);
+        video.volume=volume;
+    }
+    btns[7].onclick=function(){
+        this.innerHTML="恢复";
+      video.muted=!video.muted;
+    }
+    btns[8].onclick=function(){
+        video.paused ?(video.play()):(video.pause());
+    }
+    //currentTime 获取当前视频的播放时间
+    //console.log(video.currentTime);
+    //paused 获取当前视频是否暂停
+//      console.log(video.paused);
+    //ended 获取当前视频是否播放完毕
+//      console.log(video.ended);
+
+    setTimeout(function(){
+        console.log(video.currentTime);
+//        console.log(video.playbackRate);
+//        playbackRate 设置或获取当前视频的播放速度
+//        video.playbackRate=3;
+//        // 设置或获取当前视频的音量
+//        console.log(video.volume);
+//        video.volume=0.2;
+//        //设置或获取当前视频的静音状态
+//        console.log(video.muted);
+//        video.muted="true";
+//        video.pause();
+//        video.play();
+
+    },5000)
+</script>
+</html>

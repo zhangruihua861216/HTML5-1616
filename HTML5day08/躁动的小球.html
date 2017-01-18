@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+</body>
+<script>
+    var canvas=document.querySelector("canvas");
+    var ctx=canvas.getContext("2d");
+    canvas.width=document.documentElement.clientWidth;
+    canvas.height=document.documentElement.clientHeight;
+    function Ball(){
+        this.ctx=ctx;
+        this.radius=this.rand(10,30);
+        this.cx=this.rand(this.radius,this.ctx.canvas.width-this.radius);
+        this.cy=this.rand(this.radius,this.ctx.canvas.height-this.radius);
+        this.speedX=this.rand(-3,3);
+        this.speedY=this.rand(0,8);
+        this.color="rgba("+this.rand(0,255)+","+this.rand(0,255)+","+this.rand(0,255)+","+Math.random()+")";
+    }
+    Ball.prototype.draw=function(){
+        this.ctx.beginPath();
+        this.ctx.arc(this.cx,this.cy,this.radius,0,2*Math.PI);
+        this.ctx.fillStyle=this.color;
+        this.ctx.fill();
+    }
+    Ball.prototype.rand=function(min,max){
+        return parseInt(Math.random()*(max-min))+min;
+    }
+    var balls=[];
+    for(var i=0;i<10;i++){
+        var ball=new Ball();
+        balls.push(ball);
+        ball.draw();
+    }
+    function  _move(){
+        ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+        for(var i=0;i<balls.length;i++){
+            var ball=balls[i];
+            if(ball.cx+ball.radius>=ctx.canvas.width||ball.cx-ball.radius<0){
+                ball.speedX*=-1;
+            }else{
+                ball.speedX*=1;
+            }
+            if(ball.cy+ball.radius>=ctx.canvas.height||ball.cy-ball.radius<0){
+                ball.speedY*=-1;
+            }else{
+                ball.speedY*=1;
+            }
+            ball.cx+=ball.speedX;
+            ball.cy+=ball.speedY;
+            ball.draw();
+        }
+        requestAnimationFrame(_move)
+    }
+    _move();
+</script>
+</html>

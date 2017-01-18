@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+   <button>全屏</button>
+</body>
+<script>
+    console.log(document.body);
+
+    document.querySelector("button").onclick=function(){
+        document.body.webkitRequestFullScreen();
+    }
+
+
+    var isFull = false;
+    document.onclick = function() {
+        isFull ? exit() : fullscreen();
+    }
+
+    function fullscreen() {
+        isFull = true;
+        if (document.body.webkitRequestFullScreen) {
+            //webkit内核 chrome safari
+            document.body.webkitRequestFullScreen();
+        } else if (document.body.mozRequestFullScreen) {
+            //moz内核  firefox
+            document.body.mozRequestFullScreen();
+        } else if (document.body.requestFullScreen) {
+            //w3c标准
+            document.body.requestFullScreen();
+        }
+    }
+
+    function exit() {
+        isFull = false;
+        if (document.webkitCancelFullScreen) {
+            //webkit内核 chrome safari
+            document.webkitCancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            //moz内核  firefox
+            document.mozCancelFullScreen();
+        } else if (document.exitFullScreen) {
+            //w3c标准
+            document.exitFullScreen();
+        }
+    }
+
+
+</script>
+</html>

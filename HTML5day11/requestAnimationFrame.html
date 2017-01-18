@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            background: red;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+
+        .box2{
+            background: red;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top:100px;
+       }
+        .box3{
+                    background: red;
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    top:200px;
+                }
+    </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box2"></div>
+ <div class="box3"></div>
+</body>
+<script src="js/Tween.js"></script>
+<script>
+    //老代码
+    var left=0;
+    var box=document.querySelector(".box");
+    function _move(){
+        left++;
+        box.style.left=left+"px";
+        left<500&&setTimeout(_move,10);
+    }
+//    _move();
+
+
+    //requestAnimationFrame
+    var left2=0;
+    var box2=document.querySelector(".box2");
+    function _play(){
+        left2++;
+        box2.style.left=left2+"px";
+        left2<500&&requestAnimationFrame(_play);
+    }
+//    _play()
+
+    //tween.js
+    var s=0;  //start 开始步数
+    var d=100; //duration  总步数
+    var c=0;   //current 当前量
+    var e=500;   //end 结束量
+
+    //0-500 当前位置0px 移动到500px
+    //400-20  当前位置400px 移动到20px
+    //0.3--0.9 当前透明度为3 ，修改为9
+
+    //tween(start,begin,change,dur)
+    //start :开始步数
+    //begin:动画的开始值
+    //change:变化量
+    //dur：持续总步数
+
+    var box3=document.querySelector(".box3");
+    function _run(){
+        s++;
+        box3.style.left=Tween.Elastic.easeInOut(s,c,e,d)+"px";
+        s<100&&requestAnimationFrame(_run);
+        console.log(s);
+        console.log(e);
+    }
+
+    _run();
+
+</script>
+
+</html>

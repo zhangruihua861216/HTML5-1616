@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    console.dir(document);
+    //hidden  当前页面是否可见
+    console.dir(document.hidden);
+    // visibilityState 当前页面的可见状态
+    console.dir(document.visibilityState);
+
+    var inter=setInterval(function(){
+        document.body.innerHTML=new Date().toLocaleString();
+    },1000)
+
+    document.addEventListener("visibilitychange",function(){
+         console.log("-------");
+         console.log(document.visibilityState);
+
+        clearInterval(inter);
+    });
+
+</script>
+</html>

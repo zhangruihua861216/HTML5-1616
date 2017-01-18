@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        table td {
+            width: 49px;
+            height: 49px;
+            border: 1px dotted #ccc;
+        }
+        canvas{
+            margin: 50px;
+            box-shadow: 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+<table>
+
+</table>
+</body>
+<script>
+    var canvas=document.querySelector("canvas");
+    var ctx=canvas.getContext("2d");
+//    createLinearGradient(startX,startY,endX,endY)；
+    //addColorStop(stop,color) stop 为0~1；
+//    createRadialGradient(xStart, yStart, radiusStart, xEnd, yEnd, radiusEnd)
+//     xStart, yStart	开始圆的圆心的坐标。
+//    radiusStart	开始圆的半径。
+//    xEnd, yEnd	结束圆的圆心的坐标。
+//    radiusEnd	结束圆的半径。
+    var gradient=ctx.createRadialGradient(250,250,50,250,250,150);
+    gradient.addColorStop(0,"red");
+    gradient.addColorStop(0.5,"yellow");
+    gradient.addColorStop(1,"blue");
+    ctx.fillStyle=gradient;
+    ctx.fillRect(200,200,100,100);
+
+</script>
+<script>
+    var table = document.querySelector("table");
+    for (var i = 0; i < 10; i++) {
+        var tr = document.createElement("tr");
+        for (var j = 0; j < 10; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+</script>
+</html>

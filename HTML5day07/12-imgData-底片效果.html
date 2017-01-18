@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        table td {
+            width: 49px;
+            height: 49px;
+            border: 1px dotted #ccc;
+        }
+        canvas{
+            margin: 50px;
+            box-shadow: 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+<table>
+
+</table>
+</body>
+<script>
+    //第一步  取得canvas画布
+    var canvas=document.querySelector("canvas");
+    //第二步 取得绘图环境
+    //参数 2d 且目前 必须是2d  3d草案还在制作中
+    var ctx=canvas.getContext("2d");
+    var img=new Image();
+    img.src="img/bj-1.jpg";
+    img.onload=function(){
+          ctx.drawImage(this,0,0);
+//        getImageData(x,y,w,h) 获取当前范围内每一个像素所代表的颜色值 R G B A 0~255
+          var idata=ctx.getImageData(0,0,500,500);
+          var data=idata.data;
+          console.log(data.length);
+          for(var i=0;i<data.length;i+=4){
+              data[i]=255-data[i];
+              data[i+1]=255-data[i+1];
+              data[i+2]=255-data[i+2];
+
+          }
+          ctx.putImageData(idata,0,0);
+          console.log(idata);
+
+    }
+</script>
+<script>
+    var table = document.querySelector("table");
+    for (var i = 0; i < 10; i++) {
+        var tr = document.createElement("tr");
+        for (var j = 0; j < 10; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+</script>
+</html>

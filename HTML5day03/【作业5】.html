@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body>div{
+            border: 1px solid gray;
+            width: 200px;
+            height: 300px;
+            margin: 0 auto;
+            display: inline-block;
+        }
+        body>div:first-of-type {
+           display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body>div span{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid red;
+            /*margin: 5px;*/
+
+        }
+        body>div:nth-of-type(2){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        body>div:nth-of-type(3){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        body>div:nth-of-type(3) span:nth-of-type(2){
+            align-self: center;
+        }
+        body>div:nth-of-type(3) span:nth-of-type(3){
+            align-self: flex-end;
+        }
+
+        body>div:nth-of-type(4){
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            padding: 10px 25px;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+   <div><span></span></div>
+   <div><span></span><span></span></div>
+   <div><span></span><span></span><span></span></div>
+   <div><span></span><span></span><span></span><span></span></div>
+   <div><span></span></div>
+   <div><span></span></div>
+   <div><span></span></div>
+   <div><span></span></div>
+</body>
+</html>

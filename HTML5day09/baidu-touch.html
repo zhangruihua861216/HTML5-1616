@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>Title</title>
+
+    <script src="js/touch-0.2.14.min.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script src="js/vconsole.min.js"></script>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+<script>
+    var box=document.querySelector(".box");
+//    console.log(touch);
+    //百度touch 暴露全局变量 touch
+    //on(ele,事件名称[，委托元素],事件处理函数)
+//    单击屏幕
+    touch.on(box,"tap",function(e){
+        console.log(e);
+    })
+//    常按屏幕
+    touch.on(box,"hold",function(e){
+        console.log(e);
+    })
+//    滑动
+    touch.on(box,"swipe",function(e){
+        console.log(e);
+    })
+//    旋转
+    touch.on(box,"rotate",function(e){
+        console.log(e);
+    })
+//    缩放
+    touch.on(box,"pinch",function(e){
+        console.log(e);
+    })
+
+    var beginDeg=0;endDeg=0;
+    box.addEventListener("touchstart",function(e){
+        e.preventDefault();
+    })
+    touch.on(box,"rotate",function(e){
+        var deg= e.rotation;
+        endDeg=deg;
+        box.style.transform="rotate("+(beginDeg+deg)+"deg)";
+    });
+
+    box.addEventListener("touchend",function(){
+        beginDeg+=endDeg;
+    })
+
+</script>
+</html>
