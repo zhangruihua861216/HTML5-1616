@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-init="desc='1234'">
+   <div ng-controller="firstController">
+       {{name}}
+       <span>{{name}}</span>
+       <h1>{{desc}}</h1>
+       <h2 ng-repeat="x in arr">{{x.name+"---"+x.age}}</h2>
+   </div>
+  {{name}}
+  {{desc}}
+</body>
+<script type="text/javascript">
+    //angular.module("appName"[,arr]);
+    //声明一个ng应用(模块)
+    //appName：应用名称
+    //arr：依赖的其它模块 可选，如果不添加此参数，表示获取模块
+    var app=angular.module("myApp",[]);
+    console.log(app);
+    console.log(angular.module("myApp"))    ;//一个参数时,表示获取模块
+    //app.controller("controllerName",array)
+    //controllerName：控制器名称
+    //array:["依赖模块一","依赖模块二",....,function(依赖模块一，依赖模块二,....){}]
+
+    app.controller("firstController",["$scope","$http","$location",function($scope,$http,$location){
+        $scope.name="zhar";
+        $scope.desc="描述";
+        $scope.arr=[{
+            name:"zhar",
+            age:30
+        },{
+            name:"zhar",
+            age:15
+        }
+        ];
+    }]);
+</script>
+</html>

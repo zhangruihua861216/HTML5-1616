@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer ul li{
+            list-style: none;
+            padding: 20px;
+            background: gray;
+            border: 1px solid;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+  <div ui-view></div>
+  <footer>
+      <ul>
+          <li><a ui-sref="home">主页</a></li>
+          <li><a ui-sref="items">全部商品</a></li>
+          <li><a ui-sref="mine">个人中心</a></li>
+      </ul>
+  </footer>
+</body>
+<script>
+    var app=angular.module("myApp",["ui.router"])
+            .config(function($stateProvider,$urlRouterProvider){
+                $urlRouterProvider.otherwise("home");
+                $stateProvider.state("home",{
+                    url:"/home",
+                    templateUrl:"home.html"
+                })
+                        .state("home.one",{
+                            url:"/one",
+                            templateUrl:"one.html"
+                        })
+                        .state("home.two",{
+                            url:"/two",
+                            templateUrl:"two.html"
+                        })
+                        .state("home.three",{
+                            url:"/three",
+                            templateUrl:"three.html"
+                        })
+                        .state("mine",{
+                            url:"/mine",
+                            templateUrl:"mine.html"
+                        })
+            })
+</script>
+</html>
