@@ -1,0 +1,40 @@
+
+.product ul li{
+    list-style: none;
+    align-content: flex-start;
+    border-bottom: 1px solid #cccccc;
+
+}
+.product ul li:last-of-type{
+    border-bottom: none;
+}
+.product ul li a{
+    display: flex;
+    align-items: center;
+}
+.product ul li a img{
+    height: 6rem;
+    margin-right: 7px;
+}
+.product ul li a {
+    width: 100%;
+    text-decoration: none;
+}
+.product ul li a div{
+    padding: 5px 10px 10px 0;
+}
+.product ul li a div p:first-of-type{
+    color: #000;
+    margin-bottom:5px;
+}
+.product ul li a div p:nth-of-type(2){
+    color: #969696;
+    font-size: 1.4rem;
+}
+.product ul li a div p:nth-of-type(3){
+    color: #FE4900;
+    margin-top: 5px;
+}
+
+
+

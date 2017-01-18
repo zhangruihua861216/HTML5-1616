@@ -1,0 +1,43 @@
+.title{
+    height:4rem;
+    background: #f2f2f2;
+    text-align: center;
+    line-height: 4rem;
+
+}
+section{
+    text-align: center;
+    background: #FFFFFF;
+    margin: 10px 0;
+    padding-bottom: 15px;
+}
+section h3{
+    height: 6rem;
+    line-height: 6rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
+}
+section ul {
+    list-style: none;
+    flex-wrap: wrap;
+
+}
+section ul div{
+    display: flex;
+}
+section ul li{
+    flex: 1;
+    padding: 0 7px;
+}
+section ul li a{
+    text-decoration: none;
+}
+section ul li a img{
+    height: 5rem;
+}
+section ul li a p{
+    padding: 10px 0;
+    color: #333;
+}

@@ -1,0 +1,23 @@
+.advert div{
+   display: flex;
+    width: 100%;
+    align-items: center;
+}
+.advert div a{
+
+    display:inline-block;
+    margin-bottom: 3px;
+
+
+}
+.advert div a:nth-child(2){
+    margin-left: 6px;
+    margin-right: 6px;
+
+}
+.advert div a img{
+    width:100%;
+}
+.advert{
+    width: 100%;
+}

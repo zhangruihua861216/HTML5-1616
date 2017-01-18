@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/swiper-slide-1.css">
+    <style>
+        .swiper-container{
+            height: 500px;
+            background: #b28e66;
+        }
+        img{
+            width: 359px;
+            height: 359px;
+        }
+        .swiper-pagination-bullet{
+            background: #fff;
+            width: 30px;
+            height: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+   <div class="swiper-container">
+       <div class="swiper-wrapper">
+           <div class="swiper-slide">
+               <div><span>&#xe62b;</span><span>...</span></div>
+               <ul>
+                   <li>
+                       <div>你还欠我一个拥抱<span>...</span><span>&#xe649;</span></div>
+                       <div>Sara,后弦|无限星空五月主推歌曲</div>
+
+                   </li>
+                   <li>
+                       <div>当你老了<span>...</span><span>&#xe649;</span></div>
+                       <div>莫文蔚|当你老了</div>
+                   </li>
+                   <li>
+                       <div>不再联系<span>...</span><span>&#xe649;</span></div>
+                       <div>崔子格，夏天Alex|合格金曲</div>
+                   </li>
+               </ul>
+
+           </div>
+           <div class="swiper-slide"><img src="img/bj-1.jpg" alt=""></div>
+           <div class="swiper-slide"></div>
+           <div> <video src="video/bj-1.mp3"></video></div>
+
+       </div>
+       <div class="swiper-pagination"></div>
+   </div>
+   <div class="footer">
+       <span>&#xe600;</span><span>&#xe603;</span><span>&#xe64e;</span><span>&#xe604;</span><span>&#xe612;</span>
+   </div>
+</body>
+<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+<script src="js/swiper-3.3.1.min.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+         var imgArr=["img/bj-1.jpg","img/bj-2.jpg","img/bj-3.jpg"];
+         var txtArr=["txt/bj-1.lrc","txt/bj-2.lrc","txt/bj-3.lrc"];
+         var videoArr=["video/bj-1.mp3","video/bj-2.mp3","video/bj-3.mp3"]
+        $("ul li").hover(function(){
+            $(".swiper-slide:eq(1) img").attr("src",imgArr[$(this).index()]);
+            var htmlobj = $.ajax({
+                url:txtArr[$(this).index()],
+                async:false,
+            });
+            $(".swiper-slide:eq(2)").html(htmlobj.responseText);
+            $("ul li:eq("+$(this).index()+") div span:eq(1)").css("display","block");
+            $("video").attr("src",videoArr[$(this).index()]);
+            $("video")[0].play();
+            $(".footer span:eq(2)").html("&#xe6ad;");
+        },function(){
+            $("ul li:eq("+$(this).index()+") div span:eq(1)").css("display","none");
+        }
+        )
+
+</script>
+<script>
+    $(".footer span:eq(2)").click(function(){
+        console.log("hehe");
+        $("video")[0].paused?($("video")[0].play(),$(".footer span:eq(2)").html("&#xe6ad;")):($("video")[0].pause(),$(".footer span:eq(2)").html("&#xe64e;"));
+    })
+
+</script>
+</html>

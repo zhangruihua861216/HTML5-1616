@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link rel="stylesheet" href="css/personal-center.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        font-family: Arial,Verdana,Sans-serif;
+        font-size: 62.5%;
+    }
+    body{
+        background: #F5F5F5;
+    }
+</style>
+<body>
+<div class="title">个人中心</div>
+<section>
+    <div class="new_info">
+        <h2>立即登录</h2>
+        <div><span>+</span></div>
+    </div>
+    <div class="new_nav">
+        <ul>
+            <li><span></span>全部订单<p></p></li>
+            <li><span></span>代付款<p></p></li>
+            <li><span></span>待收货<p></p></li>
+        </ul>
+    </div>
+</section>
+<section>
+    <ol>
+        <li>我的优惠</li>
+        <li>F码通道</li>
+    </ol>
+    <ol>
+        <li>我的服务</li>
+    </ol>
+    <ol>
+        <li>设置</li>
+    </ol>
+</section>
+</body>
+<script>
+    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+    var doc = document.documentElement;
+    window.addEventListener(evt, _resize, false);
+    window.addEventListener("DOMContentLoaded", _resize);
+
+    function _resize() {
+        doc.style.fontSize = 20 * (doc.clientWidth / 320) + "px";
+    }
+</script>
+</html>

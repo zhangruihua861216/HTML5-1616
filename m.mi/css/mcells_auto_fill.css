@@ -1,0 +1,12 @@
+.mcells_auto_fill{
+    margin-bottom: 80px;
+}
+.mcells_auto_fill ul{
+    display: flex;
+    border-bottom: 4px solid #F5F5F5;
+    border-top: 4px solid #F5F5F5;
+    list-style: none;
+}
+.mcells_auto_fill ul  li img{
+    width: 100%;
+}

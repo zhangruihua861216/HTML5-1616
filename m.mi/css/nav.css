@@ -1,0 +1,57 @@
+nav{
+    border:1px solid #cccccc ;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #FFFFFF;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    height: 70px;
+    align-items: center;
+}
+nav ul li{
+    flex: 1;
+    color: #999;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+nav ul li span{
+    background: url("../img/spr1.png")no-repeat;
+    background-size: 35px;
+    display: block;
+    height: 35px;
+    margin-bottom: 5px;
+    flex: 1;
+}
+
+nav ul li:nth-of-type(1) span{
+    background-position: center -35px ;
+}
+nav ul li:nth-of-type(2) span{
+    background-position: center  -105px;
+}
+nav ul li:nth-of-type(3) span{
+    background-position:  center -175px;
+}
+nav ul li:nth-of-type(4) span{
+    background-position: center  -245px;
+}
+nav ul li:nth-of-type(1):hover span{
+    background-position: center -0px ;
+}
+nav ul li:nth-of-type(2):hover span{
+    background-position: center -70px ;
+}
+nav ul li:nth-of-type(3):hover span{
+    background-position: center -140px ;
+}
+nav ul li:nth-of-type(4):hover span{
+    background-position: center -210px ;
+}
+
+nav ul li:hover{
+    color: #FF5722;
+}

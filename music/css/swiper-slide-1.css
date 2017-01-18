@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 195889 */
+    src: url('//at.alicdn.com/t/font_pdcurpoixt0m5cdi.eot');
+    src: url('//at.alicdn.com/t/font_pdcurpoixt0m5cdi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_pdcurpoixt0m5cdi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_pdcurpoixt0m5cdi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_pdcurpoixt0m5cdi.svg#iconfont') format('svg');
+}
+.swiper-slide div{
+    color: #FFFFFF;
+    padding-top: 10px;
+}
+.swiper-slide>div span:first-of-type{
+    font-family: iconfont;
+    font-size: 20px;
+    padding-left: 10px;
+
+
+}
+.swiper-slide>div span:last-of-type{
+   float: right;
+   margin-right: 20px;
+
+}
+
+.swiper-slide ul li div:last-of-type{
+    color: #d1bba3;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+}
+ul li{
+    list-style: none;
+    border-bottom: 1px solid ;
+    border-bottom-color: rgba(255,255,255,0.1);
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.swiper-slide ul li div:first-of-type span:first-of-type{
+    font-family: iconfont;
+    float: right;
+    margin-right:30px ;
+}
+.swiper-slide ul li div:first-of-type span:last-of-type{
+    font-family: iconfont;
+    float: right;
+    color: red;
+    margin-right:30px ;
+    display: none;
+}
