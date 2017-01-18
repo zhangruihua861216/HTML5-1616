@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" multiple>
+<div class="box"></div>
+</body>
+<script type="text/javascript">
+//      H5读取文件API：
+//     multiple 允许文件框同时选择多个文件
+//     File对象：
+//     lastModifiedDate 最后修改日期
+//     name 文件名称
+//     size 文件大小(字节数)
+//     type 文件类型
+//     读取文件过程：
+//     1.监听文件框的change事件
+//     2.事件触发时，可通过this.files得到文件框所选择的所有文件
+//     3.遍历这些文件，得到每一个文件对象
+//     4.创建FileReader的实例
+//     5.选择读取方式readAsText  readAsDataURL   readAsBinaryString
+//     6.监听FileReader的onload事件
+//     7.onload触发时，可通过this.result得到读取内容；
+ var mf=document.querySelector("input");
+ var box=document.querySelector(".box");
+    mf.onchange=function(){
+        console.log(this.files);
+        var html="";
+        for(var i=0;i<this.files.length;i++){
+            // 得到每一个选择的文件
+            var file=this.files[i];
+            html +="<p>文件名:"+file.name+"---文件大小"+file.size+"---文件类型"+file.type+"</p>"
+//            构建FileReader对象
+            var fr=new FileReader();
+//           fr.readAsText(file,"utf-8");以文本方式读取文件
+//            fr.readAsText(file,"utf-8");
+//            fr.readAsDataURL(file);
+            fr.readAsBinaryString(file);
+            fr.onload=function(){
+                console.log(this.result);
+//                var img=document.createElement("img");
+//                img.src=this.result;
+//                img.width="300";
+//                document.body.appendChild(img);
+            }
+        }
+        box.innerHTML=html;
+    }
+
+</script>
+</html>

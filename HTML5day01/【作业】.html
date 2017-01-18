@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         *{
+             margin: 0;
+             padding: 0;
+         }
+        .dustbin{
+            width: 200px;
+            height: 300px;
+            background:#2c3429;
+            line-height: 300px;
+            text-align: center;
+            font-size: 40px;
+            color: #FFFFFF;
+            float: left;
+
+        }
+        h3{
+            height: 30px;
+            width: 500px;
+            background: pink;
+            margin:10px 0;
+
+        }
+        .title{
+         float: left;
+         margin-left: 20px;
+        }
+        .main::after{
+            clear: both;
+            content: "";
+            display:  block;
+        }
+
+    </style>
+</head>
+<body>
+ <div class="main">
+     <div class="dustbin">垃圾箱</div>
+     <div class="title" >
+         <h3 id="h31" draggable="true">标题一</h3>
+         <h3 id="h32" draggable="true">标题二</h3>
+         <h3 id="h33" draggable="true">标题三</h3>
+         <h3 id="h34" draggable="true">标题四</h3>
+         <h3 id="h35" draggable="true">标题五</h3>
+         <h3 id="h36" draggable="true">标题六</h3>
+     </div>
+ </div>
+</body>
+<script>
+    var dustbin=document.querySelector(".dustbin");
+    var h3s=document.querySelectorAll("h3");
+    console.log(h3s);
+     for(var i=0;i<h3s.length;i++){
+         h3s[i].ondragstart=function(e){
+             console.log(e.dataTransfer);
+             console.log(e.target.id);
+             e.dataTransfer.setData("text", e.target.id);
+//             e.dataTransfer.setData("text", e.target.id);
+         }
+     }
+    dustbin.ondragover=function(e){
+        e.preventDefault();
+    }
+    dustbin.ondrop=function(e){
+        var id=e.dataTransfer.getData("text");
+        console.log(id);
+        this.appendChild(document.querySelector("#"+id));
+    }
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="age" value="30" form="myForm">
+<!--form 指定元素跟随对应的表单进行提交-->
+<!--form="要跟随的表单的ID"-->
+<!--指定后,当点击form表单中的提交按钮时,该元素会被一同提交-->
+<form autocomplete="on" id="myForm" >
+    <!--palceholder 占位字符-->
+    <!--autofocus 设置某元素自动获取焦点-->
+    <!--autocomplete 是否开启自动完成-->
+    <!--要求表单必须提交，需要自动完成的元素必须添加到name属性-->
+    <!--novalidate 是否进行非法验证（添加到form上）-->
+    <!--添加该属性表示不进行验证-->
+    <!--pattern 指定一个正则表达式，当输入值与表达式不符时，将禁止提交-->
+    <input type="text" placeholder="请输入您的名字"  pattern="\d+" value="" autofocus="autofocus" name="user">
+    <input type="button" value="原有的按钮">
+    原有的文件框:<input type="file" value="">
+    原有的提交按钮：<input type="submit">
+    <input type="password" name="pwd">
+    <input type="checkbox" name="check">
+    <input type="radio" name="radio">
+    <hr>
+    <!--合法性验证  验证表单内容是否符合其类型-->
+    <!--非空验证 当指定元素非空验证后 提交表单时会进行验证-->
+   电子邮件: <input type="email" value="zhan@126.com">
+    <hr>
+    <!--min 最小值  max 最大值  step 步进值-->
+    数字: <input type="number" min="0" max="20" step="3">
+    <hr>
+    范围: <input type="range" min="10" max="80" step="10">
+    <hr>
+    <!--required 非空验证-->
+    URL: <input type="url" value="www.baidu.com"  required >
+    <hr>
+    image: <input type="image" src="3.png" width="100" height="100">
+    <hr>
+    时间：
+    <hr>
+    日期：<input type="date">
+    <hr>
+    月：<input type="month">
+    <hr>
+    周：<input type="week">
+    <hr>
+    时间：<input type="time">
+    <hr>
+    本地时间：<input type="datetime-local">
+    <hr>
+     颜色 <input type="color">
+    <hr>
+    <!--在pc没有任何效果-->
+    <!--在手机端，当此文件框获得焦点后，会弹出输入法的数字界面-->
+    电话: <input type="tel">
+</form>
+<!--一些这两项并不是form专属，任何颜色都可-->
+<!--contenteditable 允许元素内容可编辑-->
+<p contenteditable>这是一段神秘的内容</p>
+<!--draggable="true" 是否允许元素可拖拽-->
+<div draggable="true" style="width: 50px;height: 50px;background: red;"></div>
+</body>
+</html>
