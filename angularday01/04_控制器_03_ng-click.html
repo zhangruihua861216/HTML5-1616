@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+  <div ng-controller="myController">
+      <input type="number" ng-model="count">
+      {{count}}
+      <button ng-click="count=count+1">点击</button>
+      <button ng-click="add()">点击二</button>
+      {{add()}}
+
+      <hr>
+      <input type="number" ng-model="v1">
+      +
+      <input type="number" ng-model="v2">
+      =
+      <span>{{v1+v2}}</span>
+      ={{result}}
+
+  </div>
+</body>
+<script>
+    angular.module("myApp",[])
+            .controller("myController",["$scope",function($scope){
+                $scope.count=1;
+                $scope.add=function(){
+                    return $scope.count++;
+                }
+                $scope.v1=1;
+                $scope.v2=1;
+                $scope.result=$scope.v1+$scope.v2;
+            }]);
+</script>
+</html>

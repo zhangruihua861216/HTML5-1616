@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="public/css/mine_common.css">
+<link rel="stylesheet" href="public/css/reset.css">
+<script src="public/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="public/css/bootstrap.min.css">
+<link rel="stylesheet" href="public/css/register.css">
+
+<header class="mine-headerComBtn">
+    <span class="icon btn btn-default btn-block"><</span><div class="btn btn-default btn-block">用户注册</div>
+</header>
+
+<form role="form" class="register" >
+    <div class="form-group">
+        <input type="text" class="form-control input-lg" placeholder="手机号">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+    </div>
+    <div class="form-group" ng-controller="validateCodeController">
+        <input type="text" class="form-control input-lg logcodeText" placeholder="验证码">
+        <span id="myspanCode" ng-click="getCode(4)">123</span>
+        <i class="changeGetCode" ng-click="getCode(4)">换一张</i>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control input-lg checkcodeText" placeholder="请输入校验码">
+        <span class="btn form-control-feedback checkcodeBtn">获取校验码</span>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control input-lg" placeholder="请输入密码">
+        <span class="glyphicon glyphicon glyphicon-lock form-control-feedback"></span>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control input-lg" placeholder="再次输入密码">
+        <span class="glyphicon glyphicon glyphicon-lock form-control-feedback"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">确认注册</button>
+</form>

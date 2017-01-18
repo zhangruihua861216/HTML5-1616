@@ -1,0 +1,30 @@
+angular.module("wineApp",["ui.router"])
+        .config(function($stateProvider,$urlRouterProvider){
+            $urlRouterProvider.otherwise("mine_collection")
+            $stateProvider.state("mine",{
+                    url:"/mine",
+                    templateUrl:"views/mine.html"
+                })
+                .state("logout",{
+                    url:"/logout",
+                    templateUrl:"views/logout.html"
+
+                })
+                .state("logout.logout_account_number",{
+                    url:"/logout_account_number",
+                    templateUrl:"views/logout_account_number.html"
+                })
+                .state("logout.logout_phone_dynamic",{
+                    url:"/logout_phone_dynamic",
+                    templateUrl:"views/logout_phone_dynamic.html"
+                })
+                .state("register",{
+                    url:"/register",
+                    templateUrl:"views/register.html"
+                })
+                .state("mine_collection",{
+                    url:"/mine_collection",
+                    templateUrl:"views/mine_collection.html"
+                })
+        })
+

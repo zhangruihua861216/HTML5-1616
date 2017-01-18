@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+</head>
+<body ng-app="myApp">
+  <div class="" ng-view></div>
+</body>
+<script>
+    angular.module("myApp",["ngRoute"])
+            .config(function($routeProvider){
+                $routeProvider.when("/",{
+                    templateUrl:"items.html",
+                    controller:"itemsController"
+                })
+                        .when("/car",{
+                            templateUrl:"car.html",
+                            controller:"carController"
+                        })
+                        .otherwise({
+                            redirectTo:"/"
+                        })
+            })
+            .service("itemsService",function($http){
+                var carItem=[];
+                this.removeCarItem=function(index){
+                    carItem.splice(index,1);
+                };
+                this.addCarItem=function(item){
+//                    if(购物车已经存在此商品，则在count的数量上加新数量){
+//
+//                    }else{
+////                        carItem.push(item);
+//                    }
+                    carItem.push(item);
+                    console.log(carItem)
+
+                }
+                this.getCarItem=function(){
+                    return carItem;
+                }
+                this.getAllItems=function(callback){
+                    $http.get("data.json").success(callback);
+                }
+//                return function (callback){
+//                    $http.get("data.json").success(callback)
+//                }
+
+            })
+</script>
+<script src="./itemsController.js"></script>
+<script src="./carController.js"></script>
+</html>
