@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 195889 */
+    src: url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.eot');
+    src: url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.svg#iconfont') format('svg');
+}
+/*轮播图*/
+
+.swiper-container{
+    margin-top: 57px;
+}
+.swiper-container img{
+    width: 100%;
+    display: block;
+}
+.swiper-container .swiper-pagination-bullet-active {
+    background: #ffd600;
+}
+
+.swiper-container .swiper-pagination {
+     text-align: right;
+}
+
+
+/*广告-1*/
+.advert-1 ul{
+    display: flex;
+    background: #FFFFFF;
+    list-style: none;
+    padding: 1rem 0px;
+    margin: 1.2rem 0px;
+    align-items: flex-end;
+
+}
+.advert-1 ul li{
+    text-align: center;
+    font-size: 1.4rem;
+}
+.advert-1 ul li img{
+    width:100%;
+}
+
+/*广告-2*/
+
+.advert-2 ul{
+    display: flex;
+    list-style: none;
+}
+.advert-2 ul li img{
+    width:100%;
+    display: block;
+}
+.advert-2 ul li{
+    margin: 0 .1rem;
+    flex: 1;
+}
+
+/*广告-3*/
+.advert-3{
+    background: #FFFFFF;
+    margin: 1.2rem 0px;
+}
+.advert-3 ul{
+    display: flex;
+    list-style: none;
+}
+.advert-3 ul li img{
+    width:100%;
+}
+.advert-3 ul:nth-of-type(2) li{
+    flex: 1;
+
+}
+.advert-3 ul:nth-of-type(2) li:nth-of-type(1){
+    margin: 0 .8rem;
+}
+.advert-3 ul:nth-of-type(2) li:nth-of-type(2) {
+    margin-right: .8rem;
+}
+.advert-3 ul:nth-of-type(2) li  img{
+  display: block;
+}
+.advert-3 ul:nth-of-type(3) li{
+    flex: 1;
+}
+
+.advert-3 ul:nth-of-type(4)  {
+    background: red ;
+    display: flex;
+
+}
+.advert-3 ul:nth-of-type(4)  div{
+    font-size: 0px;
+    flex: 1;
+    border-top: .1rem solid #efefef;
+}
+.advert-3 ul:nth-of-type(4)  div li:last-child{
+    border-top: .1rem solid #efefef;
+}
+.advert-3 ul:nth-of-type(4)  div:first-child{
+    border-right:.1rem solid #efefef;
+}
+
+
+    /*广告-4*/
+
+.list{
+    margin: 1.2rem 0px;
+    padding: 0 1rem 1rem;
+    background: #FFFFFF;
+    list-style: none;
+}
+.list .product{
+    display: flex;
+}
+body .advert-4 ul:last-of-type{
+    margin-bottom: 5.7rem;
+}
+
+/*标题*/
+.advert-4 ul li:first-of-type{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.advert-4 ul li .title{
+    font-size: 1.6rem;
+    position: relative;
+    text-indent: 1.5rem;
+    font-weight: bold;
+}
+
+.advert-4 ul li .title::before{
+    content: "";
+    display: block;
+    font-size: 2rem;
+    width: .8rem;
+    height: 1.5rem;
+    position:absolute;
+    top: .1rem;
+}
+
+.advert-4 ul li .Fruit::before{
+    background: #F38631;
+}
+
+.advert-4 ul li .Milk::before{
+    background: #20B1FA;
+}
+
+.advert-4 ul li .Cooked::before{
+    background: #7B4D03;
+}
+
+.advert-4 ul li .Beverages::before{
+    background: #FF3319;
+}
+.advert-4 ul li .Snacks::before{
+    background: #E80013;
+}
+.advert-4 ul li .Instant::before{
+    background: #1EB2A3;
+}
+
+.Fruit{
+    color:#F38631;
+}
+.Milk{
+    color: #20B1FA;
+}
+.Cooked{
+    color: #7B4D03;
+}
+.Beverages{
+    color: #FF3319;
+}
+.Snacks{
+    color: #E80013;
+}
+.Instant{
+    color:#1EB2A3;
+
+}
+.advert-4 ul li .more{
+    color: #9d9d9d;
+    font-size: 1.3rem;
+}
+
+.advert-4 ul li:nth-of-type(2) img{
+    width: 100%;
+}
+
+
+.advert-4 ul li.product>div:nth-of-type(2){
+    border-left: 2px solid #efefef;
+    border-right:2px solid #efefef;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    height: 6rem;
+    background: #efefef;
+    opacity: 0.9;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+
+}
+footer ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+
+}
+footer ul li{
+    height: 6rem;
+    flex: 1;
+    text-align: center;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #777;
+
+}
+footer ul li span{
+    background: url("../img/CSS-Satyr.png") no-repeat;
+    width: 3rem;
+    height: 3rem;
+    background-size:  3rem;
+    display:block;
+    margin-bottom: .5rem;
+
+}
+
+footer ul li:nth-of-type(1) span{
+    background-position:0px -0px;
+}
+
+footer ul li:nth-of-type(2) span{
+  background-position:0px -3.5rem;
+}
+footer ul li:nth-of-type(3) span{
+    background-position:0px -7.2rem;
+}
+footer ul li:nth-of-type(4) span {
+    background-position:0px -7.2rem;
+}
+footer ul li:nth-of-type(5) span{
+    background-position:0px -14rem;
+}
+
+footer ul li:nth-of-type(1):hover span{
+    background-position:0px -17.7rem;
+}
+footer ul li:nth-of-type(2):hover span{
+    background-position:0px -21rem;
+}
+footer ul li:nth-of-type(3):hover span{
+    background-position:0px -24.6rem;
+}
+footer ul li:nth-of-type(4):hover span {
+    background-position:0px -24.6rem;
+}
+footer ul li:nth-of-type(5):hover span{
+    background-position:0px -31.6rem;
+}

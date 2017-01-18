@@ -1,0 +1,36 @@
+/*header*/
+@font-face {
+    font-family: 'iconfont';  /* project id 195889 */
+    src: url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.eot');
+    src: url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_ch5zyhnajtqehfr.svg#iconfont') format('svg');
+}
+
+header .Scan span{
+    font-family:iconfont;
+    font-size: 2rem;
+}
+header div{
+    font-size: 1.4rem;
+}
+header .search span{
+    font-family:iconfont ;
+}
+header .address{
+    font-family:iconfont ;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    background: #ffd600;
+    padding: .8rem 0.3rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0px;
+}

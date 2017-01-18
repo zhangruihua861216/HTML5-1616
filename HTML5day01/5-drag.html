@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1,.box2{
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            border: 1px solid gray;
+        }
+        .middle{
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+  <div class="box1">
+      <div class="middle" draggable="true" id="middle"></div>
+  </div>
+   <div class="box2"></div>
+</body>
+<script type="text/javascript">
+    var divs=document.querySelectorAll("div");
+    var middle=divs[1];
+    var box=divs[2];
+//    1.被拖拽元素必须包含 draggable="true"
+    //2.监听事件
+   middle.ondragstart=function(e){
+        console.log(e.dataTransfer);
+        console.log("开始拖拽");
+       e.dataTransfer.effectAllowed="copy";
+//       e.dataTransfer.effectAllowed="move";
+//       e.dataTransfer.effectAllowed="link";
+//       e.dataTransfer.effectAllowed="none";
+       e.dataTransfer.setData("text", e.target.id);
+    }
+    box.ondragover=function(e){
+        e.preventDefault();
+//        e.dataTransfer.dropEffect="copy";
+//        e.dataTransfer.dropEffect="link";
+        console.log("在目标内");
+    }
+
+    box.ondrop=function(e){
+        var id= e.dataTransfer.getData("text");
+        console.log(id);
+        this.appendChild(document.querySelector("#"+id));
+        console.log("在目标上放开");
+    }
+</script>
+</html>
