@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        table td {
+            width: 49px;
+            height: 49px;
+            border: 1px dotted #ccc;
+        }
+        canvas{
+            margin: 50px;
+            box-shadow: 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+     <canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+    <table>
+
+    </table>
+</body>
+<script>
+    //第一步  取得canvas画布
+    var canvas=document.querySelector("canvas");
+    //第二步 取得绘图环境
+    //参数 2d 且目前 必须是2d  3d草案还在制作中
+    var ctx=canvas.getContext("2d");
+    //第三步 开始绘图
+    ctx.moveTo(50,50);
+    ctx.lineTo(450,450);
+    ctx.lineTo(450,250);
+    ctx.lineTo(250,450);
+    ctx.stroke();
+//    moveTo(x,y) 开始一条新线段的绘制
+    //lineTo(x,y)从上一个终点(作为起点)连接到当前点
+    //如果没有moveTo(x,y) lineTo会去寻找上一次线段的绘制终点
+    //如果没有moveTo,lineTo会将moveTo做起点，开始新线的绘制
+    //stroke()  绘制(描边)
+    ctx.moveTo(100,250);
+    ctx.lineTo(250,100);
+    ctx.stroke();
+</script>
+<script>
+    var table = document.querySelector("table");
+    for (var i = 0; i < 10; i++) {
+        var tr = document.createElement("tr");
+        for (var j = 0; j < 10; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: purple;
+        }
+        img{
+            display: block;
+        }
+        img:nth-child(1){
+            /*-webkit-box-reflect: below 10px;*/
+            -webkit-box-reflect: below 0 linear-gradient(transparent 60%,rgba(255,255,255,.4));
+
+        }
+        img:nth-child(2){
+            margin-left: 200px;
+            -webkit-box-reflect: above;
+        }
+        img:nth-child(3){
+            margin-left: 400px;
+            -webkit-box-reflect: left;
+        }
+        img:nth-child(4){
+            -webkit-box-reflect: right;
+        }
+    </style>
+</head>
+<body>
+<img src="1.jpg" alt="" width="150px">
+<img src="1.jpg" alt="" width="150px">
+<img src="1.jpg" alt="" width="150px">
+<img src="1.jpg" alt="" width="150px">
+</body>
+</html>

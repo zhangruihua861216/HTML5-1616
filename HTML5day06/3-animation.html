@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            left:100px;
+            /*
+            animation-name 动画名称
+            animation-duration 动画执行所耗时间
+            animation-timing-function 动画执行曲线
+            animation-delay 动画延迟时间
+            animation-iteration-count 动画播放次数 默认1次
+            animation-direction: 动画执行方向(是否反向执行动画)
+            接收值: normal 默认值  正常执行
+                    reverse 动画反向执行
+                    alternate 奇数次正向，偶数次反向
+                    alternate-reverse 奇数次方向,偶数次正向
+           animation-fill-mode 动画执行完成后的状态
+            接收值:none  不做任何更改 默认值
+                    forwards 结束状态
+                    backwards 开始状态
+            animation-play-state： 动画执行状态
+            接收值: running 播放  默认
+                    paused 暂停
+            animation:animation-name
+                      animation-duration
+                     [animation-timing-function]
+                     [animation-delay]
+                     [animation-iteration-count]
+                     [animation-fill-model]
+                    [animation-play-state]
+            */
+            /*animation: ttt 5s ease-in-out 2s;*/
+            /*animation:  ttt 2s linear  2s 2 alternate-reverse;*/
+            /*animation: ttt  2s linear 2s forwards;*/
+            /*animation:ttt 2s running;*/
+              animation: ttt 2s paused;
+            /*anmation:ttt 2s linear 2s backwards;*/
+             /*animation: ttt  2s linear 2s infinite reverse; !*ttt 耗时2s  线性  延迟2s 无限次*!*/
+            /*animation:  ttt 2s  2  alternate;*/ /*ttt 耗时2s  线性  延迟2s 2次*/
+        }
+        @keyframes ttt {
+            0%{
+                left: 0;
+            }
+            100%{
+                left: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+ <div class="box"></div>
+</body>
+</html>

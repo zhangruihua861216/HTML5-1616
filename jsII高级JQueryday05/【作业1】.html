@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div><span class="title">查询类型</span><span class="contain">警情</span><span class="contain">案件</span></div>
+		<div><span class="title">统计方式</span><span class="contain">普通查询</span><span class="contain">高发类型</span><span class="contain">高发地区</span><span class="contain">高发时段</span><span class="contain">同比</span><span class="contain">环比</span></div>
+		<div><span class="title">报警时间</span><span class="contain">天</span><span class="contain">周</span><span class="contain">月</span><span class="contain">季</span><span class="contain">年</span><span class="contain">自定义</span></div>
+		<div><span class="title muilte">所属分局</span><span class="contain pro"><input type="checkbox" />北京</span><span class="contain pro"><input type="checkbox" />上海</span><span class="contain pro"><input type="checkbox" />天津</span><span class="contain pro"><input type="checkbox" />河北</span><span class="contain pro"><input type="checkbox" />新疆</span><span class="contain pro"><input type="checkbox" />陕西</span></div>
+		<div><span class="title">大类型</span><span class="contain">110</span><span class="contain">122</span><span class="contain">119</span></div>
+		<div><span class="title">所选条件</span></div>
+	</body>
+	<script type="text/javascript">
+	    $(function(){
+		    $("div").css({"border-bottom":"1px solid #e4e4e2","height":"39px","line-height":"39px","color":"#5e5f59"});
+			$(".title").css({"margin-left":"12px","margin-right":"50px","width":"100px","display":"inline-block"});
+			$(".contain").css({"color":"#22465c","margin":"0px 10px","padding":"9px 14px","font-size":"14px","cursor":"default"});
+
+
+
+  
+			$(".contain").on("click",function(){				
+				$(this).css("border","1px solid #b2231b").siblings();
+				$("div:last").append("<span class='select'>"+$(this).parent().children(".title").html()+"&nbsp"+"<span class='s_contain'>"+$(this).html()+"&nbsp;"+'×'+"</span>");
+				$(this).append("<span class='right'>✔</span>").css("position","relative");
+				$(".select").css({"color":"#22465c","margin":"0px 10px","padding":"9px 14px","font-size":"14px","cursor":"default","border":"1px solid #d8d8d6"});
+				$(".s_contain").css("color","#c13d48");				
+				$(this).children(".right").css({"position":"absolute","right":"0px","bottom":"0px","font-size":"1px","color":"white","background":"#cb4e4a","border-top-left-radius":"80px","height":"15px","line-height":"15px"});
+				
+
+					if($(this).attr("class")!="contain pro"){
+			            $(this).siblings().css("border","none").children(".right").remove();
+					    $("div:last span").find("this .s_contain").parent().remove();
+						if($("div:last span:contains("+$(this).parent().children(".title").html()+")").length>1){
+								$("div:last span:contains("+$(this).parent().children(".title").html()+")").eq(0).remove();
+									
+						}					
+					}					
+
+
+				
+				$(".select").on("click",function(){
+					$(this).each(function(m,n){
+					var str1=$(this).find(".s_contain").text().slice(0,$(this).find(".s_contain").text().length-1).trim();					
+					var str2=$(".contain:contains(\'"+str1+"\')");
+				         str2.css("border","none");
+				         str2.children(".right").remove();
+				         n.remove();
+				   })
+				})				
+			
+			}) 
+
+	    })
+
+	</script>
+</html>

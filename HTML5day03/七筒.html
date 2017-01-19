@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>麻将</title>
+    <style media="screen">
+        :root{
+            background-color: #0ac2d2;
+        }
+        body{
+            display: flex;
+            flex-wrap:wrap;
+        }
+        section{
+            width:120px;
+            height:160px;
+            background:white;
+            border-radius: 10px;
+            margin:20px;
+            display:flex;
+            padding:10px;
+            box-sizing:border-box;
+            flex-wrap:wrap;
+            -webkit-box-shadow: 3px 3px 0 0 blue,6px 6px 0 0 red,9px 9px 0 0 yellow,12px 12px 0 0 black,15px 15px 0 0 white;
+        }
+        .point{
+            width:35px;
+            height:35px;
+            border-radius: 50%;
+            background: -webkit-repeating-radial-gradient(#e80034, green 5px, gold 8px);
+            box-shadow: 0 0 0 1px pink inset;
+        }
+        .box7{
+            justify-content:space-around;
+        }
+        .box7 article:first-child{
+            width:100%;
+            box-sizing:border-box;
+            align-content:center;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+        }
+        .box7 div:nth-child(1){
+            align-self:flex-start;
+        }
+        .box7 div:nth-child(2){
+            align-self:center;
+        }
+        .box7 div:nth-child(3){
+            align-self:flex-end;
+        }
+        .box7 article:first-child div{
+            width:30%;
+            align-content: space-around;
+        }
+        .box7 article:nth-child(2){
+            display:flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-content:center;
+        }
+    </style>
+</head>
+<body>
+<section class="box7">
+    <article>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+    </article>
+    <article>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+        <div class="point"></div>
+    </article>
+</section>
+</body>
+</html>

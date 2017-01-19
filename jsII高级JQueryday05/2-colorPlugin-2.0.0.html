@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			td{
+				padding: 10px;
+			}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/JQuery-color-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<table >
+			<tr><td>A</td><td>23</td><td>男</td>	</tr>
+			<tr><td>A</td><td>23</td><td>男</td>	</tr>
+			<tr><td>A</td><td>23</td><td>男</td>	</tr>
+			<tr><td>A</td><td>23</td><td>男</td>	</tr>
+			<tr><td>A</td><td>23</td><td>男</td>	</tr>
+			<tr><td>A</td><td>23</td><td>男</td>	</tr>
+			<tr><td>A</td><td>23</td><td>男</td>	</tr>
+			<tr><td>A</td><td>23</td><td>男</td>	</tr>
+		</table>
+		<table >
+			<tr><td>B</td><td>23</td><td>男</td>	</tr>
+			<tr><td>B</td><td>23</td><td>男</td>	</tr>
+			<tr><td>B</td><td>23</td><td>男</td>	</tr>
+			<tr><td>B</td><td>23</td><td>男</td>	</tr>
+			<tr><td>B</td><td>23</td><td>男</td>	</tr>
+			<tr><td>B</td><td>23</td><td>男</td>	</tr>
+			<tr><td>B</td><td>23</td><td>男</td>	</tr>
+			<tr><td>B</td><td>23</td><td>男</td>	</tr>
+		</table>		
+	</body>
+
+	
+	
+		<script type="text/javascript">
+//		$("table").Color();
+//		$("table").eq(0).Color();
+		/*{
+			overColor:"pink",
+			outColor:"blue",
+		  }
+		*/
+		var obj={
+			overColor:"pink",
+			outColor:"blue",
+		}
+//		$("table").Color(obj)
+//		$("table").eq(0).Color(obj);
+//		$("table").eq(1).Color({
+//			overColor:"black",
+//			outColor:"green",
+//		});
+//		$("table").Color({
+//			overColor:"green",
+//		})
+//		$("table").Color({
+//			
+//		})	
+//		$("table").Color({
+//			overColor:"blue",
+//			outColor:"pink"
+//		})
+
+//		//点击变色
+//		$("table").Color({
+//			overColor:"blue",
+//			diy:"click"
+//		})
+
+		$("table").Color({
+			callback:function(el){
+				console.log(el);
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 81px;
+            height: 81px;
+            background: url("border2.png");
+        }
+        /*
+           border-image:url slice [fill]  repeat
+           url:图片地址
+           slice:图片的裁切位置，接收一到五个值
+           前四个值 等同于margin、padding的值
+           第五个值可选 如果为fill 则九宫格中间区域将保留
+           repeat 棱线块的填充模式
+           repeat==repeat   repeat
+           接收值有： repeat 重复 round 填充  默认值为 stretch 拉伸
+           repeat round 横轴重复  纵轴填充
+           round stretch 横轴填充  纵轴拉伸
+
+        */
+        .box2{
+            padding: 30px;
+            height: 300px;
+            border-image: url(border2.png)27 27 27 27 fill round ;
+            border-image-width: 27px;
+
+            border-width: 27px;
+            border-style: solid;
+            border-top-width: 50px;
+
+        }
+    </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box2"></div>
+</body>
+</html>

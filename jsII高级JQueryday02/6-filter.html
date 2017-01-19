@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin:0;padding:0;}
+			#wrap{
+				padding:20px;
+				width:350px;
+				margin:0 auto;
+				border: 1px solid red;
+			}
+			#middle{
+				border: 1px solid blue;
+			}
+			.leaf{
+				display: inline-block;
+				width:150px;
+				height:150px;
+				margin:8px;
+				text-align: center;
+				line-height: 150px;
+				border: 1px solid #ccc;
+			}
+			.btns{
+				text-align: center;
+				margin-top:30px;
+			}
+			.btns button{
+				padding: 5px 10px;
+			    background: #3547AA;
+			    border: none;
+			    border-radius: 4px;
+			    color: white;
+			    font-size: 15px;
+			    min-width: 80px;
+			    margin:5px;
+			    cursor: pointer;
+			}
+	
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="middle">
+				<div id="first" name="first" class="leaf">
+					<span>DIV1</span>
+				</div>
+				<div id="second" diy="" name="second" class="leaf other">
+					<span>DIV2</span>
+				</div>
+				<div id="third" name="third" class="leaf">
+					<span>DIV3</span>
+				</div>
+				<div id="four" name="four" class="leaf  other">
+					<span>DIV4</span>
+					<span diy="span">diy span</span>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+//		console.log($("div").eq(0).html());
+//		console.log($("div").eq(1).html());
+//		console.log($("div").eq(2).html());
+//		console.log($("div").eq(3).html());
+//		console.log($("div").first().html());
+//		console.log($("div:first").html());
+//		console.log($("div").first().hasClass("other"));
+//		console.log($(".other").children().length);
+//		console.log($("#four").children().length);
+//		console.log($("#four").children("span[diy]").html());
+//		console.log($("#wrap").children("span[diy]").html());
+//		console.log($("#wrap").find("span[diy]").html());
+//		console.log($("#first").next().html());
+//		console.log($("#first").next("third").html());
+//		console.log($("#first").next("#second").html());
+//		console.log($("span[diy]").parents("#wrap").html());
+		console.log($("span[diy]").parent("#wrap").html());
+	</script>
+</html>

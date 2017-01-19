@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin:0;padding:0;}
+			#wrap{
+				padding:20px;
+				width:350px;
+				margin:0 auto;
+				border: 1px solid red;
+			}
+			#middle{
+				border: 1px solid blue;
+			}
+			.leaf{
+				display: inline-block;
+				width:150px;
+				height:150px;
+				margin:8px;
+				text-align: center;
+				line-height: 150px;
+				border: 1px solid #ccc;
+			}
+			.btns{
+				text-align: center;
+				margin-top:30px;
+			}
+			.btns button{
+				padding: 5px 10px;
+			    background: #3547AA;
+			    border: none;
+			    border-radius: 4px;
+			    color: white;
+			    font-size: 15px;
+			    min-width: 80px;
+			    margin:5px;
+			    cursor: pointer;
+			}
+	
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="middle">
+				<div id="first" name="first" class="leaf">
+					<span>DIV1</span>
+				</div>
+				<div id="second" diy="" name="second" class="leaf other">
+					<span>DIV2</span>
+				</div>
+				<div id="third" name="third" class="leaf">
+					<span>DIV3</span>
+				</div>
+				<div id="four" name="four" class="leaf  other">
+					<span>DIV4</span>
+					<span diy="span">diy span</span>
+				</div>
+			</div>
+		</div>
+		<div class="btns">
+			<button>#ID</button>
+			<button>.class</button>
+			<button>element</button>
+			<button>sels,sel2,...</button>
+			<button>parent child</button>
+			<button>parent>child</button>
+			<button>prev+next</button>
+			<button>prev~next</button>
+			<button>:first</button>
+			<button>:even</button>
+			<button>:eq(1)</button>
+			<button>:gt(1)</button>
+			<button>:contains(text)</button>
+			<button>[attribute]</button>
+			<button>[attribute^='val']</button>
+			<button>[attribute*='val']</button>
+			<button>[attribute$='val']</button>
+			<button>[attribute!='val']</button>
+			<button>[attribute][attribute]</button>
+			<br />
+			<button class="reload" style="width:50%">重置</button>
+		</div>
+	</body>
+	<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//$===JQuery
+		//.css("样式属性","样式值");
+		//.click(function(){点击事件})
+		//
+//		$("#wrap").css("background","red");
+//		document.getElementById("wrap").style.background="red";
+//      function $(){
+//      	return document.getElementById("wrap");
+//      }
+		$("button").eq(0).click(function(){
+			$("#first").css("background","red");
+		})
+		$("button").eq(1).click(function(){
+			$(".other").css("background","yellow");
+		})
+		$("button").eq(2).click(function(){
+			$("span").css("background","blue");
+		})
+		
+		$("button").eq(3).click(function(){
+			//没有选择到，， 会返回一个长度为0的元素
+			$(".other,#first,span,XXX").css("background","pink");
+		})
+		//parent  child  选择当前元素下的所有后代元素
+//		$("button").eq(4).click(function(){
+//			$("#wrap #first").css("background","green");
+//		})
+		$("button").eq(4).click(function(){
+			$("#wrap span").css("background","green");
+		})		
+		//parent>child 选择当前元素下的直接子元素
+		$("button").eq(5).click(function(){
+			$("#wrap>#first").css("background","green");
+		})
+//		$("button").eq(5).click(function(){
+//			$("#middle>#first").css("background","green");
+//		})		
+//		$("button").eq(5).click(function(){
+//			$("#wrap>span").css("background","green");
+//		})	
+		$("button").eq(5).click(function(){
+			$("#middle>#four").css("background","green");
+		})	
+		$("button").eq(6).click(function(){
+//			$("#second+#four").css("background","red");
+//			$("#second+#third").css("background","red");
+//          prev+next  选择当前元素下一个紧邻的同辈元素
+			$("#second+div").css("background","red");
+		})	
+		//prev~next   选择当前元素后面所有的同辈的元素
+		$("button").eq(7).click(function(){
+			$("#second~div").css("background","green");
+		})
+		//:first  选择匹配元素的第一个
+		$("button").eq(8).click(function(){
+			$("span:first").css("background","green");
+		})
+		//:even 匹配偶数元素  从0开始
+		$("button").eq(9).click(function(){
+			$("span:even").css("background","green");
+		})
+		//:eq(index)  匹配指定下标的元素，从0开始
+		$("button").eq(10).click(function(){
+			$("span:eq(1)").css("background","green");
+		})
+		//:gt(index)  匹配下标大于指定index的元素
+		$("button").eq(11).click(function(){
+			$(".leaf:gt(1)").css("background","green");
+		})	
+		//:contains(text)  匹配包含有指定文字的元素
+		$("button").eq(12).click(function(){
+//			$(".leaf>span:contains(2)").css("background","green");
+			$(".leaf>span:contains('4')").css("background","green");
+		})	
+		
+		//[attribute]属性选择器  匹配包含有指定属性的元素
+		$("button").eq(13).click(function(){
+//			$("span[diy]").css("background","green");
+//			$("*[diy]").css("background","green");
+			$("div[name]").css("background","blue");
+		})
+		$("button").eq(14).click(function(){
+			$("div[name^='o']").css("background","green");
+		})
+		$("button").eq(15).click(function(){
+			$("div[name*='o']").css("background","green");
+		})	
+		$("button").eq(16).click(function(){
+			$("div[name$='d']").css("background","green");
+		})
+		$("button").eq(17).click(function(){
+			$("div[name!='first']").css("background","green");
+		})
+		$("button").eq(18).click(function(){
+			$("div[diy][name]").css("background","green");
+		})			
+		$(".reload").click(function(){
+			location.reload();
+		})
+	</script>
+</html>

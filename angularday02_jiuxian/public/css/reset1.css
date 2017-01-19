@@ -1,0 +1,22 @@
+*{
+	margin:0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+img{
+	display: block;
+}
+html{
+	font-size: 62.5%;
+	font-family: "华文细黑","黑体","Microsoft YaHei";
+}
+body{
+	box-sizing:border-box;
+}
+

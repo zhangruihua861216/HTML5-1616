@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: purple;
+            height: 500px;
+            display: flex;
+            /*
+              flex-wrap:指定项目是否自动换行  默认不换行
+              flex-wrap: nowrap|wrap|wrap-reverse
+              nowrap  不换行
+              wrap 正常换行
+              wrap-reverse 反转换行
+            */
+            /*flex-wrap:wrap;*/
+            /*
+             flex-direction:指定主轴的方向
+             flex-direction:row|row-reverse|column|column-reverse
+             row 主轴从左向右
+             row-reverse 主轴从右向左
+             column 主轴从上向下
+             column-reverse 主轴从下向上
+            */
+            /*flex-direction: column;*/
+            /*
+            flex-flow:是flex-direction与flex-wrap的简写形式
+            flex-flow: row  wrap 横向换行
+            */
+            flex-flow: row wrap;
+            /*
+            justify-content:指定项目沿主轴的排列方式
+            justify-content: flex-start|flex-end|center|space-between|space-around
+            flex-start 项目沿主轴开始方向排列
+            flex-end 项目沿主轴结束方向排列
+            center 项目沿主轴居中排列
+            space-between 项目之间距离相等 沿主轴均匀排列
+            space-around  项目两侧空白相等(项目之间的距离将是项目到边缘的一倍)
+
+            */
+            /*justify-content:space-between;*/
+            /*
+            align-items:指定项目沿交叉轴的对齐方式
+            align-items:flex-start|flex-end|center|baseline|stretch
+            flex-start:沿交叉轴起点对齐
+            flex-end：沿交叉轴终点对齐
+            center:沿交叉轴中间对齐
+            baseline:沿第一个项目的文字基线对齐
+            stretch：默认值 如果项目未指定高度，将填满整个交叉轴空间
+            */
+            align-items:flex-start;
+            /*
+            align-content:指定多条轴线沿交叉轴的对齐方式(一根轴线无效)
+            align-content:flex-start|flex-end|center|space-between|space-around
+            该属性指定的值与justify-content的值意义相同，除了轴不同
+            该属性指定的是交叉轴
+            */
+            align-content: space-around;
+        }
+        ul li{
+            padding: 10px;
+            margin: 10px;
+            color: #fff;
+            background: gray;
+            text-align: center;
+            /*
+            flex:是flex-grow flex-shrink flex-basis的简写
+            */
+            flex: 1 1 auto;
+        }
+        /*li:nth-child(1){*/
+            /*!*font-size: 100px;*!*/
+            /*!*height: 200px;*!*/
+            /*!**/
+            /*flex-grow:指定项目的放大比例 默认不自动放大*/
+            /**!*/
+            /*flex-grow: 1;*/
+        /*}*/
+        /*li:nth-child(2){*/
+            /*flex-grow: 2;*/
+        /*}*/
+        li:nth-child(5){
+            /*order: -1;*/
+            /*width: 200px;*/
+            /*!**/
+            /*flex-shrink:指定项目的缩小比例 默认为1  自动缩小 指定为0时将不再缩小*/
+            /**!*/
+            /*flex-shrink: 2;*/
+            /*
+            align-self:指定单个项目的对齐方式
+            align-self:flex-start|flex-end|center|baseline|stretchm
+            */
+            align-self:stretch;
+         }
+        /*!**/
+        /*order:指定项目的顺序 默认为0 越小越靠前 接收负值*/
+        /**!*/
+        /*li:nth-child(10){*/
+            /*order:-2;*/
+            /*flex-grow: 1;*/
+            /*
+            flex-basis:指定项目在放大时的基准
+            默认auto 项目本身大小
+            设为100%时，将沾满整个容器的宽度
+            */
+            /*flex-basis: 100%;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+  <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+  </ul>
+</body>
+</html>

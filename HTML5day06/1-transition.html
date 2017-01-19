@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transition过渡</title>
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;
+            background: red;
+            /*
+              transition:过渡属性  过渡时间  [执行曲线]  [执行动画的延迟时间]
+              过渡属性值,如果过渡属性是明确的，使用该属性名称,尽量不使用all
+              备注：颜色过渡无效
+            */
+
+            /*
+            transition-property:想使用过渡效果的属性名称 接收all
+            transition-duration:过渡事件
+            transition-timing-function：过渡执行曲线
+            transition-delay:延迟时间
+            */
+            transition: all 5s  ease-in-out 2s;
+            /*transition: height 5s linear;*/
+        }
+    </style>
+</head>
+<body>
+   <button>动画</button>
+   <div class="box"></div>
+</body>
+<script>
+    function change(){
+        var box=document.querySelector(".box");
+        box.style.borderRadius="50%";
+        box.style.width="300px";
+        box.style.height="200px";
+        box.style.marginTop="200px";
+    }
+    document.querySelector("button").onclick=change;
+</script>
+</html>

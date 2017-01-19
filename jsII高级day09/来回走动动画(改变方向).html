@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		   *{
+		   	margin: 0;
+		   	padding: 0;
+		   }
+			div{
+				width: 100px;
+				height: 100px;
+				background:#fd1;
+				position: absolute;
+				/*margin-left: 100px;*/
+				left: 100px;
+			}
+		</style>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		//js原生动画   定时器改变位置   定时器改变src的值帧动画  拖拽
+		//碰撞检测
+		//JQuery动画
+		//css3动画
+		//1.div横着走
+		//2.div来回走
+		//3.点哪里，走哪里
+	</script>
+	<script type="text/javascript">
+		var oDiv=document.getElementById("box");
+		var speed=1;
+		var dir=1;
+	    var t=setInterval(move,30);
+	    function move(){
+	    //预估下一步
+	    speed+=0.5;
+		if(oDiv.offsetLeft+oDiv.offsetWidth+speed*dir>$w()){
+			oDiv.style.left=$w()-oDiv.offsetWidth+"px";
+			dir=-1;
+			speed=1;
+		}
+		if(oDiv.offsetLeft+speed*dir<=0){
+			oDiv.style.left="0px";
+			dir=1;
+			speed=1;
+		}
+		oDiv.style.left=oDiv.offsetLeft+(speed*dir)+"px";	    	
+	    }
+
+		
+      
+	</script>
+</html>

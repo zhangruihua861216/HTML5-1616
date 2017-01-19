@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		console.log($("li"));
+		var lis=$("li");
+//		console.log(document.querySelectorAll("li")[1]);
+//		for(var i=0;i<lis.length;i++){
+//			console.log(lis[i]);
+//			console.log(lis.eq(i));
+//		}
+		lis.click(function(){
+//			this.style.background="red";
+			$(this).css("background","red");
+			console.log(this);
+			console.log($(this));
+		})
+		//dom-jquery  使用 $(dom) 
+		//jquery-dom  使用get(index) 或者jElement[index]
+		lis.get(2).style.background="blue";
+		lis[0].style.background="red";
+	</script>
+</html>

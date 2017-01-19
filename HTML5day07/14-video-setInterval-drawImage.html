@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        table td {
+            width: 49px;
+            height: 49px;
+            border: 1px dotted #ccc;
+        }
+        canvas{
+            margin: 50px;
+            box-shadow: 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+<video src="movie.mp4" autoplay width="500" height="500"></video>
+<canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+</body>
+<script>
+    //第一步  取得canvas画布
+    var canvas=document.querySelector("canvas");
+    //第二步 取得绘图环境
+    //参数 2d 且目前 必须是2d  3d草案还在制作中
+    var ctx=canvas.getContext("2d");
+    var video=document.querySelector("video");
+    //canplaythrough  提示视频可以无暂停播放
+    video.oncanplaythrough=function(){
+       ctx.drawImage(video,0,0);
+        setInterval(function(){
+            ctx.drawImage(video,0,0);
+            var idata=ctx.getImageData(0,0,500,500);
+            var  data=idata.data;
+            for(var i=0;i<data.length;i+=4){
+                var nd=(data[i]+data[i+1]+data[i+2])/3;
+                data[i]=data[i+1]=data[i+2]=nd;
+            }
+            ctx.putImageData(idata,0,0);
+        },30);
+    }
+</script>
+
+</html>

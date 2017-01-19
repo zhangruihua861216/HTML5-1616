@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			(function(){
+				function Student(name,age){
+					this.name=name;
+					this.age=age;
+					this.query=function(){
+						console.log(this.name+"  "+this.age);
+					}
+					this.add=function(attr,value){
+						this[attr]=value;
+//						console.log(this);
+					}
+					this.modify=function(attr1,attr){
+					
+						if( attr in Student){
+							attr=attr1;
+							console.log(attr);
+							console.log(this);
+						}else{
+							console.log("该属性不存在");
+						}//	
+						
+						
+
+					}
+									
+	
+					
+					this.deletes=function(attr){					
+					 
+						if(attr in Student){
+							delete this[attr];
+//							console.log(this);
+						}else {
+							console.log("该属性不存在");
+						}
+				
+						
+					}
+				}
+				
+				var student=new Student("张三","14");
+				student.add("sex","女");
+				student.modify("name1","name");
+//				student.deletes("name");
+//				student.query();
+//				student.add("sex","女");
+
+			})();
+			
+	
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

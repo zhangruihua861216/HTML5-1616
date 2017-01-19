@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 1000px;
+            margin: 100px auto;
+            perspective:500px;
+            perspective-origin:center -200px;
+        }
+        .box{
+            position: relative;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+        }
+        img{
+            position: absolute;
+            border: 1px solid ;
+           }
+        .item1{
+            animation: i1 1s forwards;
+          }
+        @keyframes i1 {
+            100%{
+                transform:translateZ(100px) rotateY(0deg);
+            }
+        }
+        .item2{
+            animation: i2 1s 1s forwards;
+             }
+        @keyframes i2 {
+            100%{
+                transform:rotateY(36deg) translateZ(307.7px)  ;
+            }
+        }
+        .item3{
+
+            /*animation: i3 1s 2s forwards;*/
+            transform: rotateY(72deg);
+        }
+        /*@keyframes  i3{*/
+            /*100%{*/
+                /*transform:  translateX(307.7px) rotateY(72deg);*/
+            /*}*/
+        /*}*/
+        .item4{
+            transform: rotateY(108deg);
+        }
+        .item5{
+            transform: rotateY(144deg);
+        }
+        .item6{
+            transform: rotateY(180deg);
+        }
+        .item7{
+            transform: rotateY(216deg);
+        }
+        .item8{
+            transform: rotateY(252deg);
+        }
+        .item9{
+            transform: rotateY(288deg);
+        }
+        .item10{
+            transform: rotateY(324deg);
+        }
+    </style>
+</head>
+<body>
+  <div class="wapper">
+      <div class="box">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item1">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item2">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item3">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item4">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item5">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item6">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item7">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item8">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item9">
+          <img src="img/bj-1.jpg" alt="" width="200" class="item10">
+      </div>
+  </div>
+</body>
+</html>

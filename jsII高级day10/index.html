@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+	var birdDownTimer;
+	var birdUpTimer;
+	setTimeout(function(){
+	 birdDownTimer=setInterval(down,100);
+	}
+		,2000);
+	
+	var  speed=1;
+	var maxSpeed=8;
+	function down(){
+		// bird top 变大
+		speed+=0.5;
+		if(speed>=maxSpeed){
+			speed=maxSpeed;
+		}
+		bird.style.top=bird.offsetTop+speed+"px";	
+		//
+		if(bird.offsetTop>=424){
+//			gameover();
+		}
+	}
+	
+	map.onclick=function(){
+		//停掉down的定时器
+		clearInterval(birdDownTimer);
+		clearInterval(birdUpTimer);
+		//创建向上的定时器
+		birdUpTimer=setInterval(up,100);
+		speed=8;
+	}
+	
+	function up(){
+		speed-=0.5;
+		//bird top减少
+		bird.style.top=bird.offsetTop- speed +"px";
+		if(speed<=0){
+			
+			//停掉向上定时器
+			clearInterval(birdUpTimer);
+			speed=1;
+			//下坠
+			birdDownTimer=setInterval(down,100);
+		}
+		if(bird.offsetTop<0){
+			console.log("撞了");
+		}
+	}
+
+
+//0.33
+//不要把浮点数进行等值比较，计算机存在误差
+if(a==0.5){
+	
+}
+
+
+//产生柱子
+
+//创建li <li></li>
+
+setInterval(createPipe,3000);
+
+var liTimer;
+function createPipe(){
+	//1.创建li
+	li.style.left=map.offsetWidth
+	//2.创建li上方的柱子
+		//2.1创建大的div  绿色背景图  随机高度（60--200）
+		//2.2创建子div  背景图是管子头  
+	//3.创建li下方的柱子
+	   	//创建大的div  绿色背景图   300--上方的高度
+	   	//创建子div  
+	   	
+ 	li.timer=setInterval(pipeMove,30);
+	function pipeMove(){
+		// left  变小
+		
+		if(li.offsetLeft<-li.offsetWidth){
+			ul.removeChild(li);
+			//清掉负责li移动的定时器
+		 clearInterval(li.timer);
+		}
+	}
+}
+	</script>
+</html>

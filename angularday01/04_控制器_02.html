@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+  <div ng-controller="aController">
+      <input type="text" ng-model="name">
+      <h1>{{name}}</h1>
+      <div ng-controller="bController">
+          <input type="text" ng-model="name">
+          <h1>{{name}}</h1>
+      </div>
+  </div>
+  <div ng-controller="cController">
+      <input type="text" ng-model="name">
+      <h1>{{name}}</h1>
+  </div>
+
+</body>
+<script>
+    var app=angular.module("myApp",[]);
+    //app.controller("myController",["",function(){}])
+    app.controller("aController",["$scope",function($scope){
+        $scope.name="a";
+    }]);
+    app.controller("bController",["$scope",function($scope){}]);
+    app.controller("cController",["$scope",function($scope){}])
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .classA{
+            background: blue;
+        }
+        .classB{
+            background: black;
+        }
+    </style>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-init="bol=true">
+<input type="checkbox" ng-model="bol">
+  <div ng-style="{width:'100px',height:'100px'}"
+       ng-class="{true:'classA',false:'classB'}[bol]">
+
+  </div>
+   <!--
+     ng-class 为元素指定样式表达式
+     ng-class="{true：'样式一',false:'样式二'}[boolean]"
+     当boolean为true时，为元素添加样式一，为false时，添加样式二
+   -->
+
+</body>
+</html>

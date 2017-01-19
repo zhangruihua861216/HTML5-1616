@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button>事件委托</button>
+		<ul>
+			<li>111</li>
+			<li>2222</li>
+			<li>33333</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+	//mouseover  mouseout
+	//mouseenter  mouseleave
+//		$('li').click(function(){
+//			console.log($(this).html());
+//		}).mouseover(function(){
+//			console.log($(this).index());
+//		})
+		//事件委托
+//		$('li').on('click',function(){
+//			console.log($(this).html());
+//		})
+		
+//		$("ul").on("click",'li',function(){
+//			console.log($(this).html());
+//		})
+		
+//		$('li').on("abc",function(){
+//			console.log($(this).html());
+//		})
+		
+//		$('li').on('click',function(ev,info){
+//			console.log(info);
+//			console.log($(this).html());
+//		})
+
+//		$("li").one("click",function(){
+//			alert();
+//		})
+
+		$("li").hover(function(){
+			$(this).css("background","red");
+		},function(){
+			$(this).css("background","blue");
+		})
+		$("button").click(function(){
+			$("<li>").html("新加的").appendTo($('ul'));
+//			$("li").trigger('abc');
+			$("li").trigger('click');
+//			$("li").eq(0).trigger('click',{name:'abc'})
+			$("li").off()
+
+		})
+		//阻止冒泡
+		//stopPropagation() 主流写法
+		//cancelBubble=true;  IE写法
+		
+		//阻止默认事件
+		//preventDefault();
+		//return false;
+		
+//		var lis=document.querySelectorAll('li');
+//		for(var i=0;i<lis.length;i++){
+//			lis[i].onclick=function(){
+//			console.log(this.innerHTML);	
+//			}
+//			
+//		}
+		
+		
+//		var ul=document.querySelector('ul');
+//		ul.onclick=function(ev){
+//		console.log(ev.target);
+//		console.log(ev.target.innerHTML);			
+//		}
+
+	</script>
+</html>

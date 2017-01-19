@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		   *{
+		   	margin: 0;
+		   	padding: 0;
+		   }
+			div{
+				height: 36px;
+				width: 100%;
+				background-color:orange;
+				line-height: 36px;
+				color: #046;
+				padding-left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div><span></span> <span></span></div>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 1、根据当前日期进行以下方面的处理：
+			a)	取得日期的年份、月份、天、时、分、秒，并转换成大写日期格式
+			1.	如：2013年8月17日 20时30分20秒
+			b)	根据日期的不同时间段，做问候语：
+			1.	早上8:00-12:00 :“早上好！欢迎登陆系统”
+			2.	中午12:00-14:00：“中午好！该休息了”
+			3.	下午14:00-18:00：“下午好！欢迎登陆系统”
+			4.	晚上19:00-00:00：“{晚上好！XXXXXXXXX}”
+			5.	注：你若觉得分的不够细，可以将时间段划分的更细一些。可以参考一下126邮箱。
+			c)	计算当前时间向前、向后（一天、一个月）的日期，并取出是星期几。
+
+		 */
+		
+		
+		var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		Date.prototype.dateFormat=function(){
+			return this.getFullYear()+"年"+getTwo(this.getMonth()+1)+"月"+getTwo(this.getDate())+"日 "+getTwo(this.getHours())+"时"+getTwo(this.getMinutes())+"分"+getTwo(this.getSeconds())+"秒 " +arr[this.getDay()];
+		}
+		
+		function getTwo(num){
+			return num<10?"0"+num:num.toString();
+		}
+		
+		var divSpan0=document.querySelectorAll("div span")[0];
+			
+		function show(){
+			var dateTime=new Date();
+			divSpan0.innerHTML="当前时间: "+dateTime.dateFormat();
+		}		
+		
+		setInterval(show,500);
+		
+		var divSpan1=document.querySelectorAll("div span")[1];
+		function sayhello(h){
+		  if(h.getHours()>=8&&h.getHours()<12){
+		  	divSpan1.innerHTML="早上好！欢迎登陆系统";
+		  }else if(h.getHours()>=12&&h.getHours()<14){
+		  	divSpan1.innerHTML="中午好！该休息了";
+		  }else if(h.getHours()>=14&&h.getHours()<18){
+		  	divSpan1.innerHTML="下午好！欢迎登陆系统";
+		  }else if(h.getHours()>=18&&h.getHours()<24){
+		  	divSpan1.innerHTML="晚上好！XXXXXXXXX";
+		  }else{
+		  	 divSpan1.innerHTML="午夜啦，该休息了";
+		  }
+		}
+		sayhello(new Date());
+		
+	   var dateTime=new Date();	
+		function forwardOneDay(){
+		dateTime.setDate(dateTime.getDate()-1);
+		return dateTime.dateFormat();
+			
+		}
+		function forwardOneMonth(){
+		dateTime.setMonth(dateTime.getMonth()-1);
+		return dateTime.dateFormat();
+		}
+	    console.log(forwardOneDay());
+	    console.log(forwardOneMonth());
+	    
+	    //前一天  
+	    var perDate=new Date(data.getTime()-24*60*60*1000);
+	    console.log(perDate.getDay());
+
+	    //后一天  
+	    var nextDate=new Date(data.getTime()+24*60*60*1000);
+	    console.log(nextDate.getDay());
+	    
+	    //1.在页面上显示今天距离今年结束还有多少天多少小时多少秒
+	</script>
+</html>

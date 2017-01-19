@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            background: red;
+        }
+    </style>
+    <!--<script src="js/webworker.js"></script>-->
+</head>
+<body>
+<button>显示</button>
+<div class="box"></div>
+
+</body>
+<script>
+    var box=document.querySelector(".box");
+    var btn=document.querySelector("button");
+    console.log(window);
+    btn.onclick=function(){
+//        _initNumArr();
+        var worker=new Worker("./js/webworker.js");
+        worker.onmessage=function(e){
+            console.log(e.data);
+        }
+        worker.postMessage("start");
+        var h=0;
+         var inter=setInterval(function(){
+             h++;
+             box.style.height=h+"px";
+             h>200&&clearInterval(inter);
+         },30)
+    }
+
+</script>
+</html>

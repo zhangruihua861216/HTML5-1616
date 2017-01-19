@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	    $.get("data.json",function(res){
+	    	var ul=$("<ul/>").appendTo("body");
+	    	if(res.length>0){
+	    		$.each(res,function(index,n){
+	    			$("<li/>").html("<h1>"+n.name+"</h1>---"+n.age+"").appendTo(ul);
+	    		})
+	    	}
+	    })
+	    
+	    $.post("data.json",function(res){
+	    	var ul=$("<ul/>").appendTo("body");
+	    	if(res.length>0){
+	    		$.each(res,function(index,n){
+	    			$("<li/>").html("<h1>"+n.name+"</h1>---"+n.age+"").appendTo(ul);
+	    		})
+	    	}
+	    })
+	    
+	    
+		$.ajax({
+			url:"data.json",
+			type:"get",
+			data:{
+				//要发送到服务器的数据
+				username:"xxx",
+				pwd:"xxx"
+			},
+			async:true,  //是否异步请求 默认true 异步请求
+			dataType:"text",//指定服务器返回的数据类型，如无必要，无须指定  json  hmtl xml text script·  jsonp
+			success:function(res){
+				res=$.parseJSON(res);
+				console.log(res); //指定请求方式  默认get
+
+				var ul=$("<ul/>").appendTo("body");
+				if(res.length>0){
+					$.each(res, function(index,n) {
+						console.log(index);
+						console.log(n);
+						$("<li/>").html("<h1>"+n.name+"</h1>---"+n.age+"").appendTo(ul);
+					});
+				}
+				
+			},
+			
+			error:function(err){
+				console.log(err);
+			}
+
+		});
+	</script>
+</html>

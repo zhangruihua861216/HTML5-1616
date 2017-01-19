@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--必须为post请求-->
+		<!--enctype必须为multipart/form-data-->
+		<!--必须是form表单-->
+		<!--enctype规定form如何对数据进行编码 默认的application/x-www-form-urlencode-->
+		<form action="fileUpload.php" method="post" enctype="multipart/form-data">
+			<input type="file" name='myFile' value=""/>
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

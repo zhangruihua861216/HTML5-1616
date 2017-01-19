@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="user" id="user" value="" />
+		<button>登录</button>
+	</body>
+	<script type="text/javascript">
+		/* 服务器如何知道曾经来过？那这里面就有一个重要的知识点，那就是cookie，cookie是什么呢，就是
+		 服务器在你的电脑上，保留一些资料，这些资料是存在于你的电脑里，并且是一个文本文件
+		当下次再次去访问同一个网站时，服务器会从cookie资料里面，读出上次保存的文本内容，判断一下
+		使用者，可以送出特定的网页内容给你
+		 */
+		var userInput=document.querySelector("#user");
+		    btn=document.querySelector("button");
+		    btn.onclick=function(){
+		    	//假装有后天流程
+		    	document.cookie="user="+userInput.value;
+		    }
+		    window.onload=function(){
+		    	//取得cookie
+		    	var cookie=document.cookie;
+		    	//判断cookie是否有user
+		    	console.log(cookie);
+		    	cookie=cookie.split(";");
+		    	console.log(cookie);
+		    	for(var i=0;i<cookie.length;i++){
+		    		var _c=cookie[i];
+		    		console.log(_c);
+		    		_c=_c.split("=");
+		    		console.log(_c);
+		    		if(_c[0].trim()=="user"){
+		    			console.log(_c[1]);
+		    			userInput.value=_c[1];
+		    		}
+		    	}
+		    }
+	</script>
+</html>

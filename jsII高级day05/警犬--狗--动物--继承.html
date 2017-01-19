@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+				/*
+		 * Animal  sex weight
+		 *         move  eat
+		 * Dog     name  color  type
+		 *         bark
+		 * PoliceDog  DogId
+		 *            work
+		 */
+		
+		
+		function Animal(sex,weight){
+			this.sex=sex;
+			this.weight=weight;
+//			console.log(this);			
+		}
+		
+		Animal.prototype.move=function(){
+			console.log("走啊走啊")
+		};
+		Animal.prototype.eat=function(){
+			console.log("进食中....")
+		};
+		
+		
+		function Dog(name,color,type,sex,weight){
+			this.name=name;
+			this.color=color;
+			this.type=type;
+//			console.log(this);
+			Animal.call(this,sex,weight);
+			
+		}
+		Dog.prototype=new Animal();
+		Dog.prototype.bark=function(){
+			console.log("汪汪汪")
+		};
+		
+		function PoliceDog(DogId,name,color,type,sex,weight){
+			this.DogId=DogId;
+//			console.log(this);
+			Dog.call(this,name,color,type,sex);
+		}
+		
+		PoliceDog.prototype=new Dog();
+		PoliceDog.prototype.work=function(){
+			console.log("执行任务中..........")
+		};
+		
+		var pDog=new PoliceDog("001","阿虎","黑色","德国牧羊犬","雄性",100);
+		console.log(pDog);
+//		pDog.work();
+//		pDog.bark();
+//		pDog.move();
+//		pDog.eat();
+		console.log(pDog.__proto__==PoliceDog.prototype);
+		console.log(pDog.__proto__==Dog.prototype);
+		console.log(pDog.__proto__.__proto__==Dog.prototype);		
+		console.log(pDog.__proto__.__proto__==Animal.prototype);
+		console.log(pDog.__proto__.__proto__.__proto__==Animal.prototype);
+		console.log(pDog.__proto__.__proto__.__proto__.__proto__==Object.prototype);
+		console.log(pDog.__proto__.__proto__.__proto__.__proto__.__proto__);
+		//Object---->Animal---->Dog----PoliceDog
+		
+//		console.log( pDog instanceof Object);
+//		console.log( pDog instanceof Animal);
+//		console.log( pDog instanceof Dog);
+//		console.log( pDog instanceof PoliceDog);
+	</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		   div{
+		   	/*display: block;*/
+		   }
+			.pipe{
+				width:62px;
+				height:100%;
+				background: gold;
+				position: absolute;
+				list-style: none;
+			}
+			.top{
+				position: absolute;
+				top:0;		
+				background:url(img/up_mod.png);
+				width:62px;
+				
+			}
+			/*上方管道的帽*/
+			#top_pipe_cap{
+				background:url(img/up_pipe.png) no-repeat;
+
+				
+			}			
+			.bottom{
+				position: absolute;
+				background:url(img/down_mod.png);
+				bottom: 0;
+				width:62px;
+			}
+			/*下方管道的帽*/
+			#bottom_pipe_cap{
+				background: url(img/down_pipe.png) 0 top no-repeat;
+			}
+			#game{
+			width:343px;
+			height:424px;
+			background:green;
+			overflow:hidden;
+			position: absolute;
+			}		
+		</style>
+	</head>
+	<body>
+		<div id="game">
+			<ul>
+				<li class="pipe">
+					<div class="top"><div id='top_pipe_cap'></div></div>
+					<div class="bottom"><div id="bottom_pipe_cap"></div></div>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			//生成随机数
+			function rand(min,max){
+				return parseInt(Math.random()*(max-min))+min;
+			}		
+			var top_cap=document.getElementById("top_pipe_cap");
+			console.log(top_cap);
+			var topHeight = rand(52,250);
+			top_pipe_cap.style.height=topHeight+"px";
+			console.log(topHeight);
+			var bottom_div_w=document.getElementById("bottom_pipe_cap")
+			bottom_div_w.style.height = 300-topHeight + "px";
+		</script>
+	</body>
+</html>

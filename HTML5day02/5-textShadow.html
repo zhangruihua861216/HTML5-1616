@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div{*/
+            /*font-size: 50px;*/
+            /*margin: 50px;*/
+            /*display: inline-block;*/
+        /*}*/
+        /*div:nth-child(1){*/
+            /*!**/
+                /*text-shadow: h-shadow v-shadow  [blur]  color*/
+                /*h-shadow:横轴偏移距离*/
+                /*v-shadow:纵轴偏移距离*/
+                /*blur:模糊半径*/
+                /*color:颜色*/
+
+            /**!*/
+            /*text-shadow: 2px 2px red;*/
+        /*}*/
+        /*div:nth-child(2){*/
+            /*text-shadow: 2px 2px  2px red;*/
+        /*}*/
+        /*div:nth-child(3){*/
+           /*text-shadow: 0px 0px  5px purple;*/
+        /*}*/
+        /*div:nth-child(4){*/
+            /*text-shadow: 2px 0px  1px red,-2px 0px 5px blue,0px -5px 1px yellow;*/
+        /*}*/
+/******************************************************************/
+        div{
+            background:gray;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 30px;
+        }
+        div:nth-child(1){
+            color: #FFFFFF;
+            text-shadow: 0 -0px 8px red;
+          }
+        div:nth-child(2) span{
+            text-shadow:0 0 5px #fff;
+        }
+    <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<div>这是一段文本阴影</div>-->
+    <!--<div>这是一段文本阴影</div>-->
+    <!--<div>这是一段文本阴影</div>-->
+    <!--<div>这是一段文本阴影</div>-->
+    <!--<div>这是一段文本阴影</div>-->
+    <div>Text Shadow</div>
+    <div><span>T</span><span>e</span><span>x</span><span>t</span><span> S</span><span>h</span><span>a</span><span>d</span><span>o</span><span>w</span><span></div>
+    <div>Text Shadow</div>
+    <div>Text Shadow</div>
+    <div>Text Shadow</div>
+    <div>Text Shadow</div>
+</body>
+</html>

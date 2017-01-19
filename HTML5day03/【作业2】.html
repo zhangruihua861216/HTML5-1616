@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+        }
+        @media screen and (max-width:400px) {
+            .main{
+               flex-basis: 100%;
+                background: pink;
+                display: flex;
+                flex-direction: column;
+            }
+            .main div{
+                background:blue ;
+                border-bottom: 1px solid #2c3429;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+
+            }
+        }
+
+        @media screen and (min-width:400px) and (max-width: 900px) {
+            .main{
+                flex-basis: 100%;
+                background: pink;
+                display: flex;
+            }
+            .main div{
+              flex: 1;
+              text-align: center;
+              background:blue ;
+              border-bottom: 1px solid #2c3429;
+              height: 40px;
+            }
+        }
+
+        @media screen and (min-width:900px) {
+            .main{
+                flex-basis: 100%;
+                background: pink;
+                display: flex;
+                justify-content: flex-end;
+                background:blue ;
+                height: 40px;
+                border-bottom: 1px solid #2c3429;
+            }
+            .main div{
+               width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+     <div>head</div>
+     <div>about</div>
+     <div>products</div>
+     <div>contact</div>
+</div>
+</body>
+</html>

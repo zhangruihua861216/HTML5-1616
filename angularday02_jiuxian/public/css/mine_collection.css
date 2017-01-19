@@ -1,0 +1,23 @@
+.mine-collection-container .mine-collection-productIcon{
+    background: url("../images/mine/productIcon.png") no-repeat;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+
+
+}
+
+.mine-collection-container .mine-collection-cartIcon{
+    background: url("../images/mine/cartIcon.png") -5rem top no-repeat ;
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.5rem;
+}
+.mine-collection-container ul{
+    border-bottom: 1px solid;
+}
+.mine-collection .allCollection{
+    background: #d4d4d4;
+    height: 1rem;
+}
+

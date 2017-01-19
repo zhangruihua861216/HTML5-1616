@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            font-size: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+            height: 25px;
+            background: red;
+        }
+        main{
+            background: pink;
+            flex: 1 1 100%;
+            /*flex-basis: 100%;*/
+        }
+        footer,header{
+            height: 80px;
+            background: red;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+        }
+        footer{
+            display: flex;
+            align-items: center;
+            align-content:flex-start;
+
+        }
+        footer div{
+            flex: 1;
+            border:1px solid gray;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <header>
+       <span>定位</span>
+       <div>
+           <input type="text">
+           <span>搜索</span>
+       </div>
+   </header>
+   <main>我是主体部分内容</main>
+   <footer>
+       <div>1</div>
+       <div>2</div>
+       <div>3</div>
+       <div>4</div>
+   </footer>
+</body>
+</html>

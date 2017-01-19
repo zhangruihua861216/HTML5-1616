@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        table td {
+            width: 49px;
+            height: 49px;
+            border: 1px dotted #ccc;
+        }
+        canvas{
+            margin: 50px;
+            box-shadow: 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+     <canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+    <table>
+
+    </table>
+</body>
+<script>
+    //第一步  取得canvas画布
+    var canvas=document.querySelector("canvas");
+    //第二步 取得绘图环境
+    //参数 2d 且目前 必须是2d  3d草案还在制作中
+    var ctx=canvas.getContext("2d");
+    var img=new Image();
+    img.src="img/bj-1.jpg";
+    img.onload=function(){
+        //drawImage(img,x,y) 图片有多大则绘多大(超出画布范围的不绘制)
+//        ctx.drawImage(img,0,0);
+        //drawImage(img,x,y,iw,ih)绘制iw,ih的大小(会缩放)
+//        ctx.drawImage(img,0,0,100,100);
+        //drawImage(img,ix,iy,iw,ih,cx,cy,cw,ch)；
+        //前四个参数 指定了在图片中 从何处开始切  切多少
+        //后四个参数  指定了前面切下来的图片  画在画布的何处 画多大
+        ctx.(img,0,0,100,100,150,150,100,100);
+    }
+</script>
+<script>
+    var table = document.querySelector("table");
+    for (var i = 0; i < 10; i++) {
+        var tr = document.createElement("tr");
+        for (var j = 0; j < 10; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+</script>
+</html>

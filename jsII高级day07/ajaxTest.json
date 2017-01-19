@@ -1,0 +1,27 @@
+{
+	"method" : "ajaxTest",
+	"result" : {
+		"list" :[{
+				"name": "张三",
+				"age": 18,
+				"sex":"男",
+				"address":"河北"
+			},{
+				"name": "psyche",
+				"age": 18,
+				"sex":"男",
+				"address":"天津"
+			},{
+				"name": "李四",
+				"age": 16,
+				"sex":"女",
+				"address":"河北"
+			},{
+				"name": "cat",
+				"age": 17,
+				"sex":"男",
+				"address":"上海"
+			}],
+        "totalnumber": 2
+	}
+}

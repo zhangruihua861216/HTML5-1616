@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+	   /*div:hover{
+	   	background:red;
+	   }*/
+		</style>
+	</head>
+	<body>
+
+	</body>
+	<script type="text/javascript">
+	   $(document).ready(function(){
+	    var div1=$("<div>菜单一</div>");
+	    div1.attr("class","div1");
+	    $("body").append(div1);
+		var div2=$("<div>菜单二</div>");
+		div2.attr("class","div2");
+		$("body").append(div2);
+		var div3=$("<div>菜单三</div>");
+		div3.attr("class","div3");
+		$("body").append(div3);
+		var div4=$("<div>菜单四</div>");
+		div4.attr("class","div4");
+		$("body").append(div4);
+		
+		$("body>div:lt(4)").css("background","blue").css("width","100px").css("height","30px").css("margin-right","10px")
+		.css("margin-bottom","10px").css("line-height","30px").css("text-align","center").css("color","#fff").css("float","left").css("cursor","pointer");
+        
+        var subDiv=$("<div></div>");
+        $("body").append(subDiv);
+	    var subDiv1=$("<div>菜单一子样式</div>");
+	    subDiv1.attr("class","subdiv1");
+	    $("body div:eq(4)").append(subDiv1);
+//	    $("body").append(div1);
+		var subDiv2=$("<div>菜单二子样式</div>");
+		subDiv2.attr("class","subdiv2");
+		$("body div:eq(4)").append(subDiv2);
+		var subDiv3=$("<div>菜单三子样式</div>");
+		subDiv3.attr("class","subdiv3");
+		$("body div:eq(4)").append(subDiv3);
+		var subDiv4=$("<div>菜单四子样式</div>");
+		subDiv4.attr("class","subdiv4");
+		$("body div:eq(4)").append(subDiv4);
+		
+		$("body div:eq(4)").css("height","200px").css("width","430px").css("border","1px solid red").css("clear","both").css("overflow","hidden");
+		$("body div:eq(4) div").css("height","200px").css("width","430px").css("border","1px solid red");
+		
+		$("body>div:lt(4)").on("mouseenter",function(){
+			$(this).css("background","red");
+		    $("body div:eq(4)").children().css("display","none");			
+			var attr1=this.getAttribute("class");
+		    $(".sub"+attr1).css("display","block");
+		    console.log($(".sub"+this.getAttribute("class")));
+			
+		}).on("mouseleave",function(){
+			$(this).css("background","blue");
+		 })
+		
+	   })
+
+
+	</script>
+</html>

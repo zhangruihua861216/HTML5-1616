@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="ajaxfileupload.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<input type="file" name="myFile" id="myFile1" value="" />
+		<input type="button"  value="提交"/>
+	</body>
+	<script type="text/javascript">
+	    $("input:eq(1)").click(function(){
+			$.ajaxFileUpload({
+	            url: "fileUpload.php",
+	            fileElementId: "myFile1",
+	            dataType: "text",
+	            success: function(data,status) {
+	                if(status=="success"){
+	                    $("<img/>").attr("src",data).appendTo($("body"));
+	                }
+	            }
+	        }) 	    	
+	    })
+
+	</script>
+</html>

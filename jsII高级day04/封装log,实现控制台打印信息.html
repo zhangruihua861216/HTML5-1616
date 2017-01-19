@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+				
+		//封装函数log 实现在控制台上打印信息
+		function log(msg){
+			//arguments [120,300,"哈哈"]
+			console.log(this);
+//			for(var i=0;i<arguments.length;i++){
+//				console.log(arguments[i]);
+//			}
+//			console.log(msg);
+			console.log.apply(window,arguments);//console.log(120,300,"哈哈")
+		}
+//		log("我今天非常开心");
+		log(120,300,"哈哈");
+//		console.log(120,300,"哈哈")
+	</script>
+</html>

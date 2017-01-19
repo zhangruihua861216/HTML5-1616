@@ -1,0 +1,171 @@
+header{
+    background-color: #f9fafd;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+.address-detail{
+    background: #FFFFFF;
+    padding: .6rem 0;
+    font-size: 1.4rem;
+
+}
+.address-detail div{
+    padding: .5rem 0;
+}
+.address-detail div label{
+    width: 10rem;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    padding-right: .8rem;
+}
+.address-detail div span{
+     width: 20rem;
+     display: inline-block;
+}
+.address-bj-1{
+    height: .3rem;
+    background-image: url("../../img/ShoppingCart-bj-1.png");
+}
+
+.car-detail{
+    background: #FFFFFF;
+    margin-top: 1rem;
+    padding-left: 2rem;
+
+}
+.car-detail .part-1{
+    border-bottom: 2px solid #efefef;
+    height: 6rem;
+}
+.car-detail .part-1 span{
+    color: #999;
+}
+.car-detail .part-1 div:first-of-type{
+    font-size: 1.6rem;
+    padding: .8rem  .4rem;
+}
+.car-detail .part-1 div:first-of-type span:first-of-type:before{
+   content: "";
+   background: #ffd600;;
+   width:.5rem;
+   height: 1.5rem;
+   display: inline-block;
+   position: relative;
+   top: .3rem;
+   margin-right: .4rem;
+   border-radius: 2rem;
+
+}
+.car-detail .part-1 div:first-of-type span:last-of-type{
+    float: right;
+    color: #e64f1a;
+    padding: .4rem 1.6rem;
+    border-radius: 2rem;
+    border: 1px solid #ff3800;;
+    display: inline-block;
+   }
+.car-detail .part-1 div:last-of-type {
+    margin-top: .7rem;
+    font-size: 1.1rem;
+    color: #999;
+
+}
+.car-detail .part-2{
+
+    line-height:6rem;
+    padding-bottom: .4rem;
+    border-bottom: 2px solid #efefef;
+    height: 6rem;
+    position: relative;
+
+}
+.car-detail .part-2 span:first-of-type{
+    color: #e64f1a;
+    margin-left: 1rem;
+}
+.ReceivingTime{
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    bottom: 0rem;
+    left: -2rem;
+    height: 4.8rem;
+
+}
+.car-detail .part-2 div .reserve{
+    float: right;
+    margin-right: 2rem;
+
+}
+.car-detail-font{
+    font-size: 1.3rem;
+}
+.car-detail .part-3{
+    border-bottom: 2px solid #efefef;
+    height: 6rem;
+    line-height: 6rem;
+}
+.part-3 input{
+    font-size: 1.3rem;
+    width: 20rem;
+    height: 4rem;
+    margin-left: 1.2rem;
+
+}
+.part-4{
+     border-bottom: 2px solid #efefef;
+     height: 8.5rem;
+     padding: .5rem 0;
+
+ }
+.part-4 .list .product{
+    list-style: none;
+}
+.part-4 .list .product div .checkbox-one{
+    float: left;
+    margin-top: 3.5rem;
+    margin-right: .5rem;
+}
+.part-4 .list .product div img{
+    width: 5rem;
+    background: pink;
+    float: left;
+    margin-top: 1.5rem;
+}
+.part-4 .list .product .wrap{
+    float: right;
+    width: 22rem;
+}
+.part-4 .list .product div section{
+    background: gold;
+}
+.part-5{
+    border-bottom: 2px solid #efefef;
+    height: 5.5rem;
+    line-height: 5.5rem;
+    font-size: 1.4rem;
+
+}
+.part-5 .checkbox{
+    float: left;
+    margin-top: 2.5rem;
+    margin-right: .5rem;
+    margin-left: .4rem;
+}
+.part-5 .submit{
+    float: right;
+    line-height: 5.5rem;
+    background: #ffd600;
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 1.8rem;
+}
+
+.part-5 .totalPrice{
+    color:#e64f1a;
+}

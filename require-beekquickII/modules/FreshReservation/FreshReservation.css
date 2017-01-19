@@ -1,0 +1,114 @@
+.FreshReservation-title{
+    height: 5rem;
+    background: #f9fafd;
+    line-height: 5rem;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    padding: 0 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    position:fixed;
+    top: 0rem;
+    z-index: 5;
+    font-weight: bold;
+
+
+}
+.FreshReservation-nav-first{
+    margin-top: 5rem;
+}
+.FreshReservation-nav{
+    display: flex;
+}
+.FreshReservation-nav li{
+    flex: 1;
+    text-align: center;
+    list-style: none;
+    background: #FFFFFF;
+    height: 3rem;
+    line-height: 3rem;
+}
+.FreshReservation-nav li{
+    border-bottom: 1px solid #e0e0e0;
+}
+.FreshReservation-nav li a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+}
+.FreshReservation-nav li a:hover{
+    color: red;
+    text-decoration: underline;
+}
+.FreshReservation-Reservation h3{
+    height: 3rem;
+    line-height: 3rem;
+    background: #FFFFFF;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 1rem;
+    color: #6d6d6d;
+    padding-left: 2rem;
+}
+.FreshReservation-Reservation{
+    position: relative;
+}
+.FreshReservation-Reservation h3:before{
+    content: "";
+    display: block;
+    font-size: 2rem;
+    width: .8rem;
+    height: 1.5rem;
+    position:absolute;
+    top: .8rem;
+    left: .8rem;
+    background: #F38631;
+}
+.FreshReservation-Reservation li{
+    list-style: none;
+    background: #FFFFFF;
+    height: 11rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+.FreshReservation-Reservation  img{
+    float: left;
+    height: 10rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.FreshReservation-Reservation li div{
+    color: #6d6d6d;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    position: relative;
+}
+.Reservation-name{
+    padding-top: 2rem;
+}
+.FreshReservation-Reservation li div  .Reservation-price{
+    font-weight: bold;
+    padding-top: 2rem;
+    color: red;
+}
+.FreshReservation-Reservation li div .Reservation-price-old{
+    text-decoration: line-through;
+    padding-left: 1rem;
+}
+.FreshReservation-Reservation li div  .Reservation-price-add{
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    right: 2rem;
+    bottom: -2rem;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    border: 1px solid #9d9d9d;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 3.8rem;
+    background: #FFFFFF;
+    margin-right: .7rem;
+}
+.FreshReservation-Reservation:last-of-type{
+    margin-bottom: 6rem;
+}

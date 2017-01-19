@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		.box{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			position: absolute;
+			background-color: orange;
+		}
+	</style>		
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	document.body.onclick = function(e){
+		
+		var evt = e||window.event;
+		for (var i = 0;i < 10;i++) {
+			var oDiv = document.createElement("div");
+			oDiv.innerHTML = i;
+			oDiv.className = "box";
+			oDiv.style.left = evt.pageX + "px";
+			oDiv.style.top = evt.pageY + "px";
+			document.body.appendChild(oDiv);
+
+			var speedX = (parseInt(Math.random()*2)==0?1:-1)*(parseInt(Math.random()*20)+1);
+			var speedY = (parseInt(Math.random()*2)==0?1:-1)*(parseInt(Math.random()*20)+1);
+
+			setInterval(move,2000);
+			function move()	{
+				oDiv.style.left = oDiv.offsetLeft + speedX + "px";
+				oDiv.style.top = oDiv.offsetTop + speedY + "px";
+			}
+		}
+	}
+	</script>
+</html>

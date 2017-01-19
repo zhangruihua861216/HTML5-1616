@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+   <my-directive></my-directive>
+   <div class="my-directive"></div>
+   <div my-directive></div>
+   <!-- directive:my-directive-->
+
+</body>
+<script>
+    /*
+     *  directive(directiveName,function(){
+     *    return{
+     *        restrict:"ECMA"  ，默认EA 指令在页面中的渲染方式(出现位置)
+     *           E:标签模式
+     *           C:class模式
+     *           M:注释模式
+     *           A:属性模式
+     *        template:"" ,一个字符串模板
+     *        replace: true|false 是否替换原节点
+     *        (在M(注释)模式下，必须为true)
+     *         controller:controller|function() 指定一个控制器
+     *         templateUrl:"url" 指定一个模板位置
+     *    }
+     *  }
+     */
+    angular.module("myApp",[])
+            .directive("myDirective",function(){
+                return{
+                    template:"<h1>欢迎来到王者荣耀</h1>",
+                    restrict:"ECMA",
+                    replace:true
+                }
+            });
+</script>
+</html>

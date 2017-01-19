@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 100px;
+				height: 100px;
+				background: #FFDD11;
+				position: absolute;
+			}
+			#box2{
+				width: 100px;
+				height: 100px;
+				background:orangered;
+				position: absolute;
+				left: 600px;
+				top: 200px;
+			}			
+		</style>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='box1'></div>
+		<div id="box2"></div>
+	</body>
+	<script>
+		var divBox1=document.getElementById("box1");
+		var divBox2=document.getElementById("box2");
+		
+	    EventT(divBox1);
+	    EventT(divBox2);
+		function EventT(obj){
+			eventUtill.addEventHandler(obj,"mousedown",down)
+			function down(e){
+				var e=e||window.event;
+				var X=e.offsetX;
+				var Y=e.offsetY;			
+				eventUtill.addEventHandler(document,"mousemove",move);
+			
+			function move(e){
+				
+				var pX=e.pageX;
+				var pY=e.pageY;
+				obj.style.left=pX-X+"px";
+				obj.style.top=pY-Y+"px";
+				
+				//1.获取box1距离左边的距离
+				 var Lbox1=obj.offsetLeft;
+//				 var Lbox2=
+			}		
+	
+				eventUtill.addEventHandler(document,"mouseup",up);
+				function up(){
+					eventUtill.deleteEventHandler(document,"mousemove",move);
+				}
+			}				
+		}
+
+	</script>
+</html>

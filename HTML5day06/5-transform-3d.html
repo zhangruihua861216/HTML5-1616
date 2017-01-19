@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper{
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            perspective: 900px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            background: red;
+            font-size: 80px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .item{
+              /*transform: rotateY(45deg);*/
+            transform: translateZ(800px);
+        }
+    </style>
+</head>
+<body>
+  <div class="wrapper">
+      <div class="box">
+          <div class="item">2</div>
+      </div>
+  </div>
+</body>
+</html>

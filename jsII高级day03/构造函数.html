@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+	//注意：构造函数的函数名首字符大写，这是一种程序员之间的约定
+		function Student(){
+			this.name='王小小';
+			this.num="001";
+			this.sex='男';
+			this.display=function(){
+				console.log("打印信息");
+			}
+		}
+		
+		var s1=new Student();
+		
+		/*
+		  new  Student()在堆上创建一个Student"类"的对象，然后返回对象的首地址，把对象的首地址赋值给s1这个全局		 
+		   变量。我们呢通常把s1称为对象名
+		*/
+		/*
+		 * 通过构造函数是如何创建对象的
+		 * 1.创建一个新的空对象
+		 * 2.将构造函数中的this指向新对象
+		 * 3.执行函数体给新对象添加属性
+		 * 4.返回新对象的地址
+		 */
+		console.log(s1);
+		
+		//构造函数----模板  "类"----"引用类型"
+		function Student1(_num,_name,_sex){
+			this.num=_num;
+			this.name=_name;
+			this.sex=_sex;
+			this.display=function(){
+				console.log(this.name+" "+this.sex);
+			}
+		}
+		//对象 -----引用类型的实例
+		var  s11=new Student1("001","赵四","男");
+		var  s12=new Student1("002","赵武","男");
+		console.log(s11,s12);
+		
+		//访问对象的属性
+		console.log(s1.name);
+		console.log(s1["name"]);
+		
+		delete s11.sex;
+		
+		console.log(s11);
+		
+        s12.display();
+        
+        
+        
+        
+        
+        
+        function Rect(l,w){
+        	this.length=l;
+        	this.width=w;
+        	this.getArea=function(){
+        		console.log("长方形的面积是:"+this.length*this.width);
+        	}
+        }
+        
+        
+        var r=new Rect(2,3);
+        console.log(r);
+        
+        r.getArea();
+        
+        
+        function Bank(id,money){
+        	this.id=id;
+        	this.money=money;
+        	this.saveMoney=function(m){
+        		this.money+=m;
+        	}
+        	this.crashMoney=function(m){
+        		this.money-=m;
+        	}
+        	this.showMoney=function(){
+        		console.log("余额是:" + this.money);
+        	}
+        }
+		
+		
+		var  count=new Bank("001",9);
+		count.showMoney();
+		console.log(count);
+		count.saveMoney(2);
+		count.showMoney();		
+		console.log(count);
+		count.crashMoney(5);
+		count.showMoney();		
+		console.log(count);
+	</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/zeptoV1.2.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+<script>
+    console.log($);
+    $(".box").css("background","red").attr("name","test");
+    var str="abc-def";
+//    camelCase(str) 将字符串转为驼峰式
+    console.log($.camelCase(str));
+    //contains(parentNode,childNode)判断父节点是否包含指定的子节点（Node）
+    console.log($.contains(document.body,document.querySelector(".box")));
+    var arr=[1,5,9];
+    console.log($.grep(arr,function(m){
+        return m>=5;
+    })
+    )
+//  $.noop 产品一个空函数
+    console.log($.noop);
+    console.log($.isFunction($.noop));
+</script>
+</html>

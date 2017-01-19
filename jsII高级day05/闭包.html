@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//闭包：包含其它函数的局部变量的函数或者说包含外部函数的局部变量的函数
+		
+		//闭包能够让变量永久的驻留在内存中。变量长期驻留在内存中会占用内存，所以使用闭包需谨慎。尤其是IE浏览器
+		
+		//闭包主要是为了让变量长期的驻留在内存中，防止污染全局环境。
+		function outer(){
+			var a=100;
+			
+			function inner(){
+				console.log(a);
+			}
+			
+			return inner;
+		}
+		
+	console.log(outer());
+	
+	var f=outer();
+	f();
+	f=null;  //进行摧毁
+	</script>
+</html>

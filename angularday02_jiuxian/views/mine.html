@@ -1,0 +1,60 @@
+
+
+<link rel="stylesheet" href="public/css/mine.css">
+<link rel="stylesheet" href="public/css/reset.css">
+<!--<script src="public/js/bootstrap.min.js"></script>-->
+<!--<link rel="stylesheet" href="public/css/bootstrap.min.css">-->
+<!--<script src="public/js/jquery-1.11.1.min.js"></script>-->
+<link rel="stylesheet" href="public/css/mine_common.css">
+
+<body>
+<header class="mine-headerComBtn" >
+    <span class="icon btn btn-default btn-block"><</span>
+    <div class="btn btn-default btn-block" ng-controller="mineHeadController">{{title}}</div>
+</header>
+<div class="mine-userInfo">
+    <div class="mine-userInfo-img"><img src="public/images/mine/topBg.jpg" alt=""></div>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td rowspan="2" class="userInfoTd">
+                <img src="public/images/mine/userPhoto.png" alt="" class="userPhoto"></td>
+            <td colspan="4" class="userInfoId">jxw73246022</td>
+        </tr>
+        <tr>
+            <td colspan="4">下载客户端 美酒随时抢</td>
+        </tr>
+        <tr class="userInfoList">
+            <td class="grade"><img src="public/images/mine/grade.png" alt=""><span>LV1 酒虫</span></td>
+            <td>代付款</td>
+            <td class="active">代发货</td>
+            <td>代收货</td>
+            <td>已完成</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="mine-contentFrame" ng-controller="mineBodyController">
+    <table class="table text-center" >
+        <tr >
+            <td ng-repeat="item in forumOne" ><img src="public/images/mine/mine-contentFrame-order-1.png" alt="">{{item.title}}</td>
+        </tr>
+        <tr >
+            <td ng-repeat="item in forumTwo" ><img src="public/images/mine/mine-contentFrame-order-1.png" alt="">{{item.title}}</td>
+        </tr>
+        <tr >
+            <td ng-repeat="item in forumThree" ><img src="public/images/mine/mine-contentFrame-order-1.png" alt="">{{item.title}}</td>
+        </tr>
+
+    </table>
+</div>
+<div class="mine-logout">
+<button class="btn btn-default btn-block">退出登录</button>
+</div>
+</body>
+
+
+
+
+

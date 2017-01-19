@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper{
+            perspective:500px;
+            perspective-origin: 30% 20px;
+        }
+        .box{
+            transform-style: preserve-3d;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 100px auto;
+            animation:boxRot 5s 7s infinite;
+        }
+        @keyframes boxRot {
+            100%{
+                /*transform: rotate3d(1,1,1,360deg);*/
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        .box div{
+            width: 100px;
+            height: 100px;
+            background: green;
+            opacity: .6;
+            position: absolute;
+            text-align: center;
+            line-height: 100px;
+            font-size: 80px;
+            /*backface-visibility: hidden;*/
+
+        }
+        .items1{
+            z-index: 6;
+            transform-origin: top;
+            animation: i1 1s  forwards;
+        }
+        .items2{
+            z-index: 5;
+            transform-origin: bottom;
+            animation: i2 1s  1s forwards;
+        }
+        .items3{
+            z-index: 4;
+            transform-origin: left;
+            animation: i3 1s  2s forwards;
+        }
+        .items4{
+            z-index: 3;
+            transform-origin: right;
+            animation: i4 1s  3s forwards;
+        }
+        .items5{
+            z-index: 2;
+            animation: i5 1s  4s forwards;
+        }
+        .items6{
+            z-index: 1;
+            animation: i6 1s  5s forwards;
+        }
+        @keyframes i1 {
+            100%{
+                transform: rotateX(90deg);
+            }
+        }
+        @keyframes i2 {
+            100%{
+                transform: rotateX(-90deg);
+            }
+        }
+        @keyframes i3 {
+            100%{
+                transform: rotateY(-90deg);
+            }
+        }
+        @keyframes i4 {
+            100%{
+                transform: rotateY(90deg);
+            }
+        }
+        @keyframes i5 {
+            100%{
+                transform: translateZ(100px);
+            }
+        }
+        @keyframes i6 {
+            100%{
+                transform: rotateY(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="items1">1</div>
+        <div class="items2">2</div>
+        <div class="items3">3</div>
+        <div class="items4">4</div>
+        <div class="items5">5</div>
+        <div class="items6">6</div>
+    </div>
+</div>
+</body>
+</html>

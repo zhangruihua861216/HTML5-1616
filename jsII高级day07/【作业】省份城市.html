@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/封装ajax请求.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<select name="pro">
+			<option value="">请选择</option>
+		</select>
+		<select name="city">
+			<option value="">请选择</option>
+		</select>
+		<input type="text" name="code" id="code" value=""placeholder="城市编码" />
+		<button>查询</button>
+	</body>
+	<script type="text/javascript">
+//		var xhr=ajax("get","ajaxTest.json",true,null,ajaxCallBack);
+//		var xhr=ajax("get","ajaxTest.json",true,{name:"zhangsan",age:18},ajaxCallBack);
+		var xhr=ajax("post","city.json",true,{name:"zhangsan",age:18},ajaxCallBack);
+		function ajaxCallBack(){
+			if(xhr.readyState==4){
+				if(xhr.status>=200&&xhr.status<300){
+//					console.log(JSON.parse(xhr.responseText));
+					var obj=JSON.parse(xhr.responseText);
+					proShow(obj["城市代码"]);
+				}
+			}
+			
+		}
+		var pro=document.getElementsByName("pro")[0];
+		function proShow(obj){
+			console.log(obj);			
+			for(var i=0 ;i<obj.length;i++){
+//				obj[i].index=i;
+				var optPro=document.createElement("option");
+				pro.appendChild(optPro);
+				optPro.value=obj[i]["省"];
+				optPro.innerHTML=obj[i]["省"];				
+				pro.onchange=cityShow(obj,i);		
+
+			}
+			
+		}
+		
+		function cityShow(obj,idx){
+			var city=document.getElementsByName("city")[0];
+//			var code=document.getElementsByTagName("input")[0];
+//			console.log(code);
+//			return function(){
+				console.log(idx);
+				for(var j=0;j<obj.length;j++){
+//				console.log(obj[idx]["省"]);
+				console.log(pro.value);
+				if(obj[idx]["省"]==pro.value){
+				var optCtiy=document.createElement("option");
+				city.appendChild(optCtiy);	
+//				optCtiy.value=obj[idx]["市"][j]['市名'];
+			    optCtiy.innerHTML=obj[idx]["市"][j]['市名'];	
+//				city.onclick=codeShow(obj,idx,j);					
+				}
+
+//				
+				}
+			
+//			}
+		}
+		
+		function codeShow(obj,idx,j){
+			console.log(idx);
+			console.log(obj[idx]["市"][j]['市名']);
+			for(var k=0;k<obj[idx]["市"].length;k++){
+			code.value=obj[idx]["市"][k]['市名'];	
+			}
+			
+		}
+
+			var cityOpt=document.getElementsByName("city")[0].children;
+			var btn=document.querySelector("button");
+			var code=document.getElementsByTagName("input")[0];
+			     btn.onclick=function(){
+			     	for(var k=0;k<cityOpt.length;k++){
+//			     		code.innerHTML=obj[idx]["市"][j]['市名'];
+			     	}
+		     }			
+	
+
+
+
+		
+	</script>
+</html>

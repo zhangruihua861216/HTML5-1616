@@ -1,0 +1,57 @@
+#zw-footerprepend{
+    height: 220px;
+    background: #f5f5f5;
+    width: 100%;
+    padding-left: 213px;
+    padding-top: 30px;
+}
+#zw-footerprepend ul:first-of-type li{
+    list-style: none;
+    float: left;
+}
+#zw-footerprepend ul:first-of-type li a{
+    text-decoration: none;
+    color: #575757;
+}
+#zw-footerprepend ul:first-of-type li span{
+    margin:0px 35px;
+    color: #dfdfdf;
+}
+
+#zw-footerprepend ul:nth-of-type(2){
+    padding: 60px 0 50px;
+}
+#zw-footerprepend ul:nth-of-type(2) li{
+    float: left;
+    list-style: none;
+    width: 275px;
+    height: 58px;
+    margin-right: 85px;
+    margin-left:45px;
+    position: relative;
+}
+#zw-footerprepend ul:nth-of-type(2) li p{
+    color: #959595;
+    font-size: 12px;
+}
+#zw-footerprepend ul:nth-of-type(2) li h3{
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+#zw-footerprepend ul:nth-of-type(2) li .icon{
+    position: absolute;
+    margin-left: -75px;
+    width: 56px;
+    height: 56px;
+    background:url("../img/zyerDIY/foot-feature.png")no-repeat;
+}
+#zw-footerprepend ul:nth-of-type(2) li .icon.zybz{
+    background-position: 0 0;
+}
+#zw-footerprepend ul:nth-of-type(2) li .icon.dcsh{
+    background-position: 0 -56px;
+}
+#zw-footerprepend ul:nth-of-type(2) li .icon.axph{
+    background-position: 0 -112px;
+}

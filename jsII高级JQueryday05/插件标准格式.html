@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//一、扩展JQuery对象本身，并不建议开发插件，而去扩展一些通过方法
+		JQuery.extend({
+			方法名:执行函数,
+			.....
+		})
+		//调用方法
+		JQuery.方法名;
+		
+		//二、扩展JQuery原型对象，建议插件写法
+		JQuery.fn.extend({
+			插件名:function(){
+				//this:为选择器所选择到的元素类数组
+				//遍历this ,以操作每一个元素
+				this.each(function(m,n){
+					$(this)==$(n)//$(this)是每一个元素
+					//dosometing
+				})
+				//在each结束后，返回元素数组，以支持链式
+				return this
+			}
+		})
+		
+		//三、我的习惯
+		JQuery.fn.extend({
+			myPlugin:function(){
+				this.each(function(m,n){
+					xx($(this))
+					xx2
+				})
+				function xx(){}
+				function xx2(){}
+				...
+				function my(){
+					
+				}
+				My.prototype.xx=function(){
+					
+				}
+				return this;
+				
+			}
+		})
+				
+	</script>
+</html>

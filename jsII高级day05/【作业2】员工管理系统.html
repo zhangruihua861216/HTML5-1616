@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*2.员工管理系统
+		a)	员工：工号 姓名 性别 年龄  职位
+		b)	管理系统：
+		1.	添加新员工
+		2.	修改老员工的职位（根据工号）
+		3.	查找指定姓名的员工
+		4.	查找指定部门的员工
+		 */
+		
+		function employ(id,name,sex,age,stuff){
+			this.id=id;
+			this.name=name;
+			this.sex=sex;
+			this.age=age;
+			this.stuff=stuff;
+			this.show=function(){
+				console.log("工号:"+this.id+" 姓名:"+ this.name+" 性别:"+this.sex+" 年龄:"+this.age+" 职位:"+this.stuff)
+			}
+		}
+		function employMangerSystem(){
+			this.employArr=new Array();
+			this.addemploy=function(newEmploy){
+				//检测
+				
+				for(var i=0;i<this.employArr.length;i++){
+					if(this.employArr[i].id==newEmploy.id){
+						console.log("该员工已经存在");
+						return;
+					}
+				}
+				this.employArr.push(newEmploy);
+			}
+		}
+		employMangerSystem.prototype.changeEmployStuff=function(id,newStuff){
+			for(var i=0;i<this.employArr.length;i++){
+				if(this.employArr[i].id==id){
+					this.employArr[i].stuff=newStuff;
+					return;
+				}
+			}
+			console.log("没有员工，修改失败");
+		}
+		employMangerSystem.prototype.searchEmploy=function(name){
+			var tag=false;
+			for(var i=0;i<this.employArr.length;i++){
+				if(this.employArr[i].name==name){
+					this.employArr[i].show();
+					console.log(this.employArr[i]);
+					tag=true;
+				}
+			}
+			if(!tag){
+			console.log("没有员工，查找失败");					
+			}
+		
+			
+		}
+		employMangerSystem.prototype.searchEmployByStuff=function(stuff){
+			var tag=false;
+			for(var i=0;i<this.employArr.length;i++){
+				if(this.employArr[i].stuff==stuff){
+						tag=true;
+						console.log(this.employArr[i]);
+				}
+			}
+			if(tag==false){			
+			console.log("部门没有员工，查找失败");	
+			}
+			
+		}	
+		
+		employMangerSystem.prototype.deleteEmployByName=function(name){
+			for(var i=0;i<this.employArr.length;i++){
+				if(this.employArr[i].name==name){
+					this.employArr.splice(i,1);
+					return;
+				}
+			}
+			console.log("没有此员工，删除失败");
+		}
+		
+		employMangerSystem.prototype.deleteEmployByStuff=function(stuff){
+			var tag=false;
+			for(var i=0;i<this.employArr.length;i++){
+				if(this.employArr[i].stuff==stuff){
+					this.employArr.splice(i,1);
+					tag=true;
+					i--;
+				}
+			}
+			if(tag==false){			
+			console.log("此部门没有员工，删除失败");
+			}			
+
+		}		
+		
+		
+		
+		employMangerSystem.prototype.showAllEmploys=function(){
+			for(var i=0;i<this.employArr.length;i++){
+//				console.log(this.employArr[i]);
+				this.employArr[i].show();
+			}
+		}
+		
+		var e1=new employ("001","张三","女","16","销售");
+		var e2=new employ("002","李四","女","26","客服");
+		var e3=new employ("003","王五","男","18","商务");
+		var e4=new employ("004","赵六","女","17","销售");
+		var emMG=new employMangerSystem();
+		
+		emMG.addemploy(e1);
+		emMG.addemploy(e2);
+		emMG.addemploy(e3);
+		emMG.addemploy(e4);
+		emMG.showAllEmploys();
+		emMG.changeEmployStuff("004","商务");
+		console.log("---")
+		emMG.showAllEmploys();
+		console.log("---");
+		emMG.searchEmploy("赵六");
+		console.log("---");
+		emMG.searchEmployByStuff("商务");
+		console.log("---");		
+		emMG.deleteEmployByName("张三");
+		emMG.showAllEmploys();
+		console.log("---");			
+		emMG.deleteEmployByName("张三");
+		emMG.showAllEmploys();
+		console.log("---");	
+		emMG.deleteEmployByStuff("商务");
+		emMG.showAllEmploys();		
+	</script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<button>该颜色</button>
+		<div class="box"></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+//	    console.log($);
+//		console.dir(jQuery);
+//		console.dir($);
+//		console.dir($.fn);
+//		console.dir($.fn==jQuery.prototype);
+		//直接扩展JQuery对象本身，但这并不是一个好的注意
+		jQuery.extend({
+			myFirstPlugin:function(){
+				console.log("first");
+//				$(this);
+			},
+			myFirstPlugin1:function(){
+				console.log("second");
+			}
+			
+		})	
+			
+			//$.fn.extend(){}
+		jQuery.fn.extend({
+				myFirstPlugin:function(){
+					console.log("原型first");
+					console.log(this);
+				},
+				setDiv:function(){
+					//由于选择器选择到的均是类数组，所以，在插件内部必须要each
+//					console.log(this);
+					this.each(function(m,n){
+						console.log($(n));
+						$(n).css({
+							width:50,
+							height:50,
+							background:"red",
+							cursor:"pointer",
+							display:"inline-block",
+						})
+					})
+					return this;
+				},
+				//为支持链式调用，在插件执行完毕，必须要返回此次选择器所选择到的元素集合
+//				return this;
+				changeDiv:function(){
+					this.each(function(m,n){
+						$(n).css("background","orange");
+					})
+				}
+				
+		})
+		
+//		$.myFirstPlugin();
+//		$("div").myFirstPlugin();
+	    var divs=$("div:gt(10)").setDiv().css("background","blue");
+//		$(this);
+//		console.dir($);
+//		$.myFirstPlugin();
+		$("button").click(function(event){
+			divs.changeDiv();
+		})
+	</script>
+</html>

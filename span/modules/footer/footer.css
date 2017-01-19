@@ -1,0 +1,11 @@
+footer{
+    position: fixed;
+     bottom: 0;
+    width: 100%;
+}
+footer span{
+    display: inline-block;
+    width: 33%;
+    padding: 15px 0;
+    text-align: center;
+}

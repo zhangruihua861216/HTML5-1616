@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 2.在数组查找数组
+			例如：var arr1 = [0,1,”2”,3,4,2,3,5,2,3,4]
+				Var arr2 = [2,3,4]
+					arr1.subArrayIndexOf(arr2)返回8
+
+		 */
+		
+		var arr1=[0,1,"2",3,4,2,2,2,2,3,5,2,3,4];
+		var arr2=[2,3,4];
+		var a=0;
+        function idx(arr1,arr2){
+        	for(var i=0;i<arr1.length;i++){
+        		if(arr1[i]===arr2[0]){
+        			a=0;
+        			for(var j=0;j<arr2.length;j++){
+        				if(arr2[j]===arr1[i+j]){
+        					a++;
+        					if(a==arr2.length){
+//      						console.log(i);
+								return i;
+        					}
+        				}
+        			}
+        		}
+        	}
+        }
+
+
+
+        function idx(arr1,arr2){
+        	for(var i=0;i<arr1.length;i++){
+        		if(arr1[i]===arr2[0]){
+        			for(var j=0;j<arr2.length;j++){
+        				if(arr2[j]===arr1[i+j]){
+							break;
+        				}
+        			}
+        					if(a==arr2.length){
+//      						console.log(i);
+								return i;
+        					}        			
+        		}
+        	}
+        }
+
+      console.log(idx());
+	</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="my.js" type="text/javascript" charset="utf-8"></script>-->
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	//noConflict()  让JQuery不再占用$的使用
+	//让出$占用：jQuery.noConflict()  让出后 ，jQuery!$
+	//夺回$s使用：可使用自执行函数包裹代码
+	   jQuery.noConflict();
+	   console.log($);
+	
+	
+		console.log($===jQuery);
+		//window.onload 当页面加载完成后  执行的回调函数
+		//一个页面只能存在一个window.onload  后添加的onload会覆盖前面的onload
+		//onload  会在页面所有元素解析，下载完成后被触发，比如：flash/img等
+//		window.onload=function(){
+//			console.log("1");
+//		}
+//		window.onload=function(){
+//			console.log("2");
+//		}
+		//$(document).ready(fun)  jQuery 页面加载完成事件
+		//可添加多个  按顺序执行
+		//执行时机为 DOM结构解析完毕  render  tree  生成
+//		(function($){
+//			$(document).ready(function(){
+//				console.log("1");
+//			})
+//			$(document).ready(function(){
+//				console.log("2");
+//			})
+//			$(function(){
+//				console.log("3");
+//			})			
+//		})(jQuery);
+//		
+//		$();
+		
+		
+
+		//$(function(){}===JQuery(function(){}))
+		//==$(document).ready(fun)==JQuery(document).ready(fun)
+	</script>
+</html>

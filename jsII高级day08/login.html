@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/封装ajax请求.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		
+			body>div{
+				width: 480px;
+				height: 290px;
+				background: #272725;
+				margin: 0 auto;
+				margin-top: 13%;
+				padding-top: 30px;
+				box-shadow: 0px 0px 15px #000;
+				border-radius: 5px;
+				
+			}
+			body>div div{
+				height: 65px;
+				line-height: 65px;
+				
+			}
+			body>div div input{
+				width: 323px;
+				height: 40px;
+				padding-left: 3px;
+				font-size: 26px;
+			}
+			body>div div input:focus{
+				background: #fef2c7;
+				border: 2px solid #6178ea;
+			}
+			body>div div label{
+				width: 121px;
+				display: inline-block;
+				text-align: right;
+				font-family: "微软雅黑";
+				color: #fff;
+				font-size: 20px;
+			}
+			body>div div:first-of-type{
+				height: 45px;
+				line-height: 45px;
+			}
+			body>div div:first-of-type label{
+				font-size: 26px;
+				text-align: left;
+				margin-left: 15px;
+				letter-spacing: 2px;
+			}
+			body>div div button{
+				width: 100px;
+				height: 40px;
+				background: #007686;
+				border: 0px;
+				color: #fff;
+				font-size: 18px;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			body>div div:last-of-type{
+				text-align: center;
+				height: 100px;
+				line-height: 100px;
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div><label>Login</label></div>
+			<div><label>管理员：</label><input type="text" name="" id="username" value="" /></div>
+			<div><label>密码：</label><input type="password" id="password" /></div>
+			<div><button id="loginBtn">登录</button></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var loginBtn=document.getElementById("loginBtn");
+		loginBtn.onclick=function(){
+			var username=document.getElementById("username").value;
+			console.log(username);
+			var pwd=document.getElementById("password").value;
+			var xhr=ajax(
+				"post",
+				"http://localhost:5050/users/login",
+				true,
+				{username:username,password:pwd},
+				function(){
+					if(xhr.readyState==4){
+						if(xhr.status>=200&&xhr.status<300){
+							console.log(xhr.responseText);
+						}
+					}
+				}
+			)
+		}
+	</script>
+</html>

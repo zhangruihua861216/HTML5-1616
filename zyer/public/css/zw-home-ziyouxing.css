@@ -1,0 +1,171 @@
+#zw-home-ziyouxing{
+    height: 711px;
+    padding-left: 213px;
+    padding-top: 35px;
+    width: 100%;
+}
+#zw-home-ziyouxing .title{
+    overflow: hidden;
+}
+#zw-home-ziyouxing h2{
+    font-size: 40px;
+    margin-bottom: 26px;
+    float: left;
+}
+
+#zw-home-ziyouxing h2 span{
+    color: #636363;
+    font-size:14px;
+    margin-right:16px;
+}
+#zw-home-ziyouxing  div ul:nth-of-type(1){
+    height: 30px;
+    width: 700px;
+    float: left;
+}
+#zw-home-ziyouxing div ul:nth-of-type(1) li{
+    float: left;
+    list-style: none;
+    margin: 0 11px;
+
+}
+#zw-home-ziyouxing div ul:nth-of-type(1) li a{
+    text-decoration: none;
+    font-size: 19px;
+    color: #323232;
+}
+#zw-home-ziyouxing div ul:nth-of-type(1) li a:hover{
+    font-size:19px;
+    color: #16c1a0;
+    border-bottom: 3px solid #16c1a0;
+    padding-bottom: 6px;
+}
+#zw-home-ziyouxing .content{
+    height: 603px;
+}
+#zw-home-ziyouxing .content li:first-child a img{
+    width: 572px;
+    height: 270px;
+}
+
+#zw-home-ziyouxing .content li:nth-of-type(2) a img,#zw-home-ziyouxing .content li:nth-of-type(3) a img,#zw-home-ziyouxing .content li:nth-of-type(4) a img,#zw-home-ziyouxing .content li:nth-of-type(5) a img,#zw-home-ziyouxing .content li:nth-of-type(6) a img{
+    width: 275px;
+    height: 185px;
+}
+
+#zw-home-ziyouxing .content li {
+    float: left;
+    height: 270px;
+    width: 275px;
+    border:  1px solid #ececec;
+    position: relative;
+    list-style: none;
+    margin-bottom: 22px;
+    margin-right: 27px;
+}
+#zw-home-ziyouxing .content li:first-child{
+    width: 572px;
+}
+#zw-home-ziyouxing .content li div:nth-of-type(2) span:first-child{
+    background: #000;
+    opacity: 0.7;
+    color: #fff;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0px 17px;
+}
+#zw-home-ziyouxing .content li div:nth-of-type(2) span:nth-of-type(2){
+    background: #ff7467;
+    color: #fff;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0px 17px;
+}
+#zw-home-ziyouxing .content li div:nth-of-type(2) {
+    position: absolute;
+    bottom: 85px;
+}
+
+#zw-home-ziyouxing .content li div:nth-of-type(3){
+    position: absolute;
+    bottom: 0px;
+    height: 85px;
+    background: #ffffff;
+    padding-top:22px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+#zw-home-ziyouxing .content li div:nth-of-type(3) p{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 18px;
+    overflow: hidden;
+    height: 42px;
+    color: #323232;
+}
+#zw-home-ziyouxing .content li:first-child div:nth-of-type(3){
+    width: 572px;
+    background: #000;
+    opacity: 0.7;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+#zw-home-ziyouxing .content li:first-child div:nth-of-type(4){
+    color:#d0c2c2;
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    padding-left: 5px;
+
+}
+
+@font-face {
+    font-family: 'iconfont';  /* project id 195889 */
+    src: url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.eot');
+    src: url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.svg#iconfont') format('svg');
+}
+#zw-home-ziyouxing .content a{
+    text-decoration: none;
+}
+#zw-home-ziyouxing .content li:last-child p:first-child span:nth-of-type(3){
+    font-family: iconfont;
+    font-size: 66px;
+    color:  #ffffff;
+    display: block;
+    margin-top: 10px;
+
+}
+#zw-home-ziyouxing .content li:last-child p{
+    text-align: center;
+}
+#zw-home-ziyouxing .content li:last-child p:first-child{
+    padding-top: 48px;
+}
+#zw-home-ziyouxing .content li:last-child p:first-child span:nth-of-type(1),#zw-home-ziyouxing .content li:last-child p:first-child span:nth-of-type(2){
+    color: #fff;
+    font-size: 20px;
+    line-height:26px;
+    display:block;
+}
+#zw-home-ziyouxing .content li:last-child p:first-child{
+    background-image: linear-gradient(180deg,#61d482,#15cbb3);
+    height: 215px;
+}
+#zw-home-ziyouxing .content li:last-child p:last-child{
+    background:#19cbb3;
+    height: 55px;
+    width: 100%;
+}
+#zw-home-ziyouxing .content li:last-child p:last-child span{
+    color: #fff;
+    margin: 0 3px;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+  {{"zhar"|myFilter}}
+  <hr>
+   {{"abc"|myFilter}}
+</body>
+<script>
+    angular.module("myApp",[])
+            .filter("myFilter",function(){
+                return function (val){
+                   console.log(val);
+                    return "Hello "+val.toUpperCase()
+                }
+            })
+</script>
+</html>

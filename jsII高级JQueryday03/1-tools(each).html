@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1111</li>
+			<li>2222</li>
+			<li>333333</li>
+		</ul>
+		<ul>
+			<li>1116</li>
+			<li>2222</li>
+			<li>333333</li>
+		</ul>		
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//each()遍历
+		var arr=["a","b","c"];
+		var obj={
+			name:'a',
+			age:20
+		}
+		//遍历数组
+		$.each(arr, function(m,n) {
+//			console.log(m,n);
+			
+		});
+		
+		//遍历对象
+		
+		$.each(obj,function(m,n){
+//			console.log(m,n);
+		})
+		
+		//遍历元素数组
+		
+		$("li").each(function(m,n){
+			console.log(m);
+			console.log(n);
+			$(this).html(m+n.innerHTML);
+//			console.log(n.innerHTML);
+//			console.log($(n).html());
+		})
+		
+		var obj2={
+			say:function(){
+				console.log("我是？")
+			}
+		}
+		
+		var obj3={
+			abc:'abc'
+		}
+		//extend()
+//		$.extend(obj,obj2,obj3);
+//		console.log(obj);
+//		console.log(obj2);
+//		console.log(obj3);
+		
+		console.log("--------")
+		
+		
+//		$.extend(obj, obj2);
+//		
+//		console.log(obj);
+//		console.log(obj2)
+		
+		
+		console.log("***************")
+		
+//		$.extend(obj2,obj,obj3);
+//		console.log(obj);
+//		console.log(obj2);
+//		console.log(obj3);	
+//		var o2={};
+//		var o=$.extend(o2,obj,obj2,obj3)
+//			console.log(obj);
+//			console.log(obj2);
+//			console.log(obj3);
+//			console.log(o);
+//			console.log(o2);
+//		//inArray(val,arr) 返回元素在数组中的下标，如果不存在则返回-1
+//		 console.log($.inArray("a",arr));
+	</script>
+</html>

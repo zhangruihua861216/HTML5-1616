@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.js"></script>
+</head>
+<body ng-app="myApp">
+   <a ui-sref="home">Home</a>
+   <a ui-sref="mine">Mine</a>
+   <div ui-view>
+
+   </div>
+</body>
+<script type="text/javascript">
+    angular.module("myApp",["ui.router"])
+            .config(function($stateProvider,$urlRouterProvider){
+                $stateProvider
+                        .state("home",{
+                    ulr:"/home",
+//                    template:"<h1>home</h1>"
+                    templateUrl:"home.html"
+                })
+                        .state("mine",{
+                    url:"/mine",
+                    template:"<h1>mine</h1>"
+                })
+                        .state("home.first",{
+                            url:"/home/first",
+                            template:"这是Home的first"
+                        })
+                $urlRouterProvider.otherwise("home")
+            })
+</script>
+</html>

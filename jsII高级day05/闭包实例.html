@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function fun(){
+			var i=1;
+			return  function(){
+				return i++;
+			}
+			
+		}
+		
+	console.log(fun()());
+	console.log(fun()());
+	console.log(fun()());
+	console.log(fun()());
+	
+	
+	var f=fun();
+	console.log("-----------------")
+	console.log(f());
+	console.log(f());
+	console.log(f());
+	console.log(f());
+	console.log(f());
+	</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController" >
+<input type="number" ng-model="price">
+<h1>{{price}}</h1>
+<h1>{{AllPrice}}</h1>
+<hr>
+<button type="button" ng-click="getDate()">点击获取时间</button>
+<h1>{{date|date:"yyyy-MM-dd HH:m:ss"}}</h1>
+</body>
+<script>
+    <!--
+//      $digest 脏查询
+//      $watch watchlist
+//        凡是用ng指令、表达式绑定的数据模型，更改都会触发脏查询
+//       脏查询：每次都会遍历整个watchlist列表
+//    $scope.$watch("name"，function(newVal,oldVal))
+//    当模型数据有变得时，会得到通知，返回新值，旧值
+//    $scope.$apply() 强制angular做一次脏查询
+//
+//    在实际应用中,应及时销毁$watch，过多的$watch会引起性能问题
+//
+//    -->
+    angular.module("myApp",[])
+            .controller("myController",["$scope","$interval","$timeout",function($scope,$interval,$timeout){
+                $scope.price=0;
+                $scope.date=new Date();
+                $scope.getDate=function(){
+                    $scope.price++;
+                    $scope.date=new Date();
+                }
+//                setInterval(function(){
+//                    $scope.date=new Date();
+//                    $scope.$apply();
+//                },1000)
+                $interval(function(){
+                    $scope.date=new Date()
+                },1000);
+                $scope.$watch("price",function(nVal,oVal){
+                    console.log(nVal,oVal);
+                    $scope.price=nVal;
+                    $scope.AllPrice=nVal*10;
+                });
+                setTimeout(function(){
+                    $scope.price=100;
+                },1000)
+            }])
+</script>
+</html>

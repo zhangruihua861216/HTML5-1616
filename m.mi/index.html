@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        color: #333;
+        font-size: 62.5%;
+    }
+    html{
+        font-family: Arial,Verdana,Sans-serif;
+
+    }
+    .APP-New-Exclusive img{
+        width: 100%;
+    }
+
+</style>
+<div class="index-header">
+    <div class="search_bar">
+        <span class="icon icon-search"></span>
+        <span class="text">搜索商品名称</span>
+    </div>
+    <div class="search_bottom"></div>
+</div>
+<!--轮播图-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/swiper-1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/swiper-2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/swiper-3.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/swiper-4.jpg" alt=""></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev swiper-button-black"></div> <!-- 白色 -->
+    <div class="swiper-button-next swiper-button-black"></div> <!-- 白色 -->
+</div>
+<!--新人专享App-->
+<div class="APP-New-Exclusive"><a href=""><img src="img/APP-New-Exclusive.webp" alt=""></a></div>
+<!--广告-->
+<div class="advert">
+    <div><a href=""><img src="img/advert-1.webp" alt=""></a><a href=""><img src="img/advert-2.webp" alt=""></a><a href=""><img src="img/advert-3.webp" alt=""></a></div>
+    <div><a href=""><img src="img/advert-4.webp" alt=""></a><a href=""><img src="img/advert-5.webp" alt=""></a><a href=""><img src="img/advert-6.webp" alt=""></a></div>
+    <div><a href=""><img src="img/advert-7.webp" alt=""></a><a href=""><img src="img/advert-8.webp" alt=""></a><a href=""><img src="img/advert-9.webp" alt=""></a></div>
+</div>
+<!--产品列表-->
+<div class="product">
+    <ul>
+        <li><a href=""><img src="img/product-1.webp" alt=""><div><p class="name">红米手机3S</p><p class="brief">指纹识别 / 全网通双卡双待 / 金属机身 / 4100mAh大电池</p><p class="price">699元 起</p></div></a></li>
+        <li><a href=""><img src="img/product-2.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+        <li><a href=""><img src="img/product-3.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+        <li><a href=""><img src="img/product-4.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+        <li><a href=""><img src="img/product-5.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+        <li><a href=""><img src="img/product-6.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+        <li><a href=""><img src="img/product-7.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+        <li><a href=""><img src="img/product-8.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+        <li><a href=""><img src="img/product-9.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+        <li><a href=""><img src="img/product-10.webp" alt=""><div><p class="name">红米Note 4</p><p class="brief">Helio X20 十核旗舰处理器 / 全金属一体化机身 / 4100mAh 大电量</p><p class="price">1199元</p></div></a></li>
+    </ul>
+</div>
+<!--任我行  吃到饱-->
+<div class="mcells_auto_fill">
+    <ul>
+        <li><img src="img/mcells_auto_fill-1.webp" alt=""></li>
+        <li><img src="img/mcells_auto_fill-2.webp" alt=""></li>
+    </ul>
+</div>
+<!--导航-->
+<div id="footer"></div>
+</body>
+<link rel="stylesheet" href="../music/css/swiper-3.3.1.min.css">
+<link rel="stylesheet" href="css/swiper.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/advert.css">
+<link rel="stylesheet" href="css/product.css">
+<link rel="stylesheet" href="css/mcells_auto_fill.css">
+<script src="../music/js/swiper-3.3.1.min.js"></script>
+<script src="js/swiper1.js"></script>
+<script>
+    $("#footer").load("./nav.hmtl");
+</script>
+</html>

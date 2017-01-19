@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 构造函数：人、狗
+			属性：名字（人）、名字（狗）
+			方法：自我介绍（人）、叫（狗）
+			
+		           需求：通过相应的构造函数，创建3个人，3个狗，放到一个数组中，然后
+			 遍历该数组，在遍历的过程中，判断如果是人,jiu调用人的自我介绍方法，
+			 如果是狗就调用狗的叫方法。
+		 */
+		
+		function Person(name){
+			this.name=name;
+			this.sayHi=function(){
+				console.log("大家好，我是："+this.name);
+			}
+		}
+		function Dog(name){
+			this.name=name;
+			this.bark=function(){
+				console.log("我的名字是："+this.name+"汪汪汪");
+			}			
+		}
+		var arr=[];
+		/*
+		 * 1.在堆区创建一个新对象
+		 * 2.将函数体中this指针指向新对象
+		 * 3.执行函数体给新对象添加新属性
+		 * 4.返回新对象的地址
+		 */
+		var p1=new Person("zhangsan");
+		arr.push(p1);
+		var p2=new Person("wangwu");
+		arr.push(p2);		
+		var p3=new Person("zhaoliu");
+		arr.push(p3);		
+		var dog1=new Dog("旺财");
+		arr.push(dog1);		
+		var dog2=new Dog("富贵");
+		arr.push(dog2);			
+		var dog3=new Dog("大白");
+		arr.push(dog3);
+		console.log(arr);
+		
+		var  arr1[p1,p2,p3,dog1,dog2,dog3];
+		for(var i=0;i<arr.length;i++){
+//		for(var i in arr){
+			if(arr[i] instanceof Person){
+				arr[i].sayHi()
+			}
+			else if(arr[i] instanceof Dog){
+				console.log(arr[i]);
+//				arr[i].sayHi()
+				arr[i].bark();
+			}
+		}
+		
+		
+	</script>
+</html>

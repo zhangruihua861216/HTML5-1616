@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		    <style type="text/css">
+		    *{
+		    	margin: 0;
+		    	padding: 0;
+		    }
+		    .main{
+		    	width: 1130px;
+		    	margin: 0 auto;
+		    	padding-top: 84px;
+		    	font-family: "微软雅黑";
+		    	border: 1px solid red;
+		    	height: 2000px;
+		    }
+			h3{
+				font-size: 46px;
+				margin-bottom: 112px;
+			}
+			.main .left span{
+				display: inline-block;
+				width: 162px;
+				height: 48px;
+				line-height: 48px;
+				text-align: center;
+				border: 1px solid #a6a6a6;
+				
+				}
+			.main .left span:nth-of-type(1){
+				border-right: none;
+			}			
+			.main .left span:nth-of-type(2){
+				border-right: none;
+			}
+			.main .left{
+				float: left;
+			}
+			.main .right{
+				float:right;
+			}
+			.main .right input{
+				width: 472px;
+				height: 47px;
+				padding-left: 5px;
+			}
+			.main .right button{
+				width: 128px;
+				height: 47px;
+				border: none;
+				background: #18a5da;
+				color: #fff;
+				font-size: 25px;
+			}
+			.title{
+				overflow: hidden;
+			}
+			.show{
+				margin-top:50px;
+				/*background: pink;*/
+			}
+			.show ul{
+				margin-left: 15px;
+				border:1px solid red;
+			}
+			.show ul li{
+				display: inline-block;
+				border: 1px solid;
+			    border-radius: 5px;
+			    width: 200px;
+			    height: 380px;
+			    margin-right: 10px;
+			    margin-bottom: 10px;
+			    padding: 0 5px;
+			}
+			.show ul li input{
+				width: 40px;
+				height: 20px;
+				text-align: center;
+			}
+			.show ul li .inf p{
+				display: inline-block;
+				margin:0 10px;
+			}
+			.show ul li .inf  .addtocar{
+				background:#FF0000;
+				width: 105px;
+				height: 32px;
+				border: none;
+				color: #FFFFFF;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.show ul li button{
+				width: 66px;
+				height: 25px;
+				font-size: 20px;
+				background: cornflowerblue;
+				border: none;
+				margin:0px 5px;
+				vertical-align: middle;
+				cursor: pointer;
+			}
+			.show ul li img{
+				margin-left: 25px;
+			}
+			.show ul li .price em{
+				margin:  0 75px 0px 10px;
+			}
+			.page{
+				text-align: center;
+				margin-top: 30px;
+			}
+			.page input{
+				width: 100px;
+				height: 40px;
+				margin: 0px 2px;
+				cursor: pointer;
+			}
+			.page>input{
+			     display: inline-block;
+			}
+			.page ul{
+				display: inline-block;
+			}
+			.page ul li{
+				list-style: none;
+				display: inline-block;			
+			}
+			.page ul  li input{
+			    width: 100px;
+				height: 40px;
+				background: #eaeaea;
+				line-height: 40px;
+				border: 1px solid #a6a6a6;
+				
+			}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div class="main">
+			<h3>商品展示</h3>
+			<div class="title">
+				<div class='left'>
+				<span>销量</span><span>评价</span><span>价格</span>
+				</div>
+				<div class="right">
+					<input type="text" placeholder="请输入搜索关键字"/>
+					<button>搜索</button>
+				</div>
+			</div>
+			<div class="show">
+				<ul></ul>
+			</div>
+			<div class="page">
+				<input type="button" value="首页" />
+				<input type="button" value="上一页" />
+				<ul class="pageNum">
+					
+				</ul>
+				<input type="button" value="下一页" />
+				<input type="button" value="末页" />				
+			</div>
+		</div>
+	</body>
+    <script src="shopShow.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="page.js" type="text/javascript" charset="utf-8"></script>-->
+</html>

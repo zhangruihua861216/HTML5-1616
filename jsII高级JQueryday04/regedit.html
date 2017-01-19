@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			form{
+				width: 500px;
+				height: 430px;
+				background: #eee;
+				margin: 200px auto;
+				color: #1f2124;
+				/*text-align: center;*/
+				padding-top: 30px;
+				font-size: 14px;
+				letter-spacing: 1px;
+				padding-left:8px;
+			}
+			div:nth-of-type(even){
+				height: 40px;
+				line-height: 40px;
+			}
+			div:nth-of-type(odd){
+				height:20px;
+				line-height:20px;
+				color: #1F2124;
+				font-size: 12px;
+				color: red;
+				padding-left:60px ;
+			}
+			div:nth-of-type(odd) span{
+				
+			}			
+			div input{
+				width: 300px;
+				height: 28px;
+				padding-left:5px;
+			}
+			div input:focus{
+				background: #FFDEAD;
+			}
+			div label{
+				width:80px;
+				height: 40px;
+				text-align:right;
+				display: inline-block;
+				padding-right:10px;
+			}
+			div input[type="submit"]{
+				width: 100px;
+				margin-top: 30px;
+				background: navajowhite;
+				border: none;
+				margin-left:80px;
+				cursor: pointer;
+			}
+			form>label{
+				font-size:30px;
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<form action="" method="post">
+			<label>Regedit</label>
+			<div><span></span></div>
+			<div><label>用户名</label><input type="text" name="userName" value="" /></div>
+			<div><span></span></div>
+			<div><label>密 码</label><input type="pwd" name="pwd"/></div>
+			<div><span></span></div>
+			<div><label>确认密码</label><input type="pwd" name="REpwd"/></div>
+			<div><span></span></div>
+			<div><label>电话</label><input type="text" name="phone"/></div>
+			<div><span></span></div>
+			<div><label>邮箱</label><input type="text" name="email"/></div>
+			<div><button>注册</button></div>
+		</form>		
+	</body>
+	<script type="text/javascript">
+		var regExp1=/^[a-z0-9_-]{3,16}$/;
+		var regExp2=/^[a-z0-9_-]{6,18}$/;	
+//      var submits=document.querySelector("input[type='submit']");
+		var inputs=document.querySelectorAll("input");
+		var spans=document.querySelectorAll("span");
+		username=inputs[0].value;
+		pwd=inputs[1].value;
+        console.log(username);
+        console.log(pwd);
+		for(var i=0;i<inputs.length;i++){
+			inputs[i].index=i;
+			inputs[i].onblur=function(){
+				for(var j=0;j<spans.length;j++){
+					switch(this.index){
+						case 0:
+						     if(regExp1.test(inputs[this.index].value)){
+						     	spans[this.index].innerHTML="";
+						     	break;
+						     }else{
+						     	spans[this.index].innerHTML="用户名不正确";
+						     	break;
+						     }
+						case 1:
+							 if(regExp2.test(inputs[this.index].value)){
+							 	spans[this.index].innerHTML="";
+							 	break;
+							 }else{
+							 	spans[this.index].innerHTML="密码不正确";
+							 	break;
+							 }
+					}
+				}
+				
+			}
+		}
+	</script>
+	<script type="text/javascript">
+	$("button").click(function(){
+//      if(regExp1.test(inputs[0].value)&&regExp2.test(inputs[1].value)){
+	  			 $.ajax({
+					url:"http://10.0.164.251/courseB/jQuery/Day6/user.php",
+					async:true,
+					dataType : "jsonp",
+					jsonp:"userCallback",
+					data:{
+						type:reg,
+						username:username,
+						passwords:pwd,
+					},
+					success:function(res){
+						    console.log(res);
+//						    console.log(username);
+//		                    console.log(pwd);
+					},
+					error:function(err){
+						    console.log(err);
+//						    console.log(username);
+//		                    console.log(pwd);	
+					}
+				});	      	
+//      }
+
+   })
+	</script>
+</html>

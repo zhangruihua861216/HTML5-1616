@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+</body>
+<script>
+    /**
+     * factory 工厂 构建一个工厂服务，常用于创建工具类函数等，
+     * 例如：做一个加法运算函数
+     * service 服务 常用于存储持久化数据、用于数据共享、用于后台交互
+     * 两者区别：
+     * factory只是一个普通的函数，
+     * service angular在调用时，会使用new（构造器），是单例的
+     * value|constant 用于存储一个常量
+     * value是可变的量 constant是不可变量
+     * provider 是上面除constant以外的老大
+     */
+
+    var app=angular.module("myApp",[]);
+    app.config(["$provide",function($provide){
+        $provide.provider("z6",function(){
+            var name="佚名";
+            this.setName=function(n){
+                name=n;
+            }
+            this.$get=function(){
+                return function (name){
+                    console.log(name+"你好");
+                }
+            }
+        })
+        $provide.factory("z7",function(){
+            return function (name){
+                console.log(name+"你好")
+            }
+        })
+        $provide.service("z8",function(){
+            return function (name){
+                console.log(name+"你好")
+            }
+        })
+        $provide.value("z9","姓名九");
+        $provide.constant("z10","姓名十")
+    }])
+    //下面的注入会抛出异常
+    // 因为通过factory service 直接接口注册的服务不能被注入到config阶段
+//            .config(function(z1){
+//                z1("这是空白config调用的z1")
+//                console.log("空白config")
+//            })
+     .config(function(z6Provider){
+                console.log(z6Provider.setName("新名字"))
+            })
+    app.factory("z1",function(){
+        return function(name){
+               console.log(name+"你好")
+        }
+    })
+    .service("z2",["z1",function(z1){
+        z1("这是z2-service调用的z1-factory")
+       return function (name){
+           console.log(name+"你好");
+       }
+     }])
+     .value("z3","姓名三")
+     .constant("z4","姓名四")
+     .provider("z5",function(){
+        this.$get=function(){
+            return function (name){
+                console.log(name+"你好")
+            }
+
+        }
+      })
+     .controller("myController",["$scope","z1","z2","z3","z4","z5","z6","z7","z8","z9","z10",function($scope,z1,z2,z3,z4,z5,z6,z7,z8,z9,z10){
+                z1("姓名一");
+                z2("姓名二");
+               console.log(z3);
+               console.log(z4);
+                z5("姓名五");
+                z6("姓名六");
+                z7("姓名七");
+                z8("姓名八");
+                 console.log(z9);
+                 console.log(z10);
+            }])
+
+</script>
+</html>

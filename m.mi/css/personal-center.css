@@ -1,0 +1,105 @@
+.title{
+    height:4rem;
+    background: #f2f2f2;
+    text-align: center;
+    line-height: 4rem;
+
+}
+
+section .new_info{
+  height: 8rem;
+  width: 100%;
+  background:#FF6B00 ;
+}
+section .new_info h2{
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 1.8rem;
+}
+section .new_info div{
+    width:75px;
+    height: 75px;
+    line-height: 75px;
+    background: #FFD24D;
+    text-align: center;
+    border-radius: 50%;
+    position:relative;
+    margin: 10px auto;
+
+}
+section .new_info div span{
+    color: #fff;
+    font-size: 3.8rem;
+}
+
+
+section .new_nav{
+    background: #ffffff;
+
+}
+section .new_nav ul{
+    height: 10rem;
+    display: flex;
+    list-style: none;
+    text-align: center;
+    padding-top: 20px;
+
+}
+section .new_nav ul li {
+    flex: 1;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    color: #333;
+
+
+
+}
+section .new_nav ul li p{
+    align-self: center;
+    margin-top: 10px;
+}
+section .new_nav ul li span:first-of-type{
+    background: url("../img/my-order.png") no-repeat;
+    background-size: 35px;
+    display: block;
+    height: 35px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+section .new_nav ul li:nth-of-type(1) span:first-of-type{
+    background-position: center -0px;
+}
+section .new_nav ul li:nth-of-type(2) span:first-of-type{
+   background-position: center -70px;
+}
+section .new_nav ul li:nth-of-type(3) span:first-of-type{
+    background-position: center -35px;
+}
+
+section .new_nav ul li:first-of-type p{
+    border-bottom: 1px solid #E33F7B;
+     width: 30px;
+}
+section .new_nav ul li:nth-of-type(2) p{
+    border-bottom: 1px solid #8BC34A;
+    width: 30px;
+}
+section .new_nav ul li:nth-of-type(3) p{
+    border-bottom: 1px solid #FA0;
+    width: 30px;
+}
+section ol{
+    background: #FFF;
+    margin-top: 1.1rem;
+}
+section ol li{
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 20px;
+    border-bottom: 1px solid #ECECEC;
+    color: #333;
+}

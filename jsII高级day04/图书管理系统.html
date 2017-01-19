@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//图书管理系统
+		//书    属性：书名 作者名  价钱  
+		//管理系统  
+		     //数组
+		     //1.添加一本书
+		     //2.修改书的价钱（书名）
+		     //3.删除书（书名）
+		     //4.删除书（作者名）
+		     //5.查（书名）
+		     //6.查（作者名）
+		     //7.查（价钱的区间）
+		     //8.展示所有的书
+		     
+		     
+//		1.图书管理系统  改版(组合方式创建'类')   
+
+        function Book(name,author,price,num){
+        	this.name=name;
+        	this.author=author;
+        	this.price=price;
+        	this.num=num;
+        }
+        Book.prototype.printInfo=function(){
+        	console.log("书名："+this.name+" | 作者:"+this.author+" | 价格:"+this.price+" | 数量:"+this.num);
+        }
+        function BookMangerSystem(){
+        	this.bookArr=new Array();
+			this.changeBookPrice=function(bookName,newPrice){
+				console.log("-------------------");
+				console.log(this.bookArr);
+				console.log("*********************");				
+				for(var i=0;i<this.bookArr.length;i++){
+					if(this.bookArr[i].name==bookName){						
+						this.bookArr[9].price=newPrice;
+						console.log("---------------------");
+						console.log(i);
+						console.log(this.bookArr[i]);
+
+						return;
+					}
+				}
+				console.log("没有此书，修改失败");
+			};        	
+        }
+        BookMangerSystem.prototype.addBook=function(newBook){
+        	this.bookArr.push(newBook);
+        };
+//      BookMangerSystem.prototype.changeBookPrice=function(bookName,newPrice){
+//      	console.log(this.bookArr.length);
+//      	var tag=false;
+//      	for(var i=0;i<this.bookArr.length;i++){
+//      		if(this.bookArr[i].name==bookName){
+//      			this.bookArr[i].price=newPrice;
+//				tag=true;
+//      		}
+//      	}
+//      	if(tag==true){
+//      		return;
+//      	}
+//	        if(tag=false){
+//	        console.log("没有此书，修改失败");        	
+//	        }
+//      }
+ 
+//       BookMangerSystem.prototype.changeBookPrice=function(bookName,newPrice){
+//      	console.log(this.bookArr.length);
+//      	for(var i=0;i<this.bookArr.length;i++){
+//      		if(this.bookArr[i].name==bookName){
+//      			this.bookArr[i].price=newPrice;
+//				    return
+//      		}
+//      	}
+//	        console.log("没有此书，修改失败");        	
+//      }
+ 
+ 
+        BookMangerSystem.prototype.deleteWithBookName=function(){
+        
+        }
+        BookMangerSystem.prototype.showAllBooks=function(){
+        	for(var i=0;i<this.bookArr.length;i++){
+      		console.log(this.bookArr[i]);
+//      		this.bookArr[i].printInfo();
+        	}
+        }
+        
+        var b1=new Book("《三重门》","韩寒",30.8,5);
+        var b2=new Book("《小时代》","郭敬明",50.2,3);
+        var b3=new Book("《美容日记》","大S",20,5);
+        console.log(b1.num);
+        var bkMg=new BookMangerSystem();
+        for(var i=0;i<b1.num;i++){
+         bkMg.addBook(b1);	
+        }
+        for(var i=0;i<b2.num;i++){
+         bkMg.addBook(b2);	
+        }     
+        for(var i=0;i<b3.num;i++){
+         bkMg.addBook(b3);	
+        }  
+//      bkMg.addBook(b3);
+//      bkMg.showAllBooks();
+        bkMg.changeBookPrice("《三重门》",69);
+        bkMg.showAllBooks();
+	</script>
+</html>

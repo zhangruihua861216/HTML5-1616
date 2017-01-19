@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border: 1px solid;
+        }
+        .box1{
+            background: linear-gradient(red,blue);
+        }
+        .box2{
+            background: linear-gradient(red,yellow,blue,green,purple,pink);
+        }
+        .box3{
+            background: linear-gradient(red 50px,blue);
+        }
+        .box4{
+            /*background: linear-gradient(to top left,red,blue);*/
+            /*background: linear-gradient(0deg,red,blue);*/
+            /*background: linear-gradient(45deg,red,blue);*/
+            background: linear-gradient(45deg,red 70px,blue 70px);
+        }
+        .box5{
+              height: 14px;
+              border-radius: 8px;
+             /*background: linear-gradient(red 10px,blue 11px,blue 20px,red 20px ,red 30px);*/
+            /*background:repeating-linear-gradient(red ,red 10px,blue 10px,blue 20px,yellow 20px,yellow 30px);*/
+            background:repeating-linear-gradient(45deg,red ,red 10px,blue 10px,blue 20px,yellow 20px,yellow 30px);
+
+        }
+        .box6{
+              /*background: radial-gradient(red,blue);*/
+               background: radial-gradient(red 20px ,blue);
+        }
+        .box7{
+               /*background: radial-gradient(circle,red,blue);*/
+                background: radial-gradient(20px 40px ellipse,red,blue);
+        }
+        .box8{
+            background: radial-gradient(circle at top left,red,blue);
+        }
+        .box9{
+            background: radial-gradient(100px 20px ,red,blue);
+        }
+        .box10{
+            background: radial-gradient(20px 30px at 20px 80px ,red,blue);
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+<div class="box6"></div>
+<div class="box7"></div>
+<div class="box8"></div>
+<div class="box9"></div>
+<div class="box10"></div>
+</body>
+</html>

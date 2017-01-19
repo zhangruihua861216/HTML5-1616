@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+	//1.	在页面上做一个倒计时显示距离今年底还有多少天多少小时多少分多少秒
+	function show(){
+		var dateNow=new Date();
+		var dateEnd=new Date("2017-01-01 00:00:00");
+		console.log(dateEnd.getTime());
+		console.log(dateEnd-dateNow);
+		var result=dateEnd-dateNow;
+		
+		var day=result/(24*60*60*1000);
+		console.log(parseInt(day));
+		var hours=(result%(24*60*60*1000))/(60*60*1000);
+		console.log(parseInt(hours));
+		var minutes=((result%(24*60*60*1000))%(60*60*1000))/(60*1000);
+		console.log(parseInt(minutes));
+		var seconds=((result%(24*60*60*1000))%(60*60*1000)%(60*1000))/1000;
+		console.log(parseInt(seconds));
+		
+		var div=document.querySelector("div")
+		div.innerHTML=parseInt(day)+"天"+parseInt(hours)+"小时"+parseInt(minutes)+"分"+parseInt(seconds)+"秒"
+	}
+		setInterval(show,1000);
+		
+		
+	</script>
+</html>

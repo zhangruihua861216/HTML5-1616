@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//dog name age color bark
+		var d1={
+			name:"旺财",
+			age:"3",
+			color:"黄色",
+			bark:function(){
+				console.log("汪汪汪")
+			}
+		}
+		var d2={
+			name:"富贵",
+			age:"12",
+			color:"黑色",
+			bark:function(){
+				console.log("汪汪汪")
+			}
+		}
+		
+		
+		function createObj(){
+			return {};
+		}
+		//工厂模式：软件设计模式
+		function createDog(_name,_age,_color){
+			return {
+				name:_name,
+				age:_age,
+				color:_color,
+				bark:function(){
+					console.log("汪汪汪");
+				}
+			};
+		}	
+		
+		var dog1=createDog("旺财",4,"黄色");
+		var dog2=createDog("富贵","5","黑色");
+		
+		console.log(dog1);
+		console.log(dog2);
+		
+		//最原始方法  Object构造函数方法
+		
+		var person=new  Object();
+		console.log(person);
+		person.name="王五";
+		person.work=function(){
+			console.log("coding coding")
+		}
+		console.log(person);
+		
+		//1.原生对象  宿主对象   内置对象
+		
+		//2.创建对象的3中方式
+		
+		//3.封装  事件封装
+	</script>
+</html>

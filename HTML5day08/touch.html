@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+    <!--<script src="vconsole.min.js"></script>-->
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script>
+    var box=document.querySelector(".box");
+    //原生click在移动设备上触发会有一个约300ms的延迟
+    box.addEventListener("click",function(){
+        console.log("触发");
+        this.innerHTML="触发";
+    })
+    // touches 得到当前屏幕上的手指数量
+    //targetTouches 得到当前元素上的手指数量
+    box.addEventListener("touchstart",function(e){
+        console.log(e);
+        console.log(e.touches.length);
+        console.log(e.targetTouches.length);
+        console.log(e.targetTouches);
+    })
+    box.addEventListener("touchmove",function(){
+        console.log("移动");
+    })
+    box.addEventListener("touchend",function(){
+        console.log("放开");
+    })
+    setTimeout(function(){
+        alert(1);
+    },3000);
+
+    box.addEventListener("touchcancel",function(){
+        console.log("取消");
+    })
+</script>
+</html>

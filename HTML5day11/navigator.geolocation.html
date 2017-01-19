@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地理位置</title>
+</head>
+<body>
+
+</body>
+<script>
+//    console.log(navigator);
+//    console.log(navigator.geolocation);
+    //获取用户地理位置
+//    console.log(navigator.geolocation.getCurrentPosition(successCallback,errorCallback[,options]));
+    function sCall(obj){
+        // 成功回调函数
+        console.log(obj);
+    }
+    function eCall(obj){
+        console.log(obj);
+    }
+    navigator.geolocation.getCurrentPosition(sCall,eCall);
+
+//    高德使用流程
+//    1.注册
+//    2.申请key
+//    3.创建一个新应用   添加一个新应用 名称随意  类型随意
+//    4.
+</script>
+</html>

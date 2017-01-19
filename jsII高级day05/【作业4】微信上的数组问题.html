@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 实现一个函数indexOf(arrayA,arrayB),检索数组arrayB在arrayA的起始位置
+//		var  arrayA = ["a","d","e","b","d","a’","f’","z’","b’","c’","f’","b’","c"];
+		
+		var  arrayA = ["a","d","e","b","d","a","f","z","b","c","f’","b’","c"];
+		var  arrayB = ["b","c"];
+//		console.log(indexOf(arrayA,arrayB));
+		
+//		var a=arrayA.toString();
+//		var b=arrayB.toString();
+//		console.log(a.indexOf(b)/2);
+		
+//		console.log(a);
+//		console.log(b);		
+//		var regExp=/1/;
+		var a=arrayA.join("");
+		var b=arrayB.join("");
+		console.log(a.indexOf(b))
+		var c=arrayA.join("");
+		var d=arrayB.join("");		
+		console.log(c.indexOf(d))
+		
+		function indexOf(arryA,arryB){
+			var strB=arrayB.join("");
+			var strA=arrayA.join("");
+			var index=strA.indexOf(strB);
+			//尽量不要在函数体中打印结果，而是应该将结果返回
+			return index;
+		}
+		
+		indexOf(arrayA,arrayB);
+		
+		
+
+	</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        table td {
+            width: 49px;
+            height: 49px;
+            border: 1px dotted #ccc;
+        }
+        canvas{
+            margin: 50px;
+            box-shadow: 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500">你的浏览器不支持canvas画布！！！</canvas>
+<table>
+
+</table>
+</body>
+<script>
+    var canvas = document.querySelector("canvas");
+    var ctx = canvas.getContext("2d");
+    var cx = 250,cy=250,r=100;
+    var dig = Math.PI/5*4;
+    // 2*Math.PI/360*144;
+    var n = Math.PI/180*144;
+    console.log(dig,n);
+    for(var i=0;i<5;i++){
+        //         Math.PI/180*144
+        var x = Math.cos(dig*i)*r+cx;
+        var y = Math.sin(dig*i)*r+cy;
+        ctx.lineTo(y,x);
+    }
+    ctx.closePath();
+    ctx.stroke();
+
+
+</script>
+<script>
+    var table = document.querySelector("table");
+    for (var i = 0; i < 10; i++) {
+        var tr = document.createElement("tr");
+        for (var j = 0; j < 10; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+</script>
+</html>

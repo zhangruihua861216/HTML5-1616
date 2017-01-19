@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--<script src="js/封装ajax请求.js" type="text/javascript" charset="utf-8"></script>-->
+	</head>
+	<body>
+		<button onclick="jsonTest()">百度的东西</button>
+	</body>
+	<script type="text/javascript">
+	function jsonTest(){
+		var sc=document.createElement("script");
+		sc.type="text/javascript";
+//		sc.src="http://127.0.0.1/t.php?callBack=";
+		sc.src="http://10.0.164.223/jsII%E9%AB%98%E7%BA%A7day08/pwnJsonp.js";
+//		sc.src="http://10.0.164.56/pwnJsonp.js";
+//		http://127.0.0.1/jsII%E9%AB%98%E7%BA%A7day08/
+		document.body.appendChild(sc);
+	}
+	function jsonpCallBack(ret){
+		console.log(ret);
+	}
+	
+	</script>
+</html>

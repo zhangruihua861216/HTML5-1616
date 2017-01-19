@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	   //父类
+	   //子类
+	   //子类的对象可以使用父类对象的属性和方法
+	   //子类继承于父类
+	   //父类派生出了子类
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+		//继承   一个对象可以使用另一个对象中的属性和方法
+		//js的继承是基于原型链的
+		//1.构造函数有一个prototype指针指向了它的原型对象
+		//2.原型对象有一个constructor的指针指回了它所属的构造函数
+		//3.构造函数创建的实例都有一个内部指针__proto__指向了它原型对象
+		//4.构造函数创建的所有实例共享原型对象的属性和方法
+		//5.让构造的prototype指针指向另一个类的实例，这样子，构造函数创建的对象就可以访问另一个对象的属性和方法了，
+		//这样就是实现了继承。那么另一个类的实例也有一个内部指针指向了它的原型对象，依次类推，就形参了原型链
+		
+		
+		
+//		Person  name  age  sex  speak
+
+//		Student   stuID  study
+
+		function Person(name,age,sex){
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+			this.speak=function(){
+				console.log("比例巴拉。。。。");
+			}
+		}
+		
+		
+		function Student(id){
+			this.stuID=id;
+			this.study=function(){
+				console.log("好好学习");
+			}
+		}
+		
+		//基于原型链的继承：子类的prototype属性指向父类的实例
+		Student.prototype=new Person("zhangsan","18","女");
+		
+		var s=new Student("001");
+
+		console.log(s);
+		//自己的属性和方法
+		console.log(s.stuID);
+		s.study();
+		//父类的属性和方法
+		console.log(s.name);
+		console.log(s.age);
+		console.log(s.sex);
+		
+		
+		//Anmail  毛色  sex  eat
+		//Cat   name fav
+		
+		function Anmail(color,sex){
+			this.color=color;
+			this.sex=sex;
+			this.eat=function(){
+				console.log("吃");
+			};
+		}
+		
+		function Cat(name){
+			this.name=name;
+			this.fav=function(){
+				console.log("撒娇卖萌");
+			};
+		}
+		
+		Cat.prototype=new Anmail("黄色","女");
+		
+		var cat=new Cat("大白");
+		
+		console.log(cat);
+		
+		//Cat---->Animal---->Object(根类)
+		//instanceof
+		console.log(c instanceof Cat);
+		console.log(c instanceof Anmail);
+		console.log(c instanceof Object);
+		
+	</script>
+</html>

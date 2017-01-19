@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		   .box{
+		   	color: white;
+		   	/*position: relative;*/
+		   	margin: 50px;
+		   	background: blue;
+		   	border:5px solid black;
+		   	padding: 20px;
+		   	width: 300px;
+		   	height: 300px;
+		   }
+			.middle{
+				border:1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			这是一段内容
+			<div class="middle">
+				这是middle的内容
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var  box=$(".box");
+		//.width([val]) .height([val])  设置或获取元素的宽高   不含border padding margin
+//		box.width(200);
+		console.log(box.width());
+//		box.height(300);
+		console.log(box.height());
+		//innerWidth()  innerHeight()  含padding的宽高
+		console.log(box.innerWidth());
+		console.log(box.innerHeight());
+		//outerWidth() outerHeight()  含border padding 的宽高
+		console.log(box.outerWidth());
+		console.log(box.outerHeight());
+		//outerWidth(true) outerHeight(true) 含margin border padding的宽高
+		console.log(box.outerWidth(true));
+		console.log(box.outerHeight(true));
+
+	</script>
+</html>

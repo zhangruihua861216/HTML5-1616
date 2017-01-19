@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			this.work=function(){
+				console.log("coding,coding,coding")
+			}
+			this.play=function(){
+				console.log("lol");
+			}
+		}
+		
+		
+		var p1=new Person("小王","20");
+		var p2= new Person("张三","18");
+		
+		//缺点：函数是对象，我们不希望每一个构造函数创建的实例都去给自己的行为属性（函数）开辟空间，我们希望能够让所有的实例共享一份行为属性（函数）
+		//1.构造函数的prototype属性指向它的的原型对象
+		//2.原型对象中有一个constructor属性指向它所属的构造函数
+		//3.构造函数创建的所有实例都有一个内部指针__proto__指向构造函数的原型对象
+		//4.所有的实例都可以共享原型对象的属性和方法
+		
+		
+		
+		/*******************原型模式创建对象******************************/
+		
+		//实质：将所有的属性全部添加到原型对象上
+		
+		function Dog(){
+			
+		}
+		Dog.prototype.name="旺财";
+		Dog.prototype.friends=["富贵","来福"];
+		
+		Dog.prototype.bark=function(){
+			console.log("汪汪汪！！");
+		}
+		var d1=new Dog();
+		var d2=new Dog();
+		console.log(d1);
+		console.log(d2);
+		console.log(d1.name==d2.name);
+		d1.friends.push("大白");
+		console.log(d2.friends);
+		
+		//原型模式创建对象的缺点:
+		//1.静态属性共享不合理
+		//2.如果属性值是引用类型（数组），不适合所有的实例共享
+		
+		
+		
+		
+		/****************组合创建对象*****************************/
+		//实质：静态属性添加到构造函数中，行为属性添加到构造函数的原型对象上
+		
+		
+		function Dog1(name,age,color,type){
+			//实例属性
+			this.name=name;
+			this.age=age;
+			this.color=color;
+			this.type=type;
+		}
+		//原型属性
+		Dog.prototype.type="犬科动物"
+		Dog1.prototype.bark=function(){
+			console.log("汪汪汪汪汪汪汪汪汪汪汪汪");
+		}
+		var d11=new Dog1("富贵",3,"黄色","中华田园犬");
+		var d21=new Dog1("来福",4,"黑色","拉布拉多");
+		console.log(d11);
+		console.log(d21);
+		d11.bark();
+		d21.bark();
+		
+		console.log(d11.name==d21.name);
+		console.log(d11.bark==d21.bark)
+		//访问对象的属性时，首先，现在对象的实例属性上查找，找到的话，返回属性值；没有找到，继续在对象原型属性上查找，找到返回属性值。如果还没有找到，则返回undefined
+		
+		console.log(d11.type);
+		
+		
+		d11.bark=function(){
+			console.log("嗷嗷嗷嗷！");
+		}
+		d11.bark();
+		d21.bark();
+		
+		/***************区分实例属性与原型属性*************************************/
+		
+		//1. hasOwnProperty()
+		//用法：  对象名.hanOwnProperty("属性名");
+		//作用：判断属性是否是该对象的实例属性，是，返回true，不是，返回false
+		
+		console.log(d11.hasOwnProperty("name")); //函数调用表达式
+		//【功能】  调用函数，传递参数，执行函数体
+		//【表达式值】
+		//【表值】函数体中return的值，没有return的话，函数调用表达式的值是undefined
+		
+		
+		//如果d1既有实例属性type，又有原型属性type，那么，使用hasOwnProperty()判断的时候，也是现在实例属性中查找，找到的化，返回true
+		
+		console.log(d1.hasOwnProperty("type"));
+		
+		console.log(d21.hasOwnProperty("bark"));
+		
+		
+		//2.in
+		
+		//用法：  "属性名"  in  对象名
+		
+		//作用：判断这个属性是否是对象的属性，无论是实例属性还是原型属性
+		
+		console.log("sex" in d1);
+		
+		console.log("name"  in d1);
+		console.log("bark" in d2);
+		
+		
+		
+		//3.封装方法  hasProtoProperty()
+		
+		function hasProtoProperty(attr1,elem){
+//			if(attr in obj){
+//				if(obj.hasOwnProperty[attr]){
+//					return false;
+//				}
+//				else{
+//					return true;
+//				}
+//			}
+//			else{
+//				return false;
+//			}
+		return (attr1 in elem) && !elem.hasOwnProperty(attr1);			
+		}
+		
+		console.log("---------"+hasProtoProperty("bark",d21));
+		console.log("---------"+hasProtoProperty("age",d21));
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		//创建学生类
+		//学生：学号  姓名  年龄  性别
+		//行为： 学习  玩  考试
+		
+		function student(id,name,age,sex){
+			//实例属性
+			this.id=id;
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+			
+		}
+		//原型属性
+		student.prototype.study=function(){
+			console.log("学习");
+		}
+		student.prototype.play=function(){
+			console.log("玩");
+		}
+		student.prototype.exam=function(){
+			console.log("考试");
+		}
+		
+		var s=new student("001","zhangsan",18,"女");
+		console.log(s);
+		console.log(s.name);
+		s.play();
+		
+		/*****初级阶段的原生对象他们是如何来创建构造函数的*****************/
+		//【答】构造函数与原型模式组合的方式
+		
+		var arr=[];
+		console.log(arr);
+		var d=new Date();
+		console.log(d)
+		
+		//【笔试中】给数组添加一个方法，计算所有数组元素的和
+		
+		Array.prototype.sum=function(){
+			//计算所有数组元素的和
+			
+			var s=0;
+			console.log(this);//函数体中的this，谁调用函数，this就指向谁
+			for(var i=0;i<this.length;i++){
+				s+=this[i];
+			}
+			return s;
+		}
+		
+		var arr2=[1,2,3];
+		console.log(arr2.sum());
+		
+		var  arr3=[10,20,30];
+		console.log(arr3.sum());
+		console.log("-----------------------")
+		//给字符串添加一个首字符大写的属性  capUpperCase
+		var str1='';
+		String.prototype.capUpperCase=function(){
+
+		  	if(this[0].charCodeAt()>=97&&this[0].charCodeAt()<123){
+			str1 +=String.fromCharCode(this[0].charCodeAt()-32);
+		  	}		
+			for(var i=1;i<this.length;i++){
+			    if(this[i].charCodeAt()>=65&&this[i].charCodeAt()<91){
+					this[i]=(this[i].charCodeAt()-32);
+					str1 +=String.fromCharCode(this[i].charCodeAt()+32);
+				}
+		  		else{
+					str1 +=this[i];
+				  }		
+			}
+			
+			return str1;
+		}
+		
+		var s1='abcDefgdfeGGGee2434234de';
+		console.log(s1);
+	    console.log(s1.capUpperCase());
+	    
+	    
+	    //给字符串添加一个首字符大写的属性  capUpperCase
+	    String.prototype.capUpperCase1=function(){
+	    	//首字符大写
+	    	if(this[0]>='a'&&this[0]<='z'){
+	    	return  String.fromCharCode(this.charCodeAt(0)-32)+this.substring(1).toLowerCase();
+//	    	   return	this[0].toUpperCase()+this.substring(1);
+	    	}
+	    	else{
+	    		return this;
+	    	}
+	    }
+	    
+	    var str='ab234234cdABDFE';
+	    console.log(str.capUpperCase1());
+	    
+
+	</script>
+</html>

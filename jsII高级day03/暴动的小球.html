@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    html{
+		    	height: 100%;
+		    }
+		    body{
+		    	width: 1000px;
+		    	height: 500px;
+		    	border: 1px solid red;
+		    	margin: 150px 130px;
+		    }
+			.ball{
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				position: absolute;
+			}
+		</style>
+		<script src="js/eventUtill.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//小球:  颜色   大小  起始位置(x,y)  speedX  speedY
+			//行为：move
+			
+			function Ball(oDiv,x,y){
+				this.body=oDiv;
+				this.bgColor=randomColor();
+				this.styleName="ball";
+				this.posX=x;
+				this.posY=y;
+				this.speedX=(parseInt(Math.random()*2)==0?1:-1)*(parseInt(Math.random()*20)+1);
+				this.speedY=(parseInt(Math.random()*2)==0?1:-1)*(parseInt(Math.random()*20)+1);
+				//初始化
+				this.init=function(){
+					this.body.className=this.styleName;
+					this.body.style.backgroundColor=this.bgColor;
+					this.body.style.left=this.posX+"px";
+					this.body.style.top=this.posY+"px";
+					document.body.appendChild(this.body);
+				}
+				this.move=function(){
+					var b=this; //this 指的是小球对象
+					console.log(this);
+					setInterval(function(){
+						
+						b.body.style.left=b.body.offsetLeft+b.speedX+"px";
+						b.body.style.top=b.body.offsetTop+b.speedY+"px";
+						console.log(document.body.clientWidth);
+						console.log(b.body.offsetLeft);
+						console.log(b.body.offsetWidth);
+						console.log(b.body.offsetX);
+						if((b.body.offsetLeft+b.body.offsetWidth)>document.body.clientWidth+130){
+							b.speedX=-b.speedX;
+						}
+						if((b.body.offsetLeft+b.body.offsetWidth)<0+130){
+							b.speedX=-b.speedX;
+						}
+						if((b.body.offsetTop+b.body.offsetHeight)>document.body.clientHeight+150){
+							b.speedY=-b.speedY;
+						}
+						if((b.body.offsetTop+b.body.offsetHeight)<0+150){
+							b.speedY=-b.speedY;
+						}						
+					},30)
+				}
+			}
+			eventUtill.addEventHandler(document.body,"click",clickCallBack);
+			function clickCallBack(e){
+				var evt=e||window.event;
+				for(var i=0;i<10;i++){
+					var div=document.createElement("div");
+					var b=new Ball(div,evt.pageX,evt.pageY);
+					b.init();
+					b.move();
+				}
+			}
+		</script>
+	</body>
+</html>
