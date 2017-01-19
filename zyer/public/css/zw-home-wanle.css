@@ -1,0 +1,175 @@
+#zw-home-wanle{
+    height: 565px;
+    background: #f5f5f5;
+    padding-left: 213px;
+    padding-top: 35px;
+}
+
+#zw-home-wanle .title{
+    overflow: hidden;
+}
+#zw-home-wanle h2{
+    font-size: 40px;
+    margin-bottom: 26px;
+    float: left;
+}
+
+#zw-home-wanle h2 span{
+    color: #636363;
+    font-size:14px;
+    margin-right: 170px;
+}
+#zw-home-wanle  div ul:nth-of-type(1){
+    height: 30px;
+    width: 700px;
+    float: left;
+}
+#zw-home-wanle div ul:nth-of-type(1) li{
+    float: left;
+    list-style: none;
+    margin: 0 11px;
+
+
+}
+#zw-home-wanle div ul:nth-of-type(1) li a{
+    text-decoration: none;
+    font-size: 19px;
+    color: #323232;
+}
+#zw-home-wanle div ul:nth-of-type(1) li a:hover{
+    font-size:19px;
+    color: #16c1a0;
+    border-bottom: 3px solid #16c1a0;
+    padding-bottom: 6px;
+}
+
+#zw-home-wanle .content li{
+    list-style: none;
+    float: left;
+    width: 370px;
+    background: #fff;
+    margin-right: 25px;
+    margin-bottom: 22px;
+}
+#zw-home-wanle .content li img{
+    float: left;
+    margin-right: 20px;
+}
+#zw-home-wanle .content li:first-child img{
+    width: 370px;
+    height: 260px;
+
+}
+#zw-home-wanle .content li p:first-of-type{
+    margin-top: 20px;
+    color: rgb(50, 50, 50);
+    font-size: 18px;
+    margin-right: 18px;
+}
+#zw-home-wanle .content li p:nth-of-type(2){
+    float: right;
+    margin-right: 10px;
+    color: #959595;
+    margin-top: 5px;
+}
+#zw-home-wanle .content li p:nth-of-type(2) span{
+    color: #ff7467;
+    font-size: 32px;
+    font-weight: bold;
+}
+#zw-home-wanle .content li a{
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'iconfont';  /* project id 195889 */
+    src: url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.eot');
+    src: url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.svg#iconfont') format('svg');
+}
+
+#zw-home-wanle .content li:nth-of-type(5) p span:nth-of-type(3){
+    font-family: iconfont;
+    font-size: 66px;
+    color:  #ffffff;
+}
+#zw-home-wanle .content li:first-child{
+    position: relative;
+}
+#zw-home-wanle .content li:first-child p:first-of-type{
+    position: absolute;
+    bottom: 45px;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 20px;
+}
+#zw-home-wanle .content li:first-child p:nth-of-type(2){
+    position: absolute;
+    bottom: 0px;
+    /*background: #000000;*/
+    /*opacity: 0.7;*/
+    /*width: 100%;*/
+    right: 10px;
+}
+
+#zw-home-wanle .content li:first-child p:nth-of-type(3)  {
+    /*float: right;*/
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color:silver;
+    /*opacity: 0.8;*/
+    width: 370px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+}
+#zw-home-wanle .content li:first-child div{
+    background: url("http://common1.qyerstatic.com/zworld/web/project/index/images/wanle-one-maskbg.png");
+    height: 175px;
+    position: absolute;
+    bottom: 0px;
+    /*background: green;*/
+    width: 100%;
+}
+#zw-home-wanle .content li:nth-of-type(5){
+    text-align: center;
+    float: right;
+    margin-right: 210px;
+
+}
+
+#zw-home-wanle .content li:nth-of-type(5) div:first-child{
+    padding-top: 48px;
+}
+#zw-home-wanle .content li:nth-of-type(5) div:first-child span:last-of-type{
+    font-family: iconfont;
+    color: #fff;
+    font-size: 60px;
+    margin-top:10px;
+    display: block;
+}
+#zw-home-wanle .content li:nth-of-type(5) div:first-child{
+    background-image: linear-gradient(180deg,#ff6476,#ff7467);
+    height: 205px;
+}
+#zw-home-wanle .content li:nth-of-type(5) div:first-child span:first-child,#zw-home-wanle .content li:nth-of-type(5) div:first-child span:nth-of-type(2){
+    color: #fff;
+    font-size: 20px;
+    line-height:26px;
+    display:block;
+}
+
+#zw-home-wanle .content li:nth-of-type(5) div:last-child{
+    background:#ff7467;
+    height: 55px;
+    width: 100%;
+}
+#zw-home-wanle .content li:nth-of-type(5) div:last-child span{
+    color: #fff;
+    margin: 0 3px;
+}
+
+

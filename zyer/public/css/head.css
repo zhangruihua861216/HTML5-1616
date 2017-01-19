@@ -1,0 +1,23 @@
+#header{
+    height: 120px;
+    width:100%;
+    background:url("../img/zyerDIY/head_bg.png") ;
+    line-height: 120px;
+}
+#header input {
+    width: 480px;
+    height: 42px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    color: #c0cbdb;
+}
+#header img:nth-of-type(1){
+     margin: 0px 100px 0px 200px;
+     vertical-align: middle;
+}
+#header img:nth-of-type(2){
+    float: right;
+
+}

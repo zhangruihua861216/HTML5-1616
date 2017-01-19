@@ -1,0 +1,129 @@
+#menu{
+    position: relative;
+}
+#menu ul:nth-of-type(1){
+    width: 280px;
+    position: absolute;
+    left: 213px;
+    top:  0px;
+    list-style: none;
+    z-index: 1;
+}
+#menu ul:nth-of-type(1) li{
+    height: 56px;
+    border-bottom: 1px solid #3d564d;
+    padding-top: 10px;
+    padding-left: 53px;
+    opacity: 0.7;
+    background: #000;
+}
+
+/*#menu ul:nth-of-type(1) li:hover{*/
+    /*background: #fff;*/
+    /*border-bottom: 2px solid #fff;*/
+    /*opacity: 1;*/
+/*}*/
+#menu ul:nth-of-type(1) li:first-child{
+    height: 70px;
+
+}
+#menu ul:nth-of-type(1) li:last-child{
+    height:70px;
+
+}
+#menu ul:nth-of-type(1) li:first-child:hover{
+     border-top:10px solid #000 ;
+ }
+#menu ul:nth-of-type(1) li:last-child:hover{
+    border-bottom:10px solid #000 ;
+}
+#menu ul:nth-of-type(1) li:hover div:nth-of-type(1){
+   color: #323232;
+
+}
+#menu ul:nth-of-type(1) li div:nth-of-type(1){
+    color: #fff;
+    font-size: 18px;
+    margin-bottom:5px;
+}
+#menu ul:nth-of-type(1) li div:nth-of-type(2){
+    color: #c0c0c0;
+    font-size: 12px;
+
+}
+
+
+#menu .moreCity{
+    width: 704px;
+    height: 403px;
+    list-style: none;
+    position: absolute;
+    left: 493px;
+    top:0px;
+    z-index: 2;
+    margin-top: 10px;
+    display: none;
+    background: #fff;
+
+}
+#menu .moreCity:nth-of-type(5) li img{
+    width: 290px;
+    height: 80px;
+    margin-top: 30px;
+}
+#menu .moreCity:nth-of-type(5) li:first-child{
+    height: 403px;
+}
+#menu .moreCity:nth-of-type(6) li:first-child{
+    height: 243px;
+}
+#menu .moreCity:nth-of-type(6) li:nth-of-type(2){
+    height: 200px;
+
+}
+#menu .moreCity:nth-of-type(6) li:nth-of-type(3){
+    height: 160px;
+    clear: both;
+}
+#menu .moreCity:nth-of-type(6) li img{
+    margin-top: -50px;
+}
+#menu .moreCity:nth-of-type(7){
+    width: 370px;
+    padding:0px 20px;
+}
+#menu .moreCity:nth-of-type(7) li{
+    height: 66px;
+    padding-left: 0px;
+  }
+#menu .moreCity:nth-of-type(7) div{
+    display: inline-block;
+    margin: 0 10px;
+
+}
+#menu .moreCity:nth-of-type(7) div img{
+    width:80px;
+    height:80px;
+    }
+
+#menu .moreCity li h3{
+    font-size: 26px;
+    border-bottom: 1px solid #ededed;
+    height: 58px;
+    line-height: 58px;
+    margin-bottom: 13px;
+}
+#menu .moreCity li{
+    width: 331px;
+    float: left;
+    height: 200px;
+    padding-left: 39px;
+
+}
+#menu .moreCity li div{
+    line-height: 24px;
+}
+#menu .moreCity li img{
+    width: 291px;
+    height: 163px;
+}

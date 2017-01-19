@@ -1,0 +1,207 @@
+#zw-footer{
+    background: #333;
+    color: #c0c0c0;
+    padding: 48px 0;
+    height: 291px;
+    padding-left: 213px;
+    position: relative;
+ }
+#zw-footer>ul:first-of-type li{
+    list-style: none;
+    float: left;
+}
+#zw-footer>p:first-of-type{
+    float: left;
+    margin-right: 25px;
+
+}
+#zw-footer>p:nth-of-type(2){
+    width: 540px;
+    height: 48px;
+    float: left;
+}
+#zw-footer>ul:first-of-type li a{
+    color: #c0c0c0;
+    text-decoration: none;
+}
+#zw-footer>ul:first-of-type li a:hover{
+    text-decoration: underline;
+}
+#zw-footer>ul:first-of-type li span{
+    margin: 0 18px;
+}
+#zw-footer>ul:first-of-type{
+    clear: both;
+    padding-top: 46px;
+}
+#zw-footer>p:nth-of-type(3){
+    clear: both;
+    line-height: 26px;
+}
+
+/*图标*/
+@font-face {
+    font-family: 'iconfont';  /* project id 195889 */
+    src: url('http://at.alicdn.com/t/font_tuv1q2zo8zmh1tt9.eot');
+    src: url('http://at.alicdn.com/t/font_tuv1q2zo8zmh1tt9.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_tuv1q2zo8zmh1tt9.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_tuv1q2zo8zmh1tt9.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_tuv1q2zo8zmh1tt9.svg#iconfont') format('svg');
+}
+/*图标使用*/
+#zw-footer>div span a{
+    font-family: iconfont;
+    font-size: 48px;
+    vertical-align: middle;
+    margin-left: 5px;
+    color:  #c0c0c0;
+    text-decoration: none;
+}
+#zw-footer>div{
+    position: absolute;
+    right: 180px;
+    top: 60px;
+    font-size: 18px;
+}
+
+.ImgApp{
+    background: #FFFFFF;
+    /*position: absolute;*/
+    width: 224px;
+    border: 1px solid #ddd;
+    list-style: none;
+    overflow: hidden;
+
+}
+.ImgApp li{
+    overflow: hidden;
+}
+.ImgApp li p{
+    color: #000000;
+    /*width:200px;*/
+}
+.ImgApp li img{
+    float: left;
+    padding: 10px;
+
+}
+
+.ImgApp li p:first-of-type{
+    font-size: 12px;
+    line-height: 20px;
+    color: #636363;
+    padding-top: 23px;
+    margin-left: 125px;
+}
+.ImgApp li p:nth-of-type(2){
+    font-size: 16px;
+    line-height: 24px;
+    color: #636363;
+    margin-left: 6px;
+    margin-left: 115px
+}
+.ImgApp li p:nth-of-type(3){
+    font-size: 25px;
+    line-height: 28px;
+    color: #00b081;
+    margin-left: 135px
+}
+
+
+
+.ImgWeixin{
+    background: #FFFFFF;
+    /*position: absolute;*/
+    width: 224px;
+    border: 1px solid #ddd;
+    list-style: none;
+    /*left: 500px;*/
+    /*overflow: hidden;*/
+
+}
+.ImgWeixin li{
+    overflow: hidden;
+}
+.ImgWeixin li img{
+    float: left;
+    padding: 10px;
+
+}
+
+.ImgWeixin li p:first-of-type{
+    font-size: 12px;
+    line-height: 20px;
+    color: #636363;
+    padding-top: 23px;
+    margin-left: 125px;
+}
+.ImgWeixin li p:nth-of-type(2){
+    font-size: 16px;
+    line-height: 24px;
+    color: #636363;
+    margin-left: 6px;
+    margin-left: 115px
+}
+.ImgWeixin li p:nth-of-type(3){
+    font-size: 25px;
+    line-height: 28px;
+    color: #00b081;
+    margin-left: 125px
+}
+
+.weibo{
+    background: #FFFFFF;
+    /*position: absolute;*/
+    width: 224px;
+    border: 1px solid #ddd;
+    list-style: none;
+}
+.weibo li>span:first-of-type{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background-color: #ff7467;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    margin: 15px;
+}
+.weibo li>span:nth-of-type(2) a{
+    line-height: 30px;
+    text-decoration: none;
+    color: #0073b6;
+}
+.weibo li span:nth-of-type(2) a span{
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+
+
+.email{
+    background: #FFFFFF;
+    /*position: absolute;*/
+    width: 224px;
+    border: 1px solid #ddd;
+}
+.email li{
+    margin: 15px;
+    list-style: none;
+}
+.email li input{
+    padding-left: 5px;
+    width: 126px;
+    height: 28px;
+}
+.email li button{
+    width: 62px;
+    height: 30px;
+    border: none;
+    background-color: #00b081;
+    font-size: 14px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+

@@ -1,0 +1,165 @@
+#zw-home-zhuanti{
+    height: 711px;
+    padding-left: 213px;
+    padding-top: 35px;
+    width: 100%;
+}
+#zw-home-zhuanti .title{
+    overflow: hidden;
+}
+#zw-home-zhuanti h2{
+    font-size: 40px;
+    margin-bottom: 26px;
+    float: left;
+}
+
+#zw-home-zhuanti h2 span{
+    color: #636363;
+    font-size:14px;
+    margin-right:16px;
+}
+#zw-home-zhuanti  div ul:nth-of-type(1){
+    height: 30px;
+    width: 700px;
+    float: left;
+}
+#zw-home-zhuanti div ul:nth-of-type(1) li{
+    float: left;
+    list-style: none;
+    margin: 0 11px;
+
+}
+#zw-home-zhuanti div ul:nth-of-type(1) li a{
+    text-decoration: none;
+    font-size: 19px;
+    color: #323232;
+}
+#zw-home-zhuanti div ul:nth-of-type(1) li a:hover{
+    font-size:19px;
+    color: #16c1a0;
+    border-bottom: 3px solid #16c1a0;
+    padding-bottom: 6px;
+}
+#zw-home-zhuanti .content{
+    height: 603px;
+}
+#zw-home-zhuanti .content li:first-child a img{
+    width: 572px;
+    height: 270px;
+}
+#zw-home-zhuanti .content li {
+    float: left;
+    height: 270px;
+    width: 275px;
+    border:  1px solid #ececec;
+    position: relative;
+    list-style: none;
+    margin-bottom: 22px;
+    margin-right: 27px;
+}
+
+#zw-home-zhuanti .content li:first-child .mask{
+    background: url(http://common1.qyerstatic.com/zworld/web/project/index/images/zhuanti-one-maskbg.png) repeat-x;
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+    /*background: green;*/
+    width: 100%;
+}
+#zw-home-zhuanti .content li:first-child{
+    width: 572px;
+    position: relative;
+}
+#zw-home-zhuanti .content li:first-child p:first-of-type{
+    position: absolute;
+    bottom: 6px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    width: 400px;
+    height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
+#zw-home-zhuanti .content li:first-child p:nth-of-type(2){
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    color: silver;
+}
+#zw-home-zhuanti .content li:first-child p:nth-of-type(2) span{
+    color: #ff7467;
+    font-size: 32px;
+}
+#zw-home-zhuanti .content li div:nth-of-type(2) {
+    color:#323232;
+    font-size: 18px;
+    padding: 13px 16px 0px 12px;
+
+
+}
+#zw-home-zhuanti .content li div:nth-of-type(3) {
+    float: right;
+    padding-right:10px;
+    color: #959595;
+}
+
+#zw-home-zhuanti .content li div:nth-of-type(3) span{
+    color: #ff7467;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#zw-home-zhuanti .content li div  img{
+    width: 273px;
+    height: 162px;
+}
+
+
+
+
+@font-face {
+    font-family: 'iconfont';  /* project id 195889 */
+    src: url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.eot');
+    src: url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_c4imi8zqn7xbhuxr.svg#iconfont') format('svg');
+}
+#zw-home-zhuanti .content a{
+    text-decoration: none;
+}
+#zw-home-zhuanti .content li:last-child p:first-child span:nth-of-type(3){
+    font-family: iconfont;
+    font-size: 66px;
+    color:  #ffffff;
+    display: block;
+    margin-top: 10px;
+
+}
+#zw-home-zhuanti .content li:last-child p{
+    text-align: center;
+}
+#zw-home-zhuanti .content li:last-child p:first-child{
+    padding-top: 48px;
+}
+#zw-home-zhuanti .content li:last-child p:first-child span:nth-of-type(1),#zw-home-zhuanti .content li:last-child p:first-child span:nth-of-type(2){
+    color: #fff;
+    font-size: 20px;
+    line-height:26px;
+    display:block;
+}
+#zw-home-zhuanti .content li:last-child p:first-child{
+    background-image: linear-gradient(180deg,#b274c7,#4d8ddb);
+    height: 215px;
+}
+#zw-home-zhuanti .content li:last-child p:last-child{
+    background:#4d8ddb;
+    height: 55px;
+    width: 100%;
+}
+#zw-home-zhuanti .content li:last-child p:last-child span{
+    color: #fff;
+    margin: 0 3px;
+}

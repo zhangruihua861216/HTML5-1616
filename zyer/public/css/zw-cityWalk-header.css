@@ -1,0 +1,118 @@
+#zw-header{
+    height: 142px;
+    border-bottom: 2px solid #45c79f;
+    padding-left: 213px;
+
+}
+#zw-header .zw-header-searchs{
+
+   position: relative;
+}
+#zw-header div{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 10px;
+}
+#zw-header .zw-header-searchs input{
+    height: 40px;
+    width: 684px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    padding:0 25px 0 38px;
+    background: #f0f0f0;
+    font-size: 16px;
+    margin:0 45px 0px 36px;
+}
+
+#zw-header .zw-header-searchs input:focus{
+    border: 1px  solid #16c1a0;
+}
+
+/*cityWalk搜索图标*/
+@font-face {
+    font-family: 'iconfont';  /* project id 195889 */
+    src: url('//at.alicdn.com/t/font_oxwgcszzyfxq1tt9.eot');
+    src: url('//at.alicdn.com/t/font_oxwgcszzyfxq1tt9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_oxwgcszzyfxq1tt9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_oxwgcszzyfxq1tt9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_oxwgcszzyfxq1tt9.svg#iconfont') format('svg');
+}
+#zw-header .zw-header-searchs span{
+    font-family: iconfont;
+    position: absolute;
+    left:40px;
+    top:0px;
+    font-size: 30px;
+    cursor: pointer;
+    color:#bbbbbb ;
+}
+/*我的订单和爱心图标*/
+@font-face {
+    font-family: 'Myiconfont';  /* project id 195889 */
+    src: url('//at.alicdn.com/t/font_nbuihaech6y74x6r.eot');
+    src: url('//at.alicdn.com/t/font_nbuihaech6y74x6r.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_nbuihaech6y74x6r.woff') format('woff'),
+    url('//at.alicdn.com/t/font_nbuihaech6y74x6r.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_nbuihaech6y74x6r.svg#iconfont') format('svg');
+}
+#zw-header .zw-header-link-unit span:first-of-type,#zw-header .zw-header-link-unit span:nth-of-type(4){
+    font-family: Myiconfont;
+    color: darkseagreen;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+#zw-header .zw-header-link-unit span:nth-of-type(2),#zw-header .zw-header-link-unit span:nth-of-type(5){
+    font-size: 12px;
+    color: #bbbbbb;
+
+}
+#zw-header .zw-header-link-unit span:nth-of-type(3){
+    font-size: 26px;
+    color: #bbbbbb;
+   vertical-align: middle;
+}
+#zw-header .zw-header-link-unit span{
+    margin-left: 12px;
+}
+#zw-header .zw-header-logo img {
+    width: 118px;
+    height: 34px;
+    vertical-align: middle;
+
+}
+#zw-header table{
+    clear: both;
+}
+#zw-header table tr td a{
+    text-decoration: none;
+    color: #323232;
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 23px;
+
+}
+
+#zw-header table tr td a:hover{
+    color: #45c79f;
+    border-bottom: 2px solid #45c79f;
+    /*text-decoration: underline;*/
+}
+#zw-header table tr td:first-of-type{
+    width: 180px;
+}
+#zw-header table tr td:first-of-type span{
+    margin-left: 40px;
+    font-size: 26px;
+    color: #bbbbbb;
+    vertical-align: middle;
+}
+
+
+
+
+
